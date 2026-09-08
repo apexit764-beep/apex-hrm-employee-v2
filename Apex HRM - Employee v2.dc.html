@@ -1206,8 +1206,13 @@
                 </sc-for>
               </div>
               <div style="display: flex; align-items: center; justify-content: center; gap: 7px; font-size: 13px; color: var(--ink-3)">
-                <span>اعادة ارسال الرمز</span>
-                <span style="font-weight: 600; color: var(--accent-ink); unicode-bidi: plaintext">بعد 5 ث</span>
+                <sc-if value="{{ canResend }}" hint-placeholder-val="{{ false }}">
+                  <button type="button" onClick="{{ resendOtp }}" style="all: unset; cursor: pointer; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 600; color: var(--accent-ink); border-bottom: 1px solid currentColor; transition: opacity 150ms" style-hover="opacity: 0.75">اعادة ارسال الرمز</button>
+                </sc-if>
+                <sc-if value="{{ resendWaiting }}" hint-placeholder-val="{{ true }}">
+                  <span>اعادة ارسال الرمز</span>
+                  <span style="font-weight: 600; color: var(--accent-ink); unicode-bidi: plaintext">بعد {{ resendIn }} ث</span>
+                </sc-if>
               </div>
             </sc-if>
 
@@ -1312,6 +1317,24 @@
               <span style="font-size: 14px; color: var(--ink); unicode-bidi: plaintext">20 يناير 2026</span>
               <span style="color: var(--ink-3); display: flex">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><path d="M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M3 10h18"/></svg>
+              </span>
+            </button>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 9px">
+            <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">الوقت</span>
+            <button type="button" onClick="{{ openTime }}" style="all: unset; cursor: pointer; height: 54px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); display: flex; align-items: center; justify-content: space-between; padding: 0 17px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
+              <span style="font-size: 14px; color: {{ reminderTimeColor }}; unicode-bidi: plaintext">{{ reminderTimeValue }}</span>
+              <span style="color: var(--ink-3); display: flex">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20"/><path d="M12 6v6l4 2"/></svg>
+              </span>
+            </button>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 9px">
+            <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">التذكير قبل</span>
+            <button type="button" onClick="{{ openRemindBefore }}" style="all: unset; cursor: pointer; height: 54px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); display: flex; align-items: center; justify-content: space-between; padding: 0 17px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
+              <span style="font-size: 14px; color: {{ reminderBeforeColor }}">{{ reminderBeforeValue }}</span>
+              <span style="color: var(--ink-3); display: flex">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
               </span>
             </button>
           </div>
@@ -1678,7 +1701,19 @@ class Component extends DCLogic {
     if (prev.startScreen !== this.props.startScreen && this.props.startScreen) this.setState({ screen: this.props.startScreen });
     this.applyAccent();
   }
-  componentWillUnmount() { clearTimeout(this.toastTimer); clearInterval(this.bannerTimer); clearTimeout(this.splashTimer); }
+  componentWillUnmount() { clearTimeout(this.toastTimer); clearInterval(this.bannerTimer); clearTimeout(this.splashTimer); clearInterval(this.resendTimer); }
+
+  startResend(sec) {
+    clearInterval(this.resendTimer);
+    this.setState({ resendIn: sec });
+    this.resendTimer = setInterval(() => {
+      this.setState((st) => {
+        const next = (st.resendIn || 0) - 1;
+        if (next <= 0) clearInterval(this.resendTimer);
+        return { resendIn: Math.max(0, next) };
+      });
+    }, 1000);
+  }
 
   startBanners(n) {
     clearInterval(this.bannerTimer);
@@ -1870,7 +1905,14 @@ class Component extends DCLogic {
         pick: (v) => this.setState({ jobFilter: v, modal: null }) },
       date: { date: true, title: "اختر التاريخ" },
       range: { date: true, title: s === "log" ? "اختر الفترة" : "اختر مدة الاجازة" },
-      time: { date: true, title: "اختر الوقت" },
+      time: { choice: true, title: "اختر الوقت",
+        options: ["07:00 ص", "07:30 ص", "08:00 ص", "09:00 ص", "10:00 ص", "12:00 م", "02:00 م", "04:00 م"],
+        current: this.state.remTime || "",
+        pick: (v) => this.setState({ remTime: v, modal: null }) },
+      remindBefore: { choice: true, title: "التذكير قبل",
+        options: ["عند الموعد", "قبل 5 دقائق", "قبل 15 دقيقة", "قبل 30 دقيقة", "قبل ساعة", "قبل يوم"],
+        current: this.state.remBefore || "",
+        pick: (v) => this.setState({ remBefore: v, modal: null }) },
     };
     const md = modalDefs[this.state.modal] || {};
 
@@ -2283,7 +2325,18 @@ class Component extends DCLogic {
         { title: "تسليم تقرير الأداء", time: "02:00 م", go: () => this.setState({ reminderSheet: "edit", reminderTitle: "تسليم تقرير الأداء" }) },
         { title: "تدريب أمن المعلومات", time: "04:00 — 05:00 م", go: () => this.setState({ reminderSheet: "edit", reminderTitle: "تدريب أمن المعلومات" }) },
       ],
-      saveReminder: () => { const edit = this.state.reminderSheet === "edit"; this.setState({ reminderSheet: null }); this.toast(edit ? "تم تعديل التذكير" : "تم إنشاء التذكير"); },
+      reminderTimeValue: this.state.remTime || "اختر الوقت",
+      reminderTimeColor: this.state.remTime ? "var(--ink)" : "var(--ink-3)",
+      reminderBeforeValue: this.state.remBefore || "التذكير قبل",
+      reminderBeforeColor: this.state.remBefore ? "var(--ink)" : "var(--ink-3)",
+      openTime: () => this.setState({ modal: "time" }),
+      openRemindBefore: () => this.setState({ modal: "remindBefore" }),
+      saveReminder: () => {
+        if (!this.state.remTime) { this.toast("اختر وقت التذكير قبل الحفظ", "err"); return; }
+        const edit = this.state.reminderSheet === "edit";
+        this.setState({ reminderSheet: null });
+        this.toast(edit ? "تم تعديل التذكير" : "تم إنشاء التذكير");
+      },
       openDelReminder: () => this.setState({ modal: "delReminder", reminderSheet: null }),
 
       hasArticleMeta: s === "announcementDetail",
@@ -2403,13 +2456,17 @@ class Component extends DCLogic {
       },
 
       isAuth, isLogin: s === "login", isOtp: s === "otp", authBack: s !== "login",
+      resendIn: this.state.resendIn || 0,
+      resendWaiting: (this.state.resendIn || 0) > 0,
+      canResend: (this.state.resendIn || 0) <= 0,
+      resendOtp: () => { this.startResend(30); this.toast("تم ارسال رمز جديد على بريدك"); },
       authTitle: authCopy.title, authSub: authCopy.sub, authCta: authCopy.cta,
       authFields: authCopy.fields.map(([label, value, g]) => ({ label, value, glyph: icon(g, 18, 1.6), isPassword: g === "lock" })),
       otpDigits: ["4", "8", "2", ""].map((value) => ({ value, border: value ? "var(--accent)" : "var(--line)" })),
       goForgot: () => this.go("forgot"),
       authSubmit: () => {
         if (s === "login") { this.jump("home"); this.toast("تم تسجيل الدخول بنجاح"); }
-        else if (s === "forgot") this.go("otp");
+        else if (s === "forgot") { this.go("otp"); this.startResend(30); }
         else if (s === "otp") this.go("reset");
         else if (s === "changePassword") { this.back(); this.toast("تم تغيير كلمة المرور"); }
         else { this.jump("login"); this.toast("تم تعيين كلمة المرور الجديدة"); }
