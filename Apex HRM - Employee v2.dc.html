@@ -259,11 +259,11 @@
             <div style="position: absolute; top: -50px; left: -40px; width: 190px; height: 190px; border-radius: 999px; background: rgba(255,255,255,0.09); pointer-events: none"></div>
             <div style="position: absolute; bottom: -80px; right: -60px; width: 210px; height: 210px; border-radius: 999px; background: rgba(255,255,255,0.07); pointer-events: none"></div>
             <div style="position: relative; display: flex; align-items: flex-start; justify-content: space-between; gap: 14px">
-              <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
-                <div style="font-size: 12px; color: rgba(255,255,255,0.72)">{{ dateLabel }}</div>
-                <div style="font-size: 40px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; unicode-bidi: plaintext">{{ nowTime }}</div>
+              <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0; flex-shrink: 0">
+                <div style="font-size: 12px; color: rgba(255,255,255,0.72); white-space: nowrap">{{ dateLabel }}</div>
+                <div style="font-size: 32px; font-weight: 600; line-height: 1; letter-spacing: -0.03em; unicode-bidi: plaintext; white-space: nowrap">{{ nowTime }}</div>
               </div>
-              <button type="button" onClick="{{ goAttend }}" style="all: unset; cursor: pointer; align-self: flex-start; height: 40px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; gap: 7px; padding: 0 16px; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 600; color: var(--accent); white-space: nowrap; flex-shrink: 0; transition: opacity 150ms" style-hover="opacity: 0.9">
+              <button type="button" onClick="{{ goAttend }}" style="all: unset; cursor: pointer; align-self: flex-start; min-width: 0; height: 40px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; gap: 7px; padding: 0 16px; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 600; color: var(--accent); white-space: nowrap; flex-shrink: 0; transition: opacity 150ms" style-hover="opacity: 0.9">
                 {{ clockCta }}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
               </button>
@@ -358,7 +358,7 @@
             </div>
           </sc-if>
 
-          <div style="padding: 34px 24px 14px; font-size: 15px; font-weight: 600; color: var(--ink)">آخر الاعلانات</div>
+          <div style="padding: 34px 24px 14px; font-size: 15px; font-weight: 600; color: var(--ink)">آخر الإعلانات</div>
           <div style="margin: 0 24px; display: flex; flex-direction: column; gap: 10px">
             <sc-for list="{{ announcements }}" as="an" hint-placeholder-count="2">
               <button type="button" onClick="{{ an.go }}" style="all: unset; cursor: pointer; display: block; text-align: right; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 19px 20px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
@@ -387,7 +387,7 @@
             <div style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 10px">
               <div style="display: flex; align-items: center; gap: 7px; height: 30px; padding: 0 12px; border-radius: 999px; background: rgba(255,255,255,0.16)">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                <span style="font-size: 12px; font-weight: 500; color: #FFFFFF">القاهرة، مصر</span>
+                <span style="font-size: 12px; font-weight: 500; color: #FFFFFF">رام الله، فلسطين</span>
               </div>
               <div style="display: flex; align-items: center; gap: 7px; height: 30px; padding: 0 12px; border-radius: 999px; background: rgba(255,255,255,0.16)">
                 <span style="width: 7px; height: 7px; border-radius: 50%; background: #FFFFFF"></span>
@@ -403,7 +403,7 @@
                 </span>
               </button>
               <div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
-                <div style="font-size: 48px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; unicode-bidi: plaintext">{{ nowTime }}</div>
+                <div style="font-size: 48px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; unicode-bidi: plaintext; white-space: nowrap">{{ nowTime }}</div>
                 <div style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.82)">{{ bigPunchLabel }}</div>
               </div>
             </div>
@@ -448,7 +448,7 @@
                 <span style="color: var(--accent-ink); display: flex">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/></svg>
                 </span>
-                <span style="font-size: 11.5px; font-weight: 500; color: var(--ink)">فرع القاهرة</span>
+                <span style="font-size: 11.5px; font-weight: 500; color: var(--ink)">فرع رام الله</span>
               </div>
               <button type="button" onClick="{{ recenterMap }}" aria-label="إعادة التمركز" style="all: unset; cursor: pointer; position: absolute; bottom: 11px; left: 11px; width: 34px; height: 34px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--ink-2); transition: color 150ms" style-hover="color: var(--accent-ink)">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>
@@ -456,7 +456,7 @@
             </div>
             <div style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-top: 1px solid var(--line)">
               <span style="flex: 1; display: flex; flex-direction: column; gap: 3px; text-align: right">
-                <span style="font-size: 13px; font-weight: 500; color: var(--ink)">القاهرة، مصر</span>
+                <span style="font-size: 13px; font-weight: 500; color: var(--ink)">رام الله، فلسطين</span>
                 <span style="font-size: 11.5px; color: var(--ink-3); unicode-bidi: plaintext">دقة الموقع ±12 م</span>
               </span>
               <span style="font-size: 11px; font-weight: 600; color: var(--ok); background: var(--ok-soft); border-radius: 999px; padding: 4px 10px; flex-shrink: 0">داخل النطاق</span>
@@ -527,6 +527,15 @@
               <sc-for list="{{ subTypeChips }}" as="sf" hint-placeholder-count="5">
                 <button type="button" onClick="{{ sf.go }}" style="all: unset; cursor: pointer; flex-shrink: 0; height: 34px; padding: 0 15px; border-radius: 999px; background: {{ sf.bg }}; border: 1px solid {{ sf.border }}; display: flex; align-items: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12.5px; font-weight: {{ sf.weight }}; color: {{ sf.color }}; white-space: nowrap; transition: background 150ms, border-color 150ms, color 150ms">{{ sf.label }}</button>
               </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ hasPeriodChip }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 24px 16px">
+              <span style="font-size: 13px; color: var(--ink-3)">{{ periodCaption }}</span>
+              <button type="button" onClick="{{ openMonth }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 7px; height: 34px; padding: 0 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12.5px; font-weight: 500; color: var(--ink); transition: border-color 150ms" style-hover="border-color: var(--accent)">
+                {{ periodLabel }}
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
             </div>
           </sc-if>
           <sc-if value="{{ hasBalance }}" hint-placeholder-val="{{ false }}">
@@ -662,14 +671,6 @@
                   <span style="flex: 1; font-size: 14px; font-weight: 500; color: var(--ink); unicode-bidi: plaintext; text-wrap: pretty">{{ r.value }}</span>
                 </div>
               </sc-for>
-              <sc-for list="{{ detailNoteRows }}" as="nr" hint-placeholder-count="2">
-                <div style="display: flex; align-items: center; gap: 14px; padding: 11px 0; border-top: 1px solid var(--line)">
-                  <span style="font-size: 13px; color: var(--ink-3); min-width: 116px; flex-shrink: 0">{{ nr.label }}</span>
-                  <button type="button" onClick="{{ nr.open }}" style="all: unset; cursor: pointer; width: 38px; height: 38px; border-radius: 10px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent-ink); transition: opacity 150ms" style-hover="opacity: 0.8">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H9a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1"/><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><path d="M8 12h8"/><path d="M8 16h5"/></svg>
-                  </button>
-                </div>
-              </sc-for>
             </div>
           </div>
 
@@ -684,6 +685,30 @@
               <div style="font-size: 13px; line-height: 1.8; color: var(--ink); margin-top: 10px; text-wrap: pretty">{{ rejectReason }}</div>
             </div>
           </sc-if>
+
+          <div style="margin: 12px 24px 0; border-radius: 14px; border: 1px solid var(--line); background: var(--card); overflow: hidden">
+            <button type="button" onClick="{{ openReason }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 13px 18px; box-sizing: border-box; transition: background 150ms" style-hover="background: var(--accent-soft)">
+              <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent-ink); flex-shrink: 0">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+              </span>
+              <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: var(--ink)">السبب</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button type="button" onClick="{{ goAdminNotes }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 13px 18px; box-sizing: border-box; transition: background 150ms" style-hover="background: var(--accent-soft)">
+              <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink)">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h12"/></svg>
+              </span>
+              <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: var(--ink)">ملاحظات الإدارة</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button type="button" onClick="{{ openAttachment }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 13px 18px; box-sizing: border-box; border-top: 1px solid var(--line); transition: background 150ms" style-hover="background: var(--accent-soft)">
+              <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink)">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13.234 20.252 21 12.3"/><path d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486"/></svg>
+              </span>
+              <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: var(--ink)">المرفقات</span>
+              <span style="font-size: 12px; color: var(--ink-3)">ملف واحد</span>
+            </button>
+          </div>
 
           <div style="margin: 12px 24px 0; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 24px 22px; box-sizing: border-box">
             <div style="font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 18px">مراحل الطلب</div>
@@ -706,22 +731,6 @@
             </sc-for>
           </div>
 
-          <div style="margin: 12px 24px 0; border-radius: 14px; border: 1px solid var(--line); background: var(--card); overflow: hidden">
-            <button type="button" onClick="{{ goAdminNotes }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 13px 18px; box-sizing: border-box; transition: background 150ms" style-hover="background: var(--accent-soft)">
-              <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink)">
-                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h12"/></svg>
-              </span>
-              <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: var(--ink)">ملاحظات الادارة</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-            </button>
-            <button type="button" onClick="{{ openAttachment }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 13px 18px; box-sizing: border-box; border-top: 1px solid var(--line); transition: background 150ms" style-hover="background: var(--accent-soft)">
-              <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink)">
-                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13.234 20.252 21 12.3"/><path d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486"/></svg>
-              </span>
-              <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: var(--ink)">المرفقات</span>
-              <span style="font-size: 12px; color: var(--ink-3)">ملف واحد</span>
-            </button>
-          </div>
 
           <sc-if value="{{ canCancelReq }}" hint-placeholder-val="{{ false }}">
             <div style="padding: 24px 24px 0">
@@ -861,7 +870,7 @@
             <div style="font-size: 12px; color: rgba(255,255,255,0.72)">صافي راتب يناير 2026</div>
             <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 12px">
               <span style="font-size: 40px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; color: var(--on-accent); unicode-bidi: plaintext">{{ netPay }}</span>
-              <span style="font-size: 14px; color: rgba(255,255,255,0.8)">ج.م</span>
+              <span style="font-size: 14px; color: rgba(255,255,255,0.8)">₪</span>
             </div>
             <div style="display: flex; align-items: center; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.22)">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
@@ -888,7 +897,7 @@
             <div style="font-size: 13px; color: var(--ink-3)">صافي الراتب</div>
             <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 12px">
               <span style="font-size: 40px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; color: var(--ink); unicode-bidi: plaintext">{{ netPay }}</span>
-              <span style="font-size: 14px; color: var(--ink-3)">ج.م</span>
+              <span style="font-size: 14px; color: var(--ink-3)">₪</span>
             </div>
             <div style="margin-top: 20px">
               <sc-for list="{{ payslip }}" as="p" hint-placeholder-count="6">
@@ -1136,7 +1145,7 @@
             <div style="display: flex; align-items: center; gap: 12px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 15px 17px; box-sizing: border-box">
               <span style="flex: 1; display: flex; flex-direction: column; gap: 3px">
                 <span style="font-size: 14px; font-weight: 500; color: var(--ink)">إرسال بشكل مجهول</span>
-                <span style="font-size: 12px; color: var(--ink-3)">ما بيظهر اسمك للادارة</span>
+                <span style="font-size: 12px; color: var(--ink-3)">ما بيظهر اسمك للإدارة</span>
               </span>
               <button type="button" onClick="{{ toggleAnon }}" style="all: unset; cursor: pointer; width: 52px; height: 30px; border-radius: 999px; background: {{ anonBg }}; position: relative; flex-shrink: 0; transition: background 150ms">
                 <span style="position: absolute; top: 3px; right: {{ anonPos }}; width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF; transition: right 150ms"></span>
@@ -1174,7 +1183,7 @@
         <sc-if value="{{ isMore }}" hint-placeholder-val="{{ false }}">
           <div style="padding: 20px 24px 24px">
             <div style="font-size: 24px; font-weight: 600; letter-spacing: -0.015em; color: var(--ink)">المزيد</div>
-            <div style="font-size: 13px; color: var(--ink-3); margin-top: 6px">حسابك والاعدادات</div>
+            <div style="font-size: 13px; color: var(--ink-3); margin-top: 6px">حسابك والإعدادات</div>
           </div>
           <button type="button" onClick="{{ goProfile }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 15px; width: calc(100% - 44px); margin: 0 24px 18px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 18px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
             <img src="assets/avatar.png" alt="" style="width: 56px; height: 56px; border-radius: 999px; object-fit: cover; display: block; border: 1px solid var(--line)" />
@@ -1319,10 +1328,10 @@
               </div>
               <div style="display: flex; align-items: center; justify-content: center; gap: 7px; font-size: 13px; color: var(--ink-3)">
                 <sc-if value="{{ canResend }}" hint-placeholder-val="{{ false }}">
-                  <button type="button" onClick="{{ resendOtp }}" style="all: unset; cursor: pointer; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 600; color: var(--accent-ink); border-bottom: 1px solid currentColor; transition: opacity 150ms" style-hover="opacity: 0.75">اعادة ارسال الرمز</button>
+                  <button type="button" onClick="{{ resendOtp }}" style="all: unset; cursor: pointer; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 600; color: var(--accent-ink); border-bottom: 1px solid currentColor; transition: opacity 150ms" style-hover="opacity: 0.75">إعادة إرسال الرمز</button>
                 </sc-if>
                 <sc-if value="{{ resendWaiting }}" hint-placeholder-val="{{ true }}">
-                  <span>اعادة ارسال الرمز</span>
+                  <span>إعادة إرسال الرمز</span>
                   <span style="font-weight: 600; color: var(--accent-ink); unicode-bidi: plaintext">بعد {{ resendIn }} ث</span>
                 </sc-if>
               </div>
@@ -1538,17 +1547,30 @@
       <div style="position: absolute; inset: 0; z-index: 26; background: rgba(8,9,13,0.5); display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box; animation: fadeIn 150ms ease-out">
         <div style="width: 100%; border-radius: 22px; border: 1px solid var(--line); background: var(--card); padding: 24px 22px; box-sizing: border-box; animation: sheetIn 200ms cubic-bezier(0.32, 0.72, 0, 1)">
 
+          <sc-if value="{{ modalIsConfirm }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+              <span style="width: 56px; height: 56px; border-radius: 999px; background: {{ confirmIconBg }}; display: flex; align-items: center; justify-content: center; color: {{ confirmIconColor }}">{{ confirmGlyph }}</span>
+              <div style="display: flex; flex-direction: column; gap: 7px">
+                <div style="font-size: 17px; font-weight: 600; line-height: 1.5; letter-spacing: -0.01em; color: var(--ink); text-wrap: balance">{{ modalTitle }}</div>
+                <div style="font-size: 13px; line-height: 1.6; color: var(--ink-3); text-wrap: pretty">{{ confirmBody }}</div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ modalHasCloseRow }}" hint-placeholder-val="{{ true }}">
           <div style="display: flex; align-items: flex-start; gap: 12px">
+
             <div style="flex: 1; font-size: 17px; font-weight: 600; line-height: 1.5; letter-spacing: -0.01em; color: var(--ink); text-wrap: pretty">{{ modalTitle }}</div>
             <button type="button" onClick="{{ closeModal }}" style="all: unset; cursor: pointer; width: 34px; height: 34px; border-radius: 999px; background: var(--bg); display: flex; align-items: center; justify-content: center; color: var(--ink-3); flex-shrink: 0; transition: color 150ms" style-hover="color: var(--ink)">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </button>
           </div>
+          </sc-if>
 
           <sc-if value="{{ modalIsConfirm }}" hint-placeholder-val="{{ false }}">
             <div style="display: flex; gap: 10px; margin-top: 22px">
-              <button type="button" onClick="{{ closeModal }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink); transition: background 150ms" style-hover="background: var(--bg)">{{ modalCancel }}</button>
               <button type="button" onClick="{{ modalAction }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; background: {{ modalCtaBg }}; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; transition: opacity 150ms" style-hover="opacity: 0.9">{{ modalCta }}</button>
+              <button type="button" onClick="{{ closeModal }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink); transition: background 150ms" style-hover="background: var(--bg)">{{ modalCancel }}</button>
             </div>
           </sc-if>
 
@@ -1569,8 +1591,8 @@
                 </sc-for>
               </div>
               <div style="display: flex; gap: 10px; margin-top: 22px">
-                <button type="button" onClick="{{ closeModal }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink); transition: background 150ms" style-hover="background: var(--bg)">إلغاء</button>
                 <button type="button" onClick="{{ applyMonth }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; transition: opacity 150ms" style-hover="opacity: 0.9">تطبيق</button>
+                <button type="button" onClick="{{ closeModal }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink); transition: background 150ms" style-hover="background: var(--bg)">إلغاء</button>
               </div>
             </div>
           </sc-if>
@@ -1736,13 +1758,13 @@ const AUTH = ["login", "forgot", "otp", "reset"];
 const ARTICLES = ["announcementDetail", "terms", "privacy", "about", "adminNotes"];
 
 const TITLES = {
-  leaves: "الاجازات", permits: "الأذونات", advances: "السلف", overtime: "الساعات الاضافية",
+  leaves: "الإجازات", permits: "الأذونات", advances: "السلف", overtime: "الساعات الإضافية",
   requestDetail: "تفاصيل الطلب", requestForm: "طلب جديد",
   salaries: "الرواتب", salaryDetail: "قسيمة الراتب", log: "سجل الحركات",
   reminders: "التذكيرات", events: "الأحداث",
-  announcements: "الاعلانات", announcementDetail: "تفاصيل الاعلان",
-  notifications: "الاشعارات", suggestion: "اقتراح أو شكوى", adminNotes: "ملاحظات الادارة",
-  profile: "الملف الشخصي", more: "المزيد", settings: "الاعدادات", pages: "الصفحات",
+  announcements: "الإعلانات", announcementDetail: "تفاصيل الإعلان",
+  notifications: "الإشعارات", suggestion: "اقتراح أو شكوى", adminNotes: "ملاحظات الإدارة",
+  profile: "الملف الشخصي", more: "المزيد", settings: "الإعدادات", pages: "الصفحات",
   terms: "الشروط والأحكام", privacy: "سياسة الخصوصية", about: "من نحن",
   camIn: "تسجيل الحضور", camOut: "تسجيل الانصراف",
   employees: "الموظفين", employeeDetail: "تفاصيل الموظف",
@@ -1760,27 +1782,27 @@ const EMPLOYEES = [
 
 const INDEX_GROUPS = [
   ["أساسي", [["home", "الرئيسية"], ["attend", "الحضور"], ["camIn", "الكاميرا"], ["log", "سجل الحضور"]]],
-  ["الطلبات", [["leaves", "الاجازات"], ["permits", "الأذونات"], ["advances", "السلف"], ["overtime", "الساعات الاضافية"], ["requestDetail", "تفاصيل الطلب"], ["requestForm", "طلب جديد"]]],
-  ["الرواتب والأحداث", [["salaries", "الرواتب"], ["salaryDetail", "قسيمة الراتب"], ["reminders", "التذكيرات"], ["events", "الأحداث"], ["announcements", "الاعلانات"], ["announcementDetail", "تفاصيل الاعلان"]]],
-  ["الحساب", [["more", "المزيد"], ["profile", "الملف الشخصي"], ["settings", "الاعدادات"], ["pages", "الصفحات"], ["terms", "الشروط والأحكام"], ["notifications", "الاشعارات"], ["suggestion", "اقتراح أو شكوى"], ["adminNotes", "ملاحظات الادارة"], ["employees", "الموظفين"], ["employeeDetail", "تفاصيل الموظف"]]],
+  ["الطلبات", [["leaves", "الإجازات"], ["permits", "الأذونات"], ["advances", "السلف"], ["overtime", "الساعات الإضافية"], ["requestDetail", "تفاصيل الطلب"], ["requestForm", "طلب جديد"]]],
+  ["الرواتب والأحداث", [["salaries", "الرواتب"], ["salaryDetail", "قسيمة الراتب"], ["reminders", "التذكيرات"], ["events", "الأحداث"], ["announcements", "الإعلانات"], ["announcementDetail", "تفاصيل الإعلان"]]],
+  ["الحساب", [["more", "المزيد"], ["profile", "الملف الشخصي"], ["settings", "الإعدادات"], ["pages", "الصفحات"], ["terms", "الشروط والأحكام"], ["notifications", "الإشعارات"], ["suggestion", "اقتراح أو شكوى"], ["adminNotes", "ملاحظات الإدارة"], ["employees", "الموظفين"], ["employeeDetail", "تفاصيل الموظف"]]],
   ["الدخول", [["splash", "سبلاش"], ["login", "تسجيل الدخول"], ["forgot", "نسيت كلمة المرور"], ["otp", "رمز التحقق"], ["reset", "كلمة مرور جديدة"]]],
 ];
 
 const fmtNum = (n) => Math.abs(n).toLocaleString("en-US");
 // مصدر الحقيقة الوحيد للقسيمة — الصافي محسوب منه، مش مكتوب بالإيد
 const PAY = [
-  { label: "الراتب الأساسي", amount: 14000, note: "" },
-  { label: "بدل مواصلات", amount: 800, note: "" },
-  { label: "ساعات اضافية", amount: 1200, credit: true, note: "8 ساعات معتمدة × 150 ج.م للساعة" },
-  { label: "مكافآت", amount: 500, credit: true, note: "مكافأة الموظف المثالي لشهر يناير" },
-  { label: "خصم تأخير", amount: -150, note: "3 حالات تأخير خلال الشهر" },
-  { label: "سلفة", amount: -1000, note: "القسط 2 من 6 — سلفة يناير 2026" },
-  { label: "تأمينات", amount: -300, note: "" },
+  { label: "الراتب الأساسي", amount: 4500, note: "" },
+  { label: "بدل مواصلات", amount: 300, note: "" },
+  { label: "ساعات إضافية", amount: 135, credit: true, note: "3 ساعات معتمدة × 45 ₪ للساعة" },
+  { label: "مكافآت", amount: 250, credit: true, note: "مكافأة الموظف المثالي لشهر يناير" },
+  { label: "خصم تأخير", amount: -60, note: "3 حالات تأخير خلال الشهر" },
+  { label: "سلفة", amount: -300, note: "القسط 2 من 6 — سلفة 1,800 ₪" },
+  { label: "تأمينات", amount: -320, note: "" },
   { label: "اخرى", amount: 0, note: "" },
 ];
 const PAY_NET = PAY.reduce((t, r) => t + r.amount, 0);
 
-// أنواع الاجازات — مصدر واحد للشرائح والتفصيل وكارت الرصيد
+// أنواع الإجازات — مصدر واحد للشرائح والتفصيل وكارت الرصيد
 const LEAVE_KINDS = [
   { label: "طارئة", used: 2, cap: "من 6", tok: "--bad" },
   { label: "اعتيادية", used: 3, cap: "من 15", tok: "--warn" },
@@ -1789,34 +1811,34 @@ const LEAVE_KINDS = [
 ];
 
 const BAL = {
-  leaves: { label: "رصيد الاجازات المتبقي", value: "15", unit: "يوم", period: "2026",
+  leaves: { label: "رصيد الإجازات المتبقي", value: "15", unit: "يوم", period: "2026",
     parts: null, // مشتقّة من LEAVE_KINDS
     types: ["الكل", "طارئة", "اعتيادية", "غير مدفوعة", "مرضية"],
     filters: ["الكل", "جديدة", "قيد المراجعة", "مقبولة", "مرفوضة"],
-    f1: "فترة الاجازة", v1: "18 — 20 أبريل", f2: "اجمالي الايام", v2: "2 يوم" },
+    f1: "فترة الإجازة", v1: "18 — 20 أبريل", f2: "إجمالي الايام", v2: "2 يوم" },
   permits: { label: "رصيد الأذونات المستخدمة", value: "1", unit: "من ساعتين", period: "02-2026",
     parts: [["مستخدم", "1 ساعة", "--warn"], ["متبقي", "1 ساعة", "--ok"]],
     types: ["الكل", "تأخير", "خروج مبكر", "استئذان لفترة محددة"],
     filters: ["الكل", "جديدة", "قيد المراجعة", "مقبولة", "مرفوضة"],
-    f1: "نوع الاذن", v1: "اذن تأخير", f2: "مدة الاذن", v2: "ساعة" },
+    f1: "نوع الإذن", v1: "إذن تأخير", f2: "مدة الإذن", v2: "ساعة" },
   advances: { filters: ["الكل", "جديدة", "قيد المراجعة", "مقبولة", "مرفوضة"],
-    f1: "المبلغ", v1: "1,500 ج.م", f2: "تاريخ الاستلام", v2: "6-1-2026" },
+    f1: "المبلغ", v1: "1,800 ₪", f2: "تاريخ الاستلام", v2: "6-1-2026" },
   overtime: { filters: ["الكل", "جديدة", "قيد المراجعة", "مقبولة", "مرفوضة"],
-    f1: "تاريخ العمل", v1: "18 أبريل 2026", f2: "اجمالي الساعات", v2: "3 ساعات" },
+    f1: "تاريخ العمل", v1: "18 أبريل 2026", f2: "إجمالي الساعات", v2: "3 ساعات" },
 };
 
 const F1MODAL = { leaves: "leaveType", permits: "permitType", advances: "advanceAmount", overtime: "date" };
 const F2MODAL = { leaves: "range", permits: "date", advances: "date", overtime: "overtimeHours" };
 
 const FORM = {
-  leaves: { f1: ["نوع الاجازة", "اعتيادية", "chevDown"], f2: ["مدة الاجازة", "18 — 20 أبريل", "cal", "2 يوم"],
-    policy: ["سياسات الاجازات العارضة", "يسمح بتقديم الطلب كل شهرين مرة، وبحد أقصى 6 أيام في السنة."] },
-  permits: { f1: ["نوع الاذن", "اذن تأخير", "chevDown"], f2: ["تاريخ الاذن", "6-1-2026", "cal", "ساعة"],
-    policy: ["سياسات الاذونات", "يسمح بتقديم الطلب مرتين شهرياً، وبحد أقصى ساعتين في الشهر."] },
-  advances: { f1: ["المبلغ", "6,000 ج.م", "chevDown"], f2: ["تاريخ الاستلام", "6-1-2026", "cal", ""],
+  leaves: { f1: ["نوع الإجازة", "اعتيادية", "chevDown"], f2: ["مدة الإجازة", "18 — 20 أبريل", "cal", "2 يوم"],
+    policy: ["سياسات الإجازات العارضة", "يسمح بتقديم الطلب كل شهرين مرة، وبحد أقصى 6 أيام في السنة."] },
+  permits: { f1: ["نوع الإذن", "إذن تأخير", "chevDown"], f2: ["تاريخ الإذن", "6-1-2026", "cal", "ساعة"],
+    policy: ["سياسات الأذونات", "يسمح بتقديم الطلب مرتين شهرياً، وبحد أقصى ساعتين في الشهر."] },
+  advances: { f1: ["المبلغ", "1,800 ₪", "chevDown"], f2: ["تاريخ الاستلام", "6-1-2026", "cal", ""],
     policy: ["سياسات السلف", "يسمح بتقديم الطلب مرة كل ستة أشهر، ولا يتجاوز راتب شهرين."] },
-  overtime: { f1: ["تاريخ العمل", "6-1-2026", "cal"], f2: ["اجمالي الساعات", "من — الى", "clock", "3 ساعات"],
-    policy: ["سياسات الساعات الاضافية", "تعتمد الساعات بعد مراجعة الادارة، وتحسب بعد ساعة كاملة."] },
+  overtime: { f1: ["تاريخ العمل", "6-1-2026", "cal"], f2: ["إجمالي الساعات", "من — الى", "clock", "3 ساعات"],
+    policy: ["سياسات الساعات الإضافية", "تعتمد الساعات بعد مراجعة الإدارة، وتحسب بعد ساعة كاملة."] },
 };
 
 class Component extends DCLogic {
@@ -1976,13 +1998,13 @@ class Component extends DCLogic {
     }));
 
     const REQUESTS = [
-      { k: "leaves", title: "إجازة اعتيادية", status: "جديد", kind2: "accent", ref: "#08766899", date: "24 ابريل 2026", f1: "فترة الاجازة", v1: "18 — 20 أبريل", f2: "اجمالي الايام", v2: "2 يوم" },
-      { k: "overtime", title: "ساعات إضافية · 3 س", status: "جديد", kind2: "accent", ref: "#08766894", date: "22 ابريل 2026", f1: "تاريخ العمل", v1: "18 أبريل 2026", f2: "اجمالي الساعات", v2: "3 ساعات" },
-      { k: "permits", title: "إذن تأخير", status: "قيد المراجعة", kind2: "warn", ref: "#08766871", date: "18 ابريل 2026", f1: "نوع الاذن", v1: "اذن تأخير", f2: "مدة الاذن", v2: "ساعة" },
-      { k: "advances", title: "سلفة 1,500 ج.م", status: "قيد المراجعة", kind2: "warn", ref: "#08766868", date: "15 ابريل 2026", f1: "المبلغ", v1: "1,500 ج.م", f2: "تاريخ الاستلام", v2: "6-5-2026" },
-      { k: "leaves", title: "إجازة طارئة", status: "مقبول", kind2: "ok", ref: "#08766804", date: "02 ابريل 2026", f1: "فترة الاجازة", v1: "02 أبريل", f2: "اجمالي الايام", v2: "1 يوم" },
-      { k: "permits", title: "خروج مبكر", status: "مقبول", kind2: "ok", ref: "#08766790", date: "28 مارس 2026", f1: "نوع الاذن", v1: "خروج مبكر", f2: "مدة الاذن", v2: "ساعتين" },
-      { k: "advances", title: "سلفة 3,000 ج.م", status: "مرفوض", kind2: "bad", ref: "#08766712", date: "21 مارس 2026", f1: "المبلغ", v1: "3,000 ج.م", f2: "تاريخ الاستلام", v2: "—" },
+      { k: "leaves", title: "إجازة اعتيادية", status: "جديد", kind2: "accent", ref: "#08766899", date: "24 أبريل 2026", f1: "فترة الإجازة", v1: "18 — 20 أبريل", f2: "إجمالي الايام", v2: "2 يوم" },
+      { k: "overtime", title: "ساعات إضافية · 3 س", status: "جديد", kind2: "accent", ref: "#08766894", date: "22 أبريل 2026", f1: "تاريخ العمل", v1: "18 أبريل 2026", f2: "إجمالي الساعات", v2: "3 ساعات" },
+      { k: "permits", title: "إذن تأخير", status: "قيد المراجعة", kind2: "warn", ref: "#08766871", date: "18 أبريل 2026", f1: "نوع الإذن", v1: "إذن تأخير", f2: "مدة الإذن", v2: "ساعة" },
+      { k: "advances", title: "سلفة 1,800 ₪", status: "قيد المراجعة", kind2: "warn", ref: "#08766868", date: "15 أبريل 2026", f1: "المبلغ", v1: "1,800 ₪", f2: "تاريخ الاستلام", v2: "6-5-2026" },
+      { k: "leaves", title: "إجازة طارئة", status: "مقبول", kind2: "ok", ref: "#08766804", date: "02 أبريل 2026", f1: "فترة الإجازة", v1: "02 أبريل", f2: "إجمالي الايام", v2: "1 يوم" },
+      { k: "permits", title: "خروج مبكر", status: "مقبول", kind2: "ok", ref: "#08766790", date: "28 مارس 2026", f1: "نوع الإذن", v1: "خروج مبكر", f2: "مدة الإذن", v2: "ساعتين" },
+      { k: "advances", title: "سلفة 3,000 ₪", status: "مرفوض", kind2: "bad", ref: "#08766712", date: "21 مارس 2026", f1: "المبلغ", v1: "3,000 ₪", f2: "تاريخ الاستلام", v2: "—" },
     ];
     const requests = this.row(REQUESTS).map((r) => Object.assign({}, r, {
       kind: r.title,
@@ -2003,66 +2025,70 @@ class Component extends DCLogic {
     }).slice(0, isReqOverview ? 3 : 99);
 
     const authCopy = {
-      login: { title: "مرحباً بك", sub: "أهلاً وسهلاً بك في تطبيق ادارة الموظفين", cta: "تسجيل الدخول",
+      login: { title: "مرحباً بك", sub: "أهلاً وسهلاً بك في تطبيق إدارة الموظفين", cta: "تسجيل الدخول",
         fields: [["البريد الالكتروني", "ahmed.moha@apex.ps", "mail"], ["كلمة المرور", "••••••••", "lock"]] },
-      forgot: { title: "نسيت كلمة المرور", sub: "الرجاء ادخال البريد الالكتروني لاعادة تعيين كلمة المرور", cta: "إرسال",
+      forgot: { title: "نسيت كلمة المرور", sub: "الرجاء إدخال البريد الالكتروني لإعادة تعيين كلمة المرور", cta: "إرسال",
         fields: [["البريد الالكتروني", "ahmed.moha@apex.ps", "mail"]] },
       otp: { title: "رمز التحقق",
         sub: this.state.pwFlow === "settings"
           ? "أرسلنا رمز تحقق على ahmed.moha@apex.ps لتأكيد تغيير كلمة المرور"
-          : "الرجاء ادخال رمز التحقق المرسل على بريدك الالكتروني",
+          : "الرجاء إدخال رمز التحقق المرسل على بريدك الالكتروني",
         cta: "تحقق", fields: [] },
-      reset: { title: this.state.pwFlow === "settings" ? "كلمة المرور الجديدة" : "اعادة تعيين كلمة المرور",
-        sub: "الرجاء ادخال كلمة المرور الجديدة", cta: "حفظ",
+      reset: { title: this.state.pwFlow === "settings" ? "كلمة المرور الجديدة" : "إعادة تعيين كلمة المرور",
+        sub: "الرجاء إدخال كلمة المرور الجديدة", cta: "حفظ",
         fields: [["كلمة المرور الجديدة", "••••••••", "lock"], ["تأكيد كلمة المرور", "••••••••", "lock"]] },
     }[s] || { title: "", sub: "", cta: "", fields: [] };
 
     const EMPTY = {
-      leaves: ["cal", "لا يوجد طلبات اجازة", "طلباتك بتظهر هنا بعد ما تقدّمها", "طلب اجازة"],
-      permits: ["clock", "لا يوجد طلبات اذن", "طلباتك بتظهر هنا بعد ما تقدّمها", "طلب اذن"],
-      advances: ["wallet", "لا يوجد طلبات سلفة", "طلباتك بتظهر هنا بعد ما تقدّمها", "طلب سلفة"],
-      overtime: ["timer", "لا يوجد ساعات اضافية", "الساعات المعتمدة بتظهر هنا", "طلب ساعات"],
-      reminders: ["calDays", "لا يوجد مواعيد", "مواعيد الفريق والتذكيرات بتظهر هنا", "إضافة تذكير"],
-      notifications: ["bell", "لا يوجد اشعارات", "بنعلمك هنا بأي تحديث على طلباتك", ""],
-      log: ["clipboard", "لا يوجد حركات", "سجّل حضورك وبتلاقي الحركة هنا", ""],
-      salaries: ["money", "لا يوجد قسائم", "قسائم رواتبك بتظهر هنا بعد أول تحويل", ""],
-      announcements: ["megaphone", "لا يوجد اعلانات", "اعلانات الشركة بتظهر هنا", ""],
+      leaves: ["cal", "لا يوجد طلبات إجازة", "ستظهر طلباتك هنا بعد تقديمها", "طلب إجازة"],
+      permits: ["clock", "لا يوجد طلبات إذن", "ستظهر طلباتك هنا بعد تقديمها", "طلب إذن"],
+      advances: ["wallet", "لا يوجد طلبات سلفة", "ستظهر طلباتك هنا بعد تقديمها", "طلب سلفة"],
+      overtime: ["timer", "لا يوجد ساعات إضافية", "ستظهر الساعات المعتمدة هنا", "طلب ساعات"],
+      reminders: ["calDays", "لا يوجد مواعيد", "ستظهر مواعيد الفريق والتذكيرات هنا", "إضافة تذكير"],
+      notifications: ["bell", "لا يوجد اشعارات", "سنُعلمك هنا بأي تحديث على طلباتك", ""],
+      log: ["clipboard", "لا يوجد حركات", "سجّل حضورك وستجد الحركة هنا", ""],
+      salaries: ["money", "لا يوجد قسائم", "ستظهر قسائم رواتبك هنا بعد أول تحويل", ""],
+      announcements: ["megaphone", "لا يوجد إعلانات", "ستظهر إعلانات الشركة هنا", ""],
     };
     const emptyDef = EMPTY[s] || EMPTY.notifications;
     const emptyScreen = empty && !!EMPTY[s];
     const emptyCta = emptyDef[3];
 
     const modalDefs = {
-      logout: { confirm: true, title: "هل أنت متأكد من تسجيل الخروج؟", cancel: "إلغاء", cta: "تسجيل خروج",
+      logout: { confirm: true, glyph: "logout", title: "تسجيل الخروج", body: "ستحتاج إلى إدخال بياناتك مجدداً للوصول إلى حسابك.", cancel: "إلغاء", cta: "تسجيل خروج",
         bad: true, action: () => { this.jump("login"); } },
-      delete: { confirm: true, title: "هل انت متأكد من انك تريد حذف حسابك؟", cancel: "إلغاء", cta: "حذف الحساب",
+      delete: { confirm: true, glyph: "trash", title: "حذف الحساب", body: "سيتم حذف بياناتك وطلباتك نهائياً، ولا يمكن التراجع.", cancel: "إلغاء", cta: "حذف الحساب",
         bad: true, action: () => { this.jump("login"); this.toast("تم حذف الحساب"); } },
-      cancelReq: { confirm: true, title: "هل انت متأكد من إلغاء طلبك؟", cancel: "تراجع", cta: "إلغاء الطلب",
+      cancelReq: { confirm: true, glyph: "x", title: "إلغاء الطلب", body: "سيُزال الطلب من قائمة المراجعة ولن يتم اعتماده.", cancel: "تراجع", cta: "إلغاء الطلب",
         bad: true, action: () => { this.openReq(kind); this.toast("تم إلغاء طلبك"); } },
-      delReminder: { confirm: true, title: "هل انت متأكد من حذف التذكير؟", cancel: "إلغاء", cta: "حذف",
+      delReminder: { confirm: true, glyph: "trash", title: "حذف التذكير", body: "سيُزال التذكير ولن تصلك تنبيهاته.", cancel: "إلغاء", cta: "حذف",
         bad: true, action: () => { this.jump("reminders"); this.toast("تم حذف هذا التذكير بنجاح"); } },
       lang: { choice: true, title: "اختر لغة التطبيق", options: ["العربية", "English"],
         current: this.state.lang, pick: (v) => this.setState({ lang: v, modal: null }) },
-      leaveType: { choice: true, title: "نوع الاجازة", options: ["طارئة", "اعتيادية", "غير مدفوعة", "مرضية"],
+      leaveType: { choice: true, title: "نوع الإجازة", options: ["طارئة", "اعتيادية", "غير مدفوعة", "مرضية"],
         current: this.state.f1val || "اعتيادية", pick: (v) => this.setState({ f1val: v, modal: null }) },
-      permitType: { choice: true, title: "نوع الاذن", options: ["اذن تأخير", "خروج مبكر", "استئذان لفترة محددة"],
-        current: this.state.f1val || "اذن تأخير", pick: (v) => this.setState({ f1val: v, modal: null }) },
-      advanceAmount: { choice: true, title: "قيمة السلفة", options: ["1,000 ج.م", "3,000 ج.م", "6,000 ج.م", "راتب شهر"],
-        current: this.state.f1val || "6,000 ج.م", pick: (v) => this.setState({ f1val: v, modal: null }) },
-      overtimeHours: { choice: true, title: "اجمالي الساعات", options: ["ساعة", "ساعتين", "3 ساعات", "4 ساعات"],
+      permitType: { choice: true, title: "نوع الإذن", options: ["إذن تأخير", "خروج مبكر", "استئذان لفترة محددة"],
+        current: this.state.f1val || "إذن تأخير", pick: (v) => this.setState({ f1val: v, modal: null }) },
+      advanceAmount: { choice: true, title: "قيمة السلفة", options: ["900 ₪", "1,800 ₪", "3,000 ₪", "راتب شهر"],
+        current: this.state.f1val || "1,800 ₪", pick: (v) => this.setState({ f1val: v, modal: null }) },
+      overtimeHours: { choice: true, title: "إجمالي الساعات", options: ["ساعة", "ساعتين", "3 ساعات", "4 ساعات"],
         current: this.state.f2val || "3 ساعات", pick: (v) => this.setState({ f2val: v, modal: null }) },
-      typeFilter: { choice: true, title: "نوع الطلب", options: ["الكل", "الاجازات", "الأذونات", "السلف", "الساعات الاضافية"],
+      typeFilter: { choice: true, title: "نوع الطلب", options: ["الكل", "الإجازات", "الأذونات", "السلف", "الساعات الإضافية"],
         current: this.state.typeFilter ? TITLES[this.state.typeFilter] : "الكل",
-        pick: (v) => this.setState({ typeFilter: { "الاجازات": "leaves", "الأذونات": "permits", "السلف": "advances", "الساعات الاضافية": "overtime" }[v] || null, modal: null }) },
-      monthPick: { month: true, title: "اختر الفترة" },
-      empNote: { note: true, title: "ملاحظات الموظف", text: "أرجو الموافقة على الطلب نظراً لظرف عائلي طارئ يتطلب تواجدي، وسأحرص على تسليم المهام المطلوبة قبل بداية الاجازة." },
+        pick: (v) => this.setState({ typeFilter: { "الإجازات": "leaves", "الأذونات": "permits", "السلف": "advances", "الساعات الإضافية": "overtime" }[v] || null, modal: null }) },
+      monthPick: { month: true, title: "اختر الشهر" },
+      yearPick: { choice: true, title: "اختر السنة",
+        options: ["2024", "2025", "2026", "2027"],
+        current: String(this.state.pickYear || 2026),
+        pick: (v) => this.setState({ pickYear: parseInt(v, 10), modal: null }) },
+      reason: { note: true, title: "سبب الطلب", text: this.state.reasonSubmitted || "أرجو الموافقة على الطلب نظراً لظرف عائلي طارئ يتطلب تواجدي، وسأحرص على تسليم المهام المطلوبة قبل بداية الإجازة." },
       payNote: { note: true, title: (this.state.payNote || {}).title || "تفاصيل البند", text: (this.state.payNote || {}).text || "" },
-      mgmtNote: { note: true, title: "ملاحظات الادارة", text: "تمت مراجعة الطلب من المدير المباشر. يرجى التنسيق مع فريقك لتغطية المهام خلال فترة الغياب." },
+      mgmtNote: { note: true, title: "ملاحظات الإدارة", text: "تمت مراجعة الطلب من المدير المباشر. يرجى التنسيق مع فريقك لتغطية المهام خلال فترة الغياب." },
       deptFilter: { choice: true, title: "تصفية حسب القسم", options: JOBS,
         current: this.state.jobFilter || "الكل",
         pick: (v) => this.setState({ jobFilter: v, modal: null }) },
       date: { date: true, title: "اختر التاريخ" },
-      range: { date: true, title: s === "log" ? "اختر الفترة" : "اختر مدة الاجازة" },
+      range: { date: true, title: s === "log" ? "اختر الفترة" : "اختر مدة الإجازة" },
       time: { choice: true, title: "اختر الوقت",
         options: ["07:00 ص", "07:30 ص", "08:00 ص", "09:00 ص", "10:00 ص", "12:00 م", "02:00 م", "04:00 م"],
         current: this.state.remTime || "",
@@ -2109,25 +2135,25 @@ class Component extends DCLogic {
       label: h === 0 ? "var(--ink-3)" : "var(--ink-2)",
     }));
 
-    const det = this.state.detail || { status: "قيد المراجعة", kind2: "warn", ref: "#08766871", date: "18 ابريل 2026", title: TITLES[kind] };
+    const det = this.state.detail || { status: "قيد المراجعة", kind2: "warn", ref: "#08766871", date: "18 أبريل 2026", title: TITLES[kind] };
     const detSt = det.status;
     const STAGES = detSt === "مرفوض" ? [
       ["تقديم الطلب", "21 مارس · 09:12 ص", "done"],
       ["مراجعة المدير المباشر", "21 مارس · 11:40 ص", "done"],
       ["تم رفض الطلب", "22 مارس · 01:15 م", "bad"],
     ] : detSt === "مقبول" ? [
-      ["تقديم الطلب", "02 ابريل · 09:12 ص", "done"],
-      ["مراجعة المدير المباشر", "02 ابريل · 11:40 ص", "done"],
-      ["موافقة الموارد البشرية", "03 ابريل · 10:05 ص", "done"],
-      ["اعتماد نهائي", "03 ابريل · 02:30 م", "done"],
+      ["تقديم الطلب", "02 أبريل · 09:12 ص", "done"],
+      ["مراجعة المدير المباشر", "02 أبريل · 11:40 ص", "done"],
+      ["موافقة الموارد البشرية", "03 أبريل · 10:05 ص", "done"],
+      ["اعتماد نهائي", "03 أبريل · 02:30 م", "done"],
     ] : detSt === "جديد" ? [
-      ["تقديم الطلب", "24 ابريل · 09:12 ص", "done"],
+      ["تقديم الطلب", "24 أبريل · 09:12 ص", "done"],
       ["مراجعة المدير المباشر", "قيد الانتظار", "active"],
       ["موافقة الموارد البشرية", "—", "todo"],
       ["اعتماد نهائي", "—", "todo"],
     ] : [
-      ["تقديم الطلب", "18 ابريل · 09:12 ص", "done"],
-      ["مراجعة المدير المباشر", "18 ابريل · 11:40 ص", "done"],
+      ["تقديم الطلب", "18 أبريل · 09:12 ص", "done"],
+      ["مراجعة المدير المباشر", "18 أبريل · 11:40 ص", "done"],
       ["موافقة الموارد البشرية", "قيد الانتظار", "active"],
       ["اعتماد نهائي", "—", "todo"],
     ];
@@ -2204,12 +2230,12 @@ class Component extends DCLogic {
         requestDetail: "متابعة مراحل الطلب", requestForm: "املأ البيانات وأرسل الطلب",
         salaries: "قسائم الرواتب والتحويلات", salaryDetail: "تفاصيل الاستحقاقات والخصومات",
         log: "حضورك خلال الفترة المحددة", reminderForm: "أضف موعد أو تذكير لنفسك",
-        announcements: "آخر ما نشرته الادارة", notifications: "تحديثات طلباتك والاعلانات",
-        suggestion: "رأيك يوصل للادارة مباشرة", profile: "بياناتك الوظيفية",
-        settings: "الحساب والاشعارات واللغة", pages: "الشروط والخصوصية ومعلومات الشركة",
-        adminNotes: "ملاحظات الادارة على طلبك",
+        announcements: "آخر ما نشرته الإدارة", notifications: "تحديثات طلباتك والإعلانات",
+        suggestion: "رأيك يوصل للإدارة مباشرة", profile: "بياناتك الوظيفية",
+        settings: "الحساب والإشعارات واللغة", pages: "الشروط والخصوصية ومعلومات الشركة",
+        adminNotes: "ملاحظات الإدارة على طلبك",
         employees: "زملاؤك في الشركة", employeeDetail: "بيانات التواصل",
-        leaves: "رصيدك وآخر طلبات الاجازة", permits: "رصيدك وآخر طلبات الاذن",
+        leaves: "رصيدك وآخر طلبات الإجازة", permits: "رصيدك وآخر طلبات الإذن",
         advances: "آخر طلبات السلف", overtime: "آخر طلبات العمل الاضافي",
       }[s] || (isReqList ? "تابع حالة طلباتك المقدمة" : ""),
       back: this.back, noop: () => {},
@@ -2282,7 +2308,7 @@ class Component extends DCLogic {
         ["تاريخ التعيين", (this.state.employee || EMPLOYEES[0]).joined, "cal"],
       ].map(([label, value, g], i) => ({ label, value, glyph: icon(g, 18, 1.6),
         borderTop: i === 0 ? "none" : "1px solid var(--line)" })),
-      callEmp: () => this.toast("جاري الاتصال بـ " + (this.state.employee || EMPLOYEES[0]).name),
+      callEmp: () => this.toast("جارٍ الاتصال بـ " + (this.state.employee || EMPLOYEES[0]).name),
       mailEmp: () => this.toast("فتح البريد الالكتروني"),
 
       hasUnread: this.state.unread,
@@ -2290,12 +2316,12 @@ class Component extends DCLogic {
       goProfile: () => this.go("profile"),
       goAttend: () => this.jump("attend"),
       goReminders: () => this.go("events"),
-      goAdminNotes: () => this.go("adminNotes"),
+      goAdminNotes: () => this.setState({ modal: "mgmtNote" }),
       goChangePassword: () => {
         this.setState({ pwFlow: "settings" });
         this.go("otp");
         this.startResend(30);
-        this.toast("تم ارسال رمز التحقق على بريدك");
+        this.toast("تم إرسال رمز التحقق على بريدك");
       },
       openAttachment: () => this.toast("اختيار ملف من الجهاز"),
 
@@ -2322,28 +2348,28 @@ class Component extends DCLogic {
       heroOut: departed ? "04:41 م" : "—",
       stats: [
         { label: "ساعات اليوم", value: punched ? (departed ? "8.1" : "6.4") : "0", unit: "ساعة", dot: "var(--accent)" },
-        { label: "رصيد الاجازات", value: "15", unit: "يوم", dot: "var(--ok)" },
+        { label: "رصيد الإجازات", value: "15", unit: "يوم", dot: "var(--ok)" },
         { label: "طلبات معلقة", value: "2", unit: "طلب", dot: "var(--warn)" },
       ],
       quickTiles: [
-        { label: "الاجازات", sub: "15 يوم متبقي", glyph: icon("cal", 22, 1.6), tint: "#4F46E5", tintBg: "#EEEFFD", badge: "", go: () => this.openReq("leaves") },
+        { label: "الإجازات", sub: "15 يوم متبقي", glyph: icon("cal", 22, 1.6), tint: "#4F46E5", tintBg: "#EEEFFD", badge: "", go: () => this.openReq("leaves") },
         { label: "الأذونات", sub: "ساعة / ساعتين", glyph: icon("clock", 22, 1.6), tint: "#0EA5A4", tintBg: "#E4F5F5", badge: "", go: () => this.openReq("permits") },
         { label: "السلف", sub: "بعد 6 أشهر", glyph: icon("wallet", 22, 1.6), tint: "#B4690E", tintBg: "#FDF3E3", badge: "", go: () => this.openReq("advances") },
         { label: "العمل الإضافي", sub: "3 ساعات معتمدة", glyph: icon("timer", 22, 1.6), tint: "#DB2777", tintBg: "#FCE7F1", badge: "", go: () => this.openReq("overtime") },
         { label: "الرواتب", sub: "يناير 2026", glyph: icon("money", 22, 1.6), tint: "#0F9D58", tintBg: "#E8F6EE", badge: "", go: () => this.jump("salaries") },
         { label: "سجل الحركات", sub: "16 يوم حضور", glyph: icon("clipboard", 22, 1.6), tint: "#7C3AED", tintBg: "#F0EBFC", badge: "", go: () => this.jump("log") },
       ],
-      clockLabel: punched ? (departed ? "انصرفت اليوم" : "سجّلت الحضور") : "لسا ما سجّلت الحضور",
+      clockLabel: punched ? (departed ? "انصرفت اليوم" : "سجّلت الحضور") : "لم تسجّل حضورك بعد",
       clockValue: punched ? (departed ? "08:32 ص — 04:41 م" : "08:32 ص") : "الأحد 18 يناير",
       clockCta: punched ? (departed ? "الحركات" : "انصراف") : "تسجيل الحضور",
       services: this.row([
-        { label: "الاجازات", glyph: icon("cal", 19), badge: "رصيد 15", bk: "ok", go: () => this.openReq("leaves") },
+        { label: "الإجازات", glyph: icon("cal", 19), badge: "رصيد 15", bk: "ok", go: () => this.openReq("leaves") },
         { label: "الأذونات", glyph: icon("clock", 19), badge: "", go: () => this.openReq("permits") },
         { label: "السلف", glyph: icon("wallet", 19), badge: "", go: () => this.openReq("advances") },
-        { label: "الساعات الاضافية", glyph: icon("timer", 19), badge: "3 ساعات", bk: "warn", go: () => this.openReq("overtime") },
+        { label: "الساعات الإضافية", glyph: icon("timer", 19), badge: "3 ساعات", bk: "warn", go: () => this.openReq("overtime") },
         { label: "الرواتب", glyph: icon("money", 19), badge: "", go: () => this.jump("salaries") },
         { label: "سجل الحضور", glyph: icon("clipboard", 19), badge: "", go: () => this.jump("log") },
-        { label: "الاعلانات", glyph: icon("megaphone", 19), badge: "2 جديد", bk: "accent", go: () => this.jump("announcements") },
+        { label: "الإعلانات", glyph: icon("megaphone", 19), badge: "2 جديد", bk: "accent", go: () => this.jump("announcements") },
       ]).map((sv) => Object.assign({}, sv, {
         badgeBg: sv.bk === "ok" ? "var(--ok-soft)" : sv.bk === "warn" ? "var(--warn-soft)" : "var(--accent-soft)",
         badgeColor: sv.bk === "ok" ? "var(--ok)" : sv.bk === "warn" ? "var(--warn)" : "var(--accent-ink)",
@@ -2357,8 +2383,8 @@ class Component extends DCLogic {
         { tag: "إدارة", date: "17 يناير 2026", title: "بيئة عمل صحية",
           body: "أهلا بالجميع، نأمل أن تكونوا بخير. لاحظنا أن المطبخ يحتاج ترتيب أكثر، فنرجو التعاون.",
           go: () => this.go("announcementDetail") },
-        { tag: "موارد بشرية", date: "12 يناير 2026", title: "تحديث لائحة الاجازات",
-          body: "تم تحديث سياسة الاجازات العارضة. تفاصيل التحديث موجودة في صفحة الشروط والأحكام.",
+        { tag: "موارد بشرية", date: "12 يناير 2026", title: "تحديث لائحة الإجازات",
+          body: "تم تحديث سياسة الإجازات العارضة. تفاصيل التحديث موجودة في صفحة الشروط والأحكام.",
           go: () => this.go("announcementDetail") },
         { tag: "إدارة", date: "05 يناير 2026", title: "الموظف المثالي لشهر يناير",
           body: "نبارك للزميل محمد أحمد على اختياره الموظف المثالي لهذا الشهر.",
@@ -2410,9 +2436,9 @@ class Component extends DCLogic {
 
       hasHistory: !empty, history, logRows: history, logCount: history.length + " حركة",
       logSummary: [
-        { label: "الايام الفعلية", value: "22", color: "var(--ink)" },
+        { label: "أيام العمل", value: "20", color: "var(--ink)" },
         { label: "أيام حضور", value: "16", color: "var(--ok)" },
-        { label: "الاجازات", value: "3", color: "var(--accent-ink)" },
+        { label: "الإجازات", value: "3", color: "var(--accent-ink)" },
         { label: "تأخير", value: "2", color: "var(--warn)" },
         { label: "غياب", value: "1", color: "var(--bad)" },
       ],
@@ -2433,7 +2459,13 @@ class Component extends DCLogic {
 
       isReqList, isReqOverview,
       viewAllReqs: () => { this.setState({ filter: 0, typeFilter: s }); this.go("requests"); },
-      hasBalance: isReqOverview && !!bal.label, balanceLabel: bal.label || "", balancePeriod: this.state.balPeriod || "سبتمبر 2026",
+      hasBalance: isReqOverview && !!bal.label, balanceLabel: bal.label || "",
+      balancePeriod: kind === "leaves"
+        ? String(this.state.pickYear || 2026)
+        : (this.state.balPeriod || "فبراير 2026"),
+      hasPeriodChip: isReqOverview && !bal.label,
+      periodCaption: kind === "advances" ? "سلف الفترة" : "ساعات الفترة",
+      periodLabel: kind === "leaves" ? String(this.state.pickYear || 2026) : (this.state.balPeriod || "فبراير 2026"),
       balanceValue: bal.value || "", balanceUnit: bal.unit || "",
       balanceParts: (bal.parts || (kind === "leaves"
         ? LEAVE_KINDS.map((k) => [k.label, k.used + " " + k.cap, k.tok])
@@ -2465,10 +2497,7 @@ class Component extends DCLogic {
         { label: "تاريخ التقديم", value: det.date },
         { label: "وقت التقديم", value: det.time || "03:30 ص" },
       ],
-      detailNoteRows: [
-        { label: "ملاحظات الموظف", open: () => this.setState({ modal: "empNote" }) },
-        { label: "ملاحظات الادارة", open: () => this.setState({ modal: "mgmtNote" }) },
-      ],
+      openReason: () => this.setState({ modal: "reason" }),
       openCancel: () => this.setState({ modal: "cancelReq" }),
 
       formFields: [
@@ -2492,34 +2521,35 @@ class Component extends DCLogic {
           this.toast("اكتب سبب الطلب قبل الإرسال", "err");
           return;
         }
+        const submitted = this.reasonText.trim();
         this.reasonText = "";
-        this.setState({ reasonErr: false });
+        this.setState({ reasonErr: false, reasonSubmitted: submitted });
         this.openReq(kind);
-        this.toast("تم ارسال طلبك بنجاح");
+        this.toast("تم إرسال طلبك بنجاح");
       },
 
       salaries: this.row([
-        { month: "راتب شهر يناير", date: "28 يناير 2026", total: fmtNum(PAY_NET) + " ج.م" },
-        { month: "راتب شهر ديسمبر", date: "28 ديسمبر 2025", total: "15,550 ج.م" },
-        { month: "راتب شهر نوفمبر", date: "28 نوفمبر 2025", total: "14,980 ج.م" },
-        { month: "راتب شهر أكتوبر", date: "28 أكتوبر 2025", total: "14,980 ج.م" },
-        { month: "راتب شهر سبتمبر", date: "28 سبتمبر 2025", total: "14,980 ج.م" },
-        { month: "راتب شهر أغسطس", date: "28 أغسطس 2025", total: "14,980 ج.م" },
+        { month: "راتب شهر يناير", date: "28 يناير 2026", total: fmtNum(PAY_NET) + " ₪" },
+        { month: "راتب شهر ديسمبر", date: "28 ديسمبر 2025", total: "4,505 ₪" },
+        { month: "راتب شهر نوفمبر", date: "28 نوفمبر 2025", total: "4,370 ₪" },
+        { month: "راتب شهر أكتوبر", date: "28 أكتوبر 2025", total: "4,370 ₪" },
+        { month: "راتب شهر سبتمبر", date: "28 سبتمبر 2025", total: "4,370 ₪" },
+        { month: "راتب شهر أغسطس", date: "28 أغسطس 2025", total: "4,370 ₪" },
       ]).map((sl) => Object.assign({}, sl, { go: () => this.go("salaryDetail") })),
       payslip: PAY.map((r) => Object.assign({}, r, {
-        value: fmtNum(r.amount) + " ج.م" + (r.amount < 0 ? " −" : ""),
+        value: fmtNum(r.amount) + " ₪" + (r.amount < 0 ? " −" : ""),
         color: r.amount < 0 ? "var(--bad)" : r.credit ? "var(--ok)" : r.amount === 0 ? "var(--ink-3)" : "var(--ink)",
         hasNote: !!r.note,
         openNote: () => this.setState({ modal: "payNote", payNote: { title: r.label, text: r.note } }),
       })),
       netPay: fmtNum(PAY_NET),
-      download: () => this.toast("جاري تحميل القسيمة"),
+      download: () => this.toast("جارٍ تحميل القسيمة"),
       receipts: [
         { name: "ايصال تحويل يناير 2026.pdf", meta: "PDF · 240 KB · 28 يناير 2026" },
         { name: "كشف حساب البنك.pdf", meta: "PDF · 180 KB · 28 يناير 2026" },
       ].map((r, i) => Object.assign({}, r, {
         divider: i === 0 ? "0" : "1px solid var(--line)",
-        open: () => this.toast("جاري تحميل " + r.name),
+        open: () => this.toast("جارٍ تحميل " + r.name),
       })),
 
       monthLabel: MONTHS[((this.state.monthIdx % 12) + 12) % 12] + " 2026",
@@ -2565,7 +2595,7 @@ class Component extends DCLogic {
       hasArticleMeta: s === "announcementDetail",
       articleTag: "إدارة", articleDate: "17 يناير 2026",
       articleTitle: {
-        announcementDetail: "بيئة عمل صحية", adminNotes: "ملاحظات الادارة على طلبك",
+        announcementDetail: "بيئة عمل صحية", adminNotes: "ملاحظات الإدارة على طلبك",
         terms: "الشروط والأحكام", privacy: "سياسة الخصوصية", about: "من نحن",
       }[s] || "",
       articleBody: {
@@ -2594,11 +2624,11 @@ class Component extends DCLogic {
 
       hasNotifs: !empty,
       notifications: this.row([
-        { text: "تم قبول طلب الاجازة رقم #08766804", time: "قبل ساعة", fresh: true, g: "check" },
-        { text: "تم اضافة راتبك الشهري إلى حسابك بنجاح", time: "قبل 3 ساعات", fresh: true, g: "money" },
+        { text: "تم قبول طلب الإجازة رقم #08766804", time: "قبل ساعة", fresh: true, g: "check" },
+        { text: "تم إضافة راتبك الشهري إلى حسابك بنجاح", time: "قبل 3 ساعات", fresh: true, g: "money" },
         { text: "الموظف المثالي لهذا الشهر الزميل محمد أحمد", time: "أمس", fresh: false, g: "megaphone" },
-        { text: "تمت اضافة لائحة ادارية جديدة", time: "قبل يومين", fresh: false, g: "doc" },
-        { text: "تم اضافة مكان جديد لقائمة الخصومات", time: "قبل 4 أيام", fresh: false, g: "info" },
+        { text: "تمت إضافة لائحة ادارية جديدة", time: "قبل يومين", fresh: false, g: "doc" },
+        { text: "تم إضافة مكان جديد لقائمة الخصومات", time: "قبل 4 أيام", fresh: false, g: "info" },
       ]).map((n) => Object.assign({}, n, {
         glyph: icon(n.g, 19), bg: n.fresh ? "var(--accent-soft)" : "transparent",
       })),
@@ -2613,19 +2643,19 @@ class Component extends DCLogic {
       anonBg: this.state.anon ? "var(--accent)" : "var(--line-strong)",
       anonPos: this.state.anon ? "3px" : "25px",
       toggleAnon: () => this.setState({ anon: !this.state.anon }),
-      submitSuggestion: () => { this.jump("more"); this.toast("تم ارسال " + this.state.suggestType + " بنجاح"); },
+      submitSuggestion: () => { this.jump("more"); this.toast("تم إرسال " + this.state.suggestType + " بنجاح"); },
 
       profileRows: this.row([
         { label: "الاسم", value: "محمد أحمد", g: "user" },
         { label: "البريد", value: "ahmed.moha@apex.ps", g: "mail" },
-        { label: "الجوال", value: "+20 1234567890", g: "phone" },
-        { label: "الفرع", value: "مصر", g: "pin" },
+        { label: "الجوال", value: "0599 000 110", g: "phone" },
+        { label: "الفرع", value: "رام الله", g: "pin" },
         { label: "الرقم الوظيفي", value: "A234567", g: "badge" },
         { label: "القسم", value: "البرمجة", g: "dept" },
         { label: "المسمى", value: "Open Cart Develper", g: "brief" },
         { label: "الانضمام", value: "12-3-2025", g: "cal" },
         { label: "نظام التعاقد", value: "دوام كامل", g: "doc" },
-        { label: "الراتب", value: "10,000 ج.م", g: "money" },
+        { label: "الراتب", value: "4,500 ₪", g: "money" },
       ]).map((r) => Object.assign({}, r, { glyph: icon(r.g, 17) })),
 
       moreRows: this.row([
@@ -2633,7 +2663,7 @@ class Component extends DCLogic {
         { label: "الموظفين", glyph: icon("user", 19), bg: "var(--accent-soft)", fg: "var(--accent-ink)", text: "var(--ink)", go: () => this.go("employees") },
         { label: "الرواتب", glyph: icon("money", 19), bg: "var(--accent-soft)", fg: "var(--accent-ink)", text: "var(--ink)", go: () => this.jump("salaries") },
         { label: "اقتراح أو شكوى", glyph: icon("mail", 19), bg: "var(--accent-soft)", fg: "var(--accent-ink)", text: "var(--ink)", go: () => this.go("suggestion") },
-        { label: "الاعدادات", glyph: icon("gear", 19), bg: "var(--accent-soft)", fg: "var(--accent-ink)", text: "var(--ink)", go: () => this.go("settings") },
+        { label: "الإعدادات", glyph: icon("gear", 19), bg: "var(--accent-soft)", fg: "var(--accent-ink)", text: "var(--ink)", go: () => this.go("settings") },
         { label: "الصفحات", glyph: icon("doc", 19), bg: "var(--accent-soft)", fg: "var(--accent-ink)", text: "var(--ink)", go: () => this.go("pages") },
         { label: "تسجيل الخروج", glyph: icon("logout", 19), bg: "var(--bad-soft)", fg: "var(--bad)", text: "var(--bad)", go: () => this.setState({ modal: "logout" }) },
       ]),
@@ -2646,22 +2676,26 @@ class Component extends DCLogic {
       lang: this.state.lang,
       openLang: () => this.setState({ modal: "lang" }),
       openDate: () => this.setState({ modal: "date" }),
-      openMonth: () => this.setState({ modal: "monthPick", pickYear: this.state.pickYear || 2026, pickMonth: this.state.pickMonth == null ? 8 : this.state.pickMonth }),
+      openMonth: () => this.setState({
+        modal: s === "leaves" ? "yearPick" : "monthPick",
+        pickYear: this.state.pickYear || 2026,
+        pickMonth: this.state.pickMonth == null ? 1 : this.state.pickMonth,
+      }),
       monthYear: String(this.state.pickYear || 2026),
       monthYearPrev: () => this.setState({ pickYear: (this.state.pickYear || 2026) - 1 }),
       monthYearNext: () => this.setState({ pickYear: (this.state.pickYear || 2026) + 1 }),
-      monthCells: ["يناير", "فبراير", "مارس", "ابريل", "مايو", "يونيو", "يوليو", "اغسطس", "سبتمبر", "اكتوبر", "نوفمبر", "ديسمبر"].map((label, i) => {
+      monthCells: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "اغسطس", "سبتمبر", "اكتوبر", "نوفمبر", "ديسمبر"].map((label, i) => {
         const on = (this.state.pickMonth == null ? 8 : this.state.pickMonth) === i;
         return { label, go: () => this.setState({ pickMonth: i }),
           bg: on ? "var(--accent)" : "var(--bg)",
           color: on ? "#FFFFFF" : "var(--ink-2)", weight: on ? 600 : 400 };
       }),
-      applyMonth: () => { const m = ["يناير", "فبراير", "مارس", "ابريل", "مايو", "يونيو", "يوليو", "اغسطس", "سبتمبر", "اكتوبر", "نوفمبر", "ديسمبر"][this.state.pickMonth == null ? 8 : this.state.pickMonth]; this.setState({ modal: null, balPeriod: m + " " + (this.state.pickYear || 2026) }); },
+      applyMonth: () => { const m = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "اغسطس", "سبتمبر", "اكتوبر", "نوفمبر", "ديسمبر"][this.state.pickMonth == null ? 8 : this.state.pickMonth]; this.setState({ modal: null, balPeriod: m + " " + (this.state.pickYear || 2026) }); },
       openLogout: () => this.setState({ modal: "logout" }),
       openDelete: () => this.setState({ modal: "delete" }),
       settingSwitches: [
         { key: "__theme", label: "الوضع المظلم", hint: "مظهر داكن مريح للعين", g: "moon" },
-        { key: "notifOn", label: "الاشعارات", hint: "تحديثات الطلبات والاعلانات", g: "bell" },
+        { key: "notifOn", label: "الإشعارات", hint: "تحديثات الطلبات والإعلانات", g: "bell" },
         { key: "bioOn", label: "البصمة", hint: "تسجيل الدخول بالبصمة", g: "fingerprint" },
         { key: "digestOn", label: "ملخص أسبوعي", hint: "تقرير حضورك كل أحد", g: "inbox" },
       ].map((sw) => {
@@ -2686,7 +2720,7 @@ class Component extends DCLogic {
       resendIn: this.state.resendIn || 0,
       resendWaiting: (this.state.resendIn || 0) > 0,
       canResend: (this.state.resendIn || 0) <= 0,
-      resendOtp: () => { this.startResend(30); this.toast("تم ارسال رمز جديد على بريدك"); },
+      resendOtp: () => { this.startResend(30); this.toast("تم إرسال رمز جديد على بريدك"); },
       authTitle: authCopy.title, authSub: authCopy.sub, authCta: authCopy.cta,
       authFields: authCopy.fields.map(([label, value, g]) => ({ label, value, glyph: icon(g, 18, 1.6), isPassword: g === "lock" })),
       otpDigits: ["4", "8", "2", ""].map((value) => ({ value, border: value ? "var(--accent)" : "var(--line)" })),
@@ -2716,6 +2750,11 @@ class Component extends DCLogic {
       hasModal: !!this.state.modal, closeModal: () => this.setState({ modal: null }),
       modalTitle: md.title || "",
       modalIsConfirm: !!md.confirm, modalIsChoice: !!md.choice, modalIsDate: !!md.date,
+      confirmGlyph: icon(md.glyph || "info", 24, 1.8),
+      confirmBody: md.body || "",
+      modalHasCloseRow: !md.confirm,
+      confirmIconBg: md.bad ? "var(--bad-soft)" : "var(--accent-soft)",
+      confirmIconColor: md.bad ? "var(--bad)" : "var(--accent-ink)",
       modalIsNote: !!md.note, modalNoteText: md.text || "",
       modalIsMonth: !!md.month,
       modalIsRange: isRange,
