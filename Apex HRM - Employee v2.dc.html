@@ -70,11 +70,37 @@
   @keyframes islandCollapse { from { opacity: 1; transform: translateY(0) scale(1) } to { opacity: 0; transform: translateY(-10px) scale(0.55) } }
 </style>
 <script src="image-slot.js"></script>
+<style>
+  /* fit: يصغّر إطار الجوال تلقائياً ليناسب ارتفاع/عرض نافذة المتصفح */
+  [data-dc-frame] {
+    transform: scale(var(--dc-fit, 1));
+    transform-origin: top center;
+    margin-bottom: var(--dc-fit-gap, 0px);
+  }
+</style>
+<script>
+  (function () {
+    var W = 393, H = 852, PAD_Y = 144, PAD_X = 322;
+    function fit() {
+      var vh = window.innerHeight, vw = window.innerWidth;
+      if (!vh || !vw) return;              // الأبعاد لسه مش جاهزة — تجاهل
+      var f = Math.max(0.35, Math.min(1, (vh - PAD_Y) / H, (vw - PAD_X) / W));
+      var st = document.documentElement.style;
+      st.setProperty('--dc-fit', f);
+      st.setProperty('--dc-fit-gap', (H * (f - 1)) + 'px');
+    }
+    fit();
+    requestAnimationFrame(fit);
+    window.addEventListener('load', fit);
+    window.addEventListener('resize', fit, { passive: true });
+    if (window.ResizeObserver) new ResizeObserver(fit).observe(document.documentElement);
+  })();
+</script>
 </helmet>
 
 <div style="min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; gap: 44px; padding: 48px 32px 72px; box-sizing: border-box; background: #0B0C10">
 
-  <aside style="width: 214px; flex-shrink: 0; position: sticky; top: 48px; max-height: calc(100vh - 96px); overflow-y: auto; scrollbar-width: none; display: flex; flex-direction: column; gap: 22px; direction: rtl">
+  <aside style="width: 214px; flex-shrink: 0; position: sticky; top: 48px; max-height: calc(100vh - 120px); overflow-y: auto; scrollbar-width: none; display: flex; flex-direction: column; gap: 22px; direction: rtl">
     <div>
       <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B7080; font-weight: 500">Apex HRM · v2</div>
       <div style="font-size: 13px; line-height: 1.6; color: #8A90A0; margin-top: 8px">تطبيق الموظف — إعادة تصميم 2026</div>
@@ -128,7 +154,7 @@
     </div>
   </aside>
 
-  <div dir="rtl" data-theme="{{ theme }}" ref="{{ frameRef }}" style="position: relative; width: 393px; height: 852px; flex-shrink: 0; border-radius: 46px; overflow: hidden; background: var(--bg-grad, var(--bg)); background-attachment: local; box-shadow: 0 0 0 10px #14161C, 0 0 0 11px #2A2E38; transition: background 150ms">
+  <div dir="rtl" data-dc-frame data-theme="{{ theme }}" ref="{{ frameRef }}" style="position: relative; width: 393px; height: 852px; flex-shrink: 0; border-radius: 46px; overflow: hidden; background: var(--bg-grad, var(--bg)); background-attachment: local; box-shadow: 0 0 0 10px #14161C, 0 0 0 11px #2A2E38; transition: background 150ms">
 
     <!-- ══ DYNAMIC ISLAND ══ -->
     <sc-if value="{{ showStatus }}" hint-placeholder-val="{{ true }}">
