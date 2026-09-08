@@ -2437,14 +2437,18 @@ class Component extends DCLogic {
       openLogout: () => this.setState({ modal: "logout" }),
       openDelete: () => this.setState({ modal: "delete" }),
       settingSwitches: [
+        { key: "__theme", label: "الوضع المظلم", hint: "مظهر داكن مريح للعين", g: "moon" },
         { key: "notifOn", label: "الاشعارات", hint: "تحديثات الطلبات والاعلانات", g: "bell" },
         { key: "bioOn", label: "البصمة", hint: "تسجيل الدخول بالبصمة", g: "fingerprint" },
         { key: "digestOn", label: "ملخص أسبوعي", hint: "تقرير حضورك كل أحد", g: "inbox" },
       ].map((sw) => {
-        const on = this.state[sw.key];
+        const isTheme = sw.key === "__theme";
+        const on = isTheme ? this.state.theme === "dark" : this.state[sw.key];
         return { label: sw.label, hint: sw.hint, glyph: icon(sw.g, 19),
           trackBg: on ? "var(--accent)" : "var(--line-strong)", knobPos: on ? "3px" : "25px",
-          go: () => this.setState({ [sw.key]: !on }) };
+          go: isTheme
+            ? () => this.setState({ theme: on ? "light" : "dark" })
+            : () => this.setState({ [sw.key]: !on }) };
       }),
 
       showEmpty: emptyScreen,
