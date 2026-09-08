@@ -661,6 +661,23 @@
 
         <!-- ── EMPLOYEES ── -->
         <sc-if value="{{ isEmployees }}" hint-placeholder-val="{{ false }}">
+          <div style="margin: 0 24px 14px; display: flex; align-items: center; gap: 10px; height: 48px; padding: 0 16px; box-sizing: border-box; border-radius: 14px; border: 1px solid var(--line); background: var(--card)">
+            <span style="color: var(--ink-3); display: flex; flex-shrink: 0">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            </span>
+            <input type="text" onInput="{{ setEmpQuery }}" placeholder="ابحث بالاسم أو المسمى" style="flex: 1; min-width: 0; border: 0; background: transparent; outline: none; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; color: var(--ink); direction: rtl" />
+            <sc-if value="{{ hasEmpQuery }}" hint-placeholder-val="{{ false }}">
+              <button type="button" onClick="{{ clearEmpQuery }}" aria-label="مسح البحث" style="all: unset; cursor: pointer; display: flex; color: var(--ink-3); flex-shrink: 0; transition: color 150ms" style-hover="color: var(--ink)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              </button>
+            </sc-if>
+          </div>
+          <sc-if value="{{ noEmpResults }}" hint-placeholder-val="{{ false }}">
+            <div style="margin: 0 24px; padding: 34px 20px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); display: flex; flex-direction: column; align-items: center; gap: 7px; text-align: center">
+              <span style="font-size: 14px; font-weight: 600; color: var(--ink)">لا يوجد موظف بهذا الاسم</span>
+              <span style="font-size: 12.5px; color: var(--ink-3)">جرّب اسم أو مسمى وظيفي مختلف</span>
+            </div>
+          </sc-if>
           <div style="margin: 0 24px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); overflow: hidden">
             <sc-for list="{{ employees }}" as="em" hint-placeholder-count="6">
               <button type="button" onClick="{{ em.go }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 72px; padding: 13px 18px; box-sizing: border-box; border-top: {{ em.borderTop }}; transition: background 150ms" style-hover="background: var(--accent-soft)">
@@ -1589,7 +1606,7 @@ const BANNERS = [
 ];
 
 const REQ = ["leaves", "permits", "advances", "overtime"];
-const AUTH = ["login", "forgot", "otp", "reset", "changePassword"];
+const AUTH = ["login", "forgot", "otp", "reset"];
 const ARTICLES = ["announcementDetail", "terms", "privacy", "about", "adminNotes"];
 
 const TITLES = {
@@ -1787,8 +1804,17 @@ class Component extends DCLogic {
     return list.map((r, i) => Object.assign({}, r, { divider: i === 0 ? "0" : "1px solid var(--line)" }));
   }
 
+  matchEmployees() {
+    const q = (this.state.empQuery || "").trim().toLowerCase();
+    const dept = this.state.jobFilter || "الكل";
+    return EMPLOYEES
+      .filter((e) => dept === "الكل" || e.dept === dept)
+      .filter((e) => !q || (e.name + " " + e.role + " " + e.dept).toLowerCase().indexOf(q) > -1);
+  }
+
   renderVals() {
     const s = this.state.screen, dark = this.state.theme === "dark";
+    const empMatches = this.matchEmployees();
     const nav = this.state.navStyle, empty = this.state.empty;
     const punched = this.state.punched, departed = this.state.departed;
     const kind = REQ.indexOf(s) > -1 ? s : this.state.reqKind;
@@ -1852,11 +1878,14 @@ class Component extends DCLogic {
         fields: [["البريد الالكتروني", "ahmed.moha@apex.ps", "mail"], ["كلمة المرور", "••••••••", "lock"]] },
       forgot: { title: "نسيت كلمة المرور", sub: "الرجاء ادخال البريد الالكتروني لاعادة تعيين كلمة المرور", cta: "إرسال",
         fields: [["البريد الالكتروني", "ahmed.moha@apex.ps", "mail"]] },
-      otp: { title: "رمز التحقق", sub: "الرجاء ادخال رمز التحقق المرسل على بريدك الالكتروني", cta: "تحقق", fields: [] },
-      reset: { title: "اعادة تعيين كلمة المرور", sub: "الرجاء ادخال كلمة المرور الجديدة", cta: "حفظ",
+      otp: { title: "رمز التحقق",
+        sub: this.state.pwFlow === "settings"
+          ? "أرسلنا رمز تحقق على ahmed.moha@apex.ps لتأكيد تغيير كلمة المرور"
+          : "الرجاء ادخال رمز التحقق المرسل على بريدك الالكتروني",
+        cta: "تحقق", fields: [] },
+      reset: { title: this.state.pwFlow === "settings" ? "كلمة المرور الجديدة" : "اعادة تعيين كلمة المرور",
+        sub: "الرجاء ادخال كلمة المرور الجديدة", cta: "حفظ",
         fields: [["كلمة المرور الجديدة", "••••••••", "lock"], ["تأكيد كلمة المرور", "••••••••", "lock"]] },
-      changePassword: { title: "تغيير كلمة المرور", sub: "ادخل كلمة المرور الحالية ثم الجديدة", cta: "حفظ",
-        fields: [["كلمة المرور الحالية", "••••••••", "lock"], ["كلمة المرور الجديدة", "••••••••", "lock"]] },
     }[s] || { title: "", sub: "", cta: "", fields: [] };
 
     const EMPTY = {
@@ -2089,7 +2118,11 @@ class Component extends DCLogic {
           bg: on ? "var(--accent)" : "transparent", border: on ? "var(--accent)" : "var(--line)",
           color: on ? "#FFFFFF" : "var(--ink-2)", weight: on ? 600 : 400 };
       }),
-      employees: EMPLOYEES.filter((e) => (this.state.jobFilter || "الكل") === "الكل" || e.dept === this.state.jobFilter)
+      hasEmpQuery: !!(this.state.empQuery || "").trim(),
+      noEmpResults: s === "employees" && empMatches.length === 0,
+      setEmpQuery: (e) => this.setState({ empQuery: e.target.value }),
+      clearEmpQuery: () => { this.setState({ empQuery: "" }); },
+      employees: empMatches
         .map((e, i) => ({ name: e.name, role: e.role, dept: e.dept, initials: e.initials,
           borderTop: i === 0 ? "none" : "1px solid var(--line)",
           go: () => { this.setState({ employee: e }); this.go("employeeDetail"); } })),
@@ -2114,7 +2147,12 @@ class Component extends DCLogic {
       goAttend: () => this.jump("attend"),
       goReminders: () => this.jump("reminders"),
       goAdminNotes: () => this.go("adminNotes"),
-      goChangePassword: () => this.go("changePassword"),
+      goChangePassword: () => {
+        this.setState({ pwFlow: "settings" });
+        this.go("otp");
+        this.startResend(30);
+        this.toast("تم ارسال رمز التحقق على بريدك");
+      },
       openAttachment: () => this.toast("اختيار ملف من الجهاز"),
 
       hasBanners: BANNERS.length > 0,
@@ -2472,7 +2510,11 @@ class Component extends DCLogic {
         if (s === "login") { this.jump("home"); this.toast("تم تسجيل الدخول بنجاح"); }
         else if (s === "forgot") { this.go("otp"); this.startResend(30); }
         else if (s === "otp") this.go("reset");
-        else if (s === "changePassword") { this.back(); this.toast("تم تغيير كلمة المرور"); }
+        else if (this.state.pwFlow === "settings") {
+          this.setState({ pwFlow: null });
+          this.jump("settings");
+          this.toast("تم تغيير كلمة المرور");
+        }
         else { this.jump("login"); this.toast("تم تعيين كلمة المرور الجديدة"); }
       },
 
