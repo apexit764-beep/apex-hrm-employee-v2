@@ -222,6 +222,12 @@
             </sc-if>
             <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
               <div style="font-size: 27px; font-weight: 600; line-height: 1.2; letter-spacing: -0.025em; color: var(--ink); text-wrap: pretty">{{ title }}</div>
+              <sc-if value="{{ hasPeriodChip }}" hint-placeholder-val="{{ false }}">
+                <button type="button" onClick="{{ openMonth }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); box-sizing: border-box; flex-shrink: 0; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12.5px; font-weight: 500; color: var(--ink); white-space: nowrap; transition: border-color 150ms" style-hover="border-color: var(--accent)">
+                  {{ periodLabel }}
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+              </sc-if>
               <sc-if value="{{ showTypeFilter }}" hint-placeholder-val="{{ false }}">
                 <button type="button" onClick="{{ openTypeFilter }}" style="all: unset; cursor: pointer; position: relative; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); display: flex; align-items: center; justify-content: center; color: var(--ink-2); flex-shrink: 0; transition: border-color 150ms, color 150ms" style-hover="border-color: var(--accent); color: var(--accent-ink)">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.46V19l4 2v-8.54z"/></svg>
@@ -527,15 +533,6 @@
               <sc-for list="{{ subTypeChips }}" as="sf" hint-placeholder-count="5">
                 <button type="button" onClick="{{ sf.go }}" style="all: unset; cursor: pointer; flex-shrink: 0; height: 34px; padding: 0 15px; border-radius: 999px; background: {{ sf.bg }}; border: 1px solid {{ sf.border }}; display: flex; align-items: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12.5px; font-weight: {{ sf.weight }}; color: {{ sf.color }}; white-space: nowrap; transition: background 150ms, border-color 150ms, color 150ms">{{ sf.label }}</button>
               </sc-for>
-            </div>
-          </sc-if>
-          <sc-if value="{{ hasPeriodChip }}" hint-placeholder-val="{{ false }}">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 24px 16px">
-              <span style="font-size: 13px; color: var(--ink-3)">{{ periodCaption }}</span>
-              <button type="button" onClick="{{ openMonth }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 7px; height: 34px; padding: 0 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12.5px; font-weight: 500; color: var(--ink); transition: border-color 150ms" style-hover="border-color: var(--accent)">
-                {{ periodLabel }}
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </button>
             </div>
           </sc-if>
           <sc-if value="{{ hasBalance }}" hint-placeholder-val="{{ false }}">
@@ -1998,9 +1995,9 @@ class Component extends DCLogic {
     }));
 
     const REQUESTS = [
-      { k: "leaves", title: "إجازة اعتيادية", status: "جديد", kind2: "accent", ref: "#08766899", date: "24 أبريل 2026", f1: "فترة الإجازة", v1: "18 — 20 أبريل", f2: "إجمالي الايام", v2: "2 يوم" },
+      { k: "leaves", title: "إجازة اعتيادية", status: "جديد", kind2: "accent", ref: "#08766899", date: "14 أبريل 2026", f1: "فترة الإجازة", v1: "18 — 20 أبريل", f2: "إجمالي الايام", v2: "2 يوم" },
       { k: "overtime", title: "ساعات إضافية · 3 س", status: "جديد", kind2: "accent", ref: "#08766894", date: "22 أبريل 2026", f1: "تاريخ العمل", v1: "18 أبريل 2026", f2: "إجمالي الساعات", v2: "3 ساعات" },
-      { k: "permits", title: "إذن تأخير", status: "قيد المراجعة", kind2: "warn", ref: "#08766871", date: "18 أبريل 2026", f1: "نوع الإذن", v1: "إذن تأخير", f2: "مدة الإذن", v2: "ساعة" },
+      { k: "permits", title: "إذن تأخير", status: "قيد المراجعة", kind2: "warn", ref: "#08766873", date: "18 أبريل 2026", f1: "نوع الإذن", v1: "إذن تأخير", f2: "مدة الإذن", v2: "ساعة" },
       { k: "advances", title: "سلفة 1,800 ₪", status: "قيد المراجعة", kind2: "warn", ref: "#08766868", date: "15 أبريل 2026", f1: "المبلغ", v1: "1,800 ₪", f2: "تاريخ الاستلام", v2: "6-5-2026" },
       { k: "leaves", title: "إجازة طارئة", status: "مقبول", kind2: "ok", ref: "#08766804", date: "02 أبريل 2026", f1: "فترة الإجازة", v1: "02 أبريل", f2: "إجمالي الايام", v2: "1 يوم" },
       { k: "permits", title: "خروج مبكر", status: "مقبول", kind2: "ok", ref: "#08766790", date: "28 مارس 2026", f1: "نوع الإذن", v1: "خروج مبكر", f2: "مدة الإذن", v2: "ساعتين" },
@@ -2137,23 +2134,24 @@ class Component extends DCLogic {
 
     const det = this.state.detail || { status: "قيد المراجعة", kind2: "warn", ref: "#08766871", date: "18 أبريل 2026", title: TITLES[kind] };
     const detSt = det.status;
+    const subDay = (det.date || "18 أبريل 2026").replace(/\s*20\d\d$/, "");
     const STAGES = detSt === "مرفوض" ? [
-      ["تقديم الطلب", "21 مارس · 09:12 ص", "done"],
-      ["مراجعة المدير المباشر", "21 مارس · 11:40 ص", "done"],
-      ["تم رفض الطلب", "22 مارس · 01:15 م", "bad"],
+      ["تقديم الطلب", subDay + " · 09:12 ص", "done"],
+      ["مراجعة المدير المباشر", subDay + " · 11:40 ص", "done"],
+      ["تم رفض الطلب", subDay + " · 01:15 م", "bad"],
     ] : detSt === "مقبول" ? [
-      ["تقديم الطلب", "02 أبريل · 09:12 ص", "done"],
-      ["مراجعة المدير المباشر", "02 أبريل · 11:40 ص", "done"],
-      ["موافقة الموارد البشرية", "03 أبريل · 10:05 ص", "done"],
-      ["اعتماد نهائي", "03 أبريل · 02:30 م", "done"],
+      ["تقديم الطلب", subDay + " · 09:12 ص", "done"],
+      ["مراجعة المدير المباشر", subDay + " · 11:40 ص", "done"],
+      ["موافقة الموارد البشرية", subDay + " · 02:05 م", "done"],
+      ["اعتماد نهائي", subDay + " · 04:30 م", "done"],
     ] : detSt === "جديد" ? [
-      ["تقديم الطلب", "24 أبريل · 09:12 ص", "done"],
+      ["تقديم الطلب", subDay + " · 09:12 ص", "done"],
       ["مراجعة المدير المباشر", "قيد الانتظار", "active"],
       ["موافقة الموارد البشرية", "—", "todo"],
       ["اعتماد نهائي", "—", "todo"],
     ] : [
-      ["تقديم الطلب", "18 أبريل · 09:12 ص", "done"],
-      ["مراجعة المدير المباشر", "18 أبريل · 11:40 ص", "done"],
+      ["تقديم الطلب", subDay + " · 09:12 ص", "done"],
+      ["مراجعة المدير المباشر", subDay + " · 11:40 ص", "done"],
       ["موافقة الموارد البشرية", "قيد الانتظار", "active"],
       ["اعتماد نهائي", "—", "todo"],
     ];
@@ -2236,7 +2234,7 @@ class Component extends DCLogic {
         adminNotes: "ملاحظات الإدارة على طلبك",
         employees: "زملاؤك في الشركة", employeeDetail: "بيانات التواصل",
         leaves: "رصيدك وآخر طلبات الإجازة", permits: "رصيدك وآخر طلبات الإذن",
-        advances: "آخر طلبات السلف", overtime: "آخر طلبات العمل الاضافي",
+        advances: "آخر طلبات السلف", overtime: "آخر طلبات العمل الإضافي",
       }[s] || (isReqList ? "تابع حالة طلباتك المقدمة" : ""),
       back: this.back, noop: () => {},
       showTypeFilter: isReqList || s === "employees",
@@ -2464,7 +2462,6 @@ class Component extends DCLogic {
         ? String(this.state.pickYear || 2026)
         : (this.state.balPeriod || "فبراير 2026"),
       hasPeriodChip: isReqOverview && !bal.label,
-      periodCaption: kind === "advances" ? "سلف الفترة" : "ساعات الفترة",
       periodLabel: kind === "leaves" ? String(this.state.pickYear || 2026) : (this.state.balPeriod || "فبراير 2026"),
       balanceValue: bal.value || "", balanceUnit: bal.unit || "",
       balanceParts: (bal.parts || (kind === "leaves"
@@ -2495,7 +2492,7 @@ class Component extends DCLogic {
         { label: det.f1 || bal.f1, value: det.v1 || bal.v1 },
         { label: det.f2 || bal.f2, value: det.v2 || bal.v2 },
         { label: "تاريخ التقديم", value: det.date },
-        { label: "وقت التقديم", value: det.time || "03:30 ص" },
+        { label: "وقت التقديم", value: det.time || "09:12 ص" },
       ],
       openReason: () => this.setState({ modal: "reason" }),
       openCancel: () => this.setState({ modal: "cancelReq" }),
@@ -2684,13 +2681,13 @@ class Component extends DCLogic {
       monthYear: String(this.state.pickYear || 2026),
       monthYearPrev: () => this.setState({ pickYear: (this.state.pickYear || 2026) - 1 }),
       monthYearNext: () => this.setState({ pickYear: (this.state.pickYear || 2026) + 1 }),
-      monthCells: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "اغسطس", "سبتمبر", "اكتوبر", "نوفمبر", "ديسمبر"].map((label, i) => {
-        const on = (this.state.pickMonth == null ? 8 : this.state.pickMonth) === i;
+      monthCells: MONTHS.map((label, i) => {
+        const on = (this.state.pickMonth == null ? 1 : this.state.pickMonth) === i;
         return { label, go: () => this.setState({ pickMonth: i }),
           bg: on ? "var(--accent)" : "var(--bg)",
           color: on ? "#FFFFFF" : "var(--ink-2)", weight: on ? 600 : 400 };
       }),
-      applyMonth: () => { const m = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "اغسطس", "سبتمبر", "اكتوبر", "نوفمبر", "ديسمبر"][this.state.pickMonth == null ? 8 : this.state.pickMonth]; this.setState({ modal: null, balPeriod: m + " " + (this.state.pickYear || 2026) }); },
+      applyMonth: () => { const m = MONTHS[this.state.pickMonth == null ? 1 : this.state.pickMonth]; this.setState({ balPeriod: m + " " + (this.state.pickYear || 2026), modal: null }); },
       openLogout: () => this.setState({ modal: "logout" }),
       openDelete: () => this.setState({ modal: "delete" }),
       settingSwitches: [
