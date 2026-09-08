@@ -2029,13 +2029,13 @@ class Component extends DCLogic {
 
     const authCopy = {
       login: { title: "مرحباً بك", sub: "أهلاً وسهلاً بك في تطبيق إدارة الموظفين", cta: "تسجيل الدخول",
-        fields: [["البريد الالكتروني", "ahmed.moha@apex.ps", "mail"], ["كلمة المرور", "••••••••", "lock"]] },
-      forgot: { title: "نسيت كلمة المرور", sub: "الرجاء إدخال البريد الالكتروني لإعادة تعيين كلمة المرور", cta: "إرسال",
-        fields: [["البريد الالكتروني", "ahmed.moha@apex.ps", "mail"]] },
+        fields: [["البريد الإلكتروني", "ahmed.moha@apex.ps", "mail"], ["كلمة المرور", "••••••••", "lock"]] },
+      forgot: { title: "نسيت كلمة المرور", sub: "الرجاء إدخال البريد الإلكتروني لإعادة تعيين كلمة المرور", cta: "إرسال",
+        fields: [["البريد الإلكتروني", "ahmed.moha@apex.ps", "mail"]] },
       otp: { title: "رمز التحقق",
         sub: this.state.pwFlow === "settings"
-          ? "أرسلنا رمز تحقق على ahmed.moha@apex.ps لتأكيد تغيير كلمة المرور"
-          : "الرجاء إدخال رمز التحقق المرسل على بريدك الالكتروني",
+          ? "أرسلنا الرمز على بريدك الإلكتروني"
+          : "أدخل الرمز المرسل على بريدك الإلكتروني",
         cta: "تحقق", fields: [] },
       reset: { title: this.state.pwFlow === "settings" ? "كلمة المرور الجديدة" : "إعادة تعيين كلمة المرور",
         sub: "الرجاء إدخال كلمة المرور الجديدة", cta: "حفظ",
@@ -2305,7 +2305,7 @@ class Component extends DCLogic {
       empDept: (this.state.employee || EMPLOYEES[0]).dept,
       empInitials: (this.state.employee || EMPLOYEES[0]).initials,
       empRows: [
-        ["البريد الالكتروني", (this.state.employee || EMPLOYEES[0]).email, "mail"],
+        ["البريد الإلكتروني", (this.state.employee || EMPLOYEES[0]).email, "mail"],
         ["رقم الهاتف", (this.state.employee || EMPLOYEES[0]).phone, "phone"],
         ["القسم", (this.state.employee || EMPLOYEES[0]).dept, "dept"],
         ["الفرع", (this.state.employee || EMPLOYEES[0]).branch, "pin"],
@@ -2313,7 +2313,7 @@ class Component extends DCLogic {
       ].map(([label, value, g], i) => ({ label, value, glyph: icon(g, 18, 1.6),
         borderTop: i === 0 ? "none" : "1px solid var(--line)" })),
       callEmp: () => this.toast("جارٍ الاتصال بـ " + (this.state.employee || EMPLOYEES[0]).name),
-      mailEmp: () => this.toast("فتح البريد الالكتروني"),
+      mailEmp: () => this.toast("فتح البريد الإلكتروني"),
 
       hasUnread: this.state.unread,
       goNotif: () => { this.setState({ unread: false }); this.go("notifications"); },
