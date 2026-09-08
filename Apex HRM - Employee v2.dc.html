@@ -522,6 +522,11 @@
                 <button type="button" onClick="{{ rt.go }}" style="all: unset; cursor: pointer; flex: 1; height: 38px; border-radius: 999px; background: {{ rt.bg }}; display: flex; align-items: center; justify-content: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: {{ rt.weight }}; color: {{ rt.color }}; white-space: nowrap; transition: background 150ms, color 150ms">{{ rt.label }}</button>
               </sc-for>
             </div>
+            <div style="display: flex; gap: 8px; margin: 0 0 16px; padding: 0 24px; overflow-x: auto; scrollbar-width: none">
+              <sc-for list="{{ subTypeChips }}" as="sf" hint-placeholder-count="5">
+                <button type="button" onClick="{{ sf.go }}" style="all: unset; cursor: pointer; flex-shrink: 0; height: 34px; padding: 0 15px; border-radius: 999px; background: {{ sf.bg }}; border: 1px solid {{ sf.border }}; display: flex; align-items: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12.5px; font-weight: {{ sf.weight }}; color: {{ sf.color }}; white-space: nowrap; transition: background 150ms, border-color 150ms, color 150ms">{{ sf.label }}</button>
+              </sc-for>
+            </div>
           </sc-if>
           <sc-if value="{{ hasBalance }}" hint-placeholder-val="{{ false }}">
             <div style="margin: 0 24px 18px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 18px; box-sizing: border-box">
@@ -601,6 +606,12 @@
                 عرض الكل
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
               </button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ noFilterResults }}" hint-placeholder-val="{{ false }}">
+            <div style="margin: 0 24px; padding: 34px 20px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); display: flex; flex-direction: column; align-items: center; gap: 9px; text-align: center">
+              <span style="font-size: 14px; font-weight: 600; color: var(--ink)">لا يوجد طلبات بهذه الفلترة</span>
+              <button type="button" onClick="{{ clearFilters }}" style="all: unset; cursor: pointer; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12.5px; font-weight: 600; color: var(--accent-ink); transition: opacity 150ms" style-hover="opacity: 0.75">مسح الفلترة</button>
             </div>
           </sc-if>
           <sc-if value="{{ hasRequests }}" hint-placeholder-val="{{ true }}">
@@ -1952,7 +1963,9 @@ class Component extends DCLogic {
       if (isReqOverview) return r.k === s;
       const st = [null, "جديد", "قيد المراجعة", "مقبول", "مرفوض"][this.state.filter || 0];
       const tf = this.state.typeFilter;
-      return (!st || r.status === st) && (!tf || r.k === tf);
+      const sub = this.state.subType;
+      return (!st || r.status === st) && (!tf || r.k === tf)
+        && (!sub || (r.title || "").indexOf(sub) > -1 || (r.v1 || "").indexOf(sub) > -1);
     }).slice(0, isReqOverview ? 3 : 99);
 
     const authCopy = {
@@ -2376,14 +2389,16 @@ class Component extends DCLogic {
       balanceParts: (bal.parts || (kind === "leaves"
         ? LEAVE_KINDS.map((k) => [k.label, k.used + " " + k.cap, k.tok])
         : [])).map(([label, value, tok]) => ({ label, value, dot: "var(" + tok + ")" })),
-      filters: (bal.filters || []).map((label, i) => ({
-        label, go: () => this.setState({ filter: i }),
-        bg: this.state.filter === i ? "var(--accent)" : "transparent",
-        border: this.state.filter === i ? "var(--accent)" : "var(--line)",
-        color: this.state.filter === i ? "#FFFFFF" : "var(--ink-2)",
-        weight: this.state.filter === i ? 600 : 400,
+      subTypeChips: (bal.types || []).map((label) => ({
+        label, go: () => this.setState({ subType: label === "الكل" ? null : label }),
+        bg: (this.state.subType || "الكل") === label ? "var(--accent)" : "transparent",
+        border: (this.state.subType || "الكل") === label ? "var(--accent)" : "var(--line)",
+        color: (this.state.subType || "الكل") === label ? "#FFFFFF" : "var(--ink-2)",
+        weight: (this.state.subType || "الكل") === label ? 600 : 400,
       })),
-      hasRequests: !empty, requests,
+      hasRequests: !empty && requests.length > 0, requests,
+      noFilterResults: !empty && requests.length === 0 && isReqList,
+      clearFilters: () => this.setState({ filter: 0, subType: null, typeFilter: null }),
 
       detailTitle: det.title || TITLES[kind],
       detailStatus: detSt, detailRef: det.ref,
@@ -2393,10 +2408,13 @@ class Component extends DCLogic {
       canCancelReq: detSt === "جديد" || detSt === "قيد المراجعة",
       rejectReason: "الرصيد المتاح غير كافٍ خلال الفترة المطلوبة. يمكنك التقديم من جديد بعد بداية الشهر القادم.",
       detailRows: [
+        { label: "نوع الطلب", value: TITLES[kind] || "" },
         { label: "حالة الطلب", value: detSt },
+        { label: "رقم الطلب", value: det.ref || "" },
         { label: det.f1 || bal.f1, value: det.v1 || bal.v1 },
         { label: det.f2 || bal.f2, value: det.v2 || bal.v2 },
         { label: "تاريخ التقديم", value: det.date },
+        { label: "وقت التقديم", value: det.time || "03:30 ص" },
       ],
       detailNoteRows: [
         { label: "ملاحظات الموظف", open: () => this.setState({ modal: "empNote" }) },
