@@ -1012,10 +1012,12 @@
 
         <!-- ── REMINDERS ── -->
         <sc-if value="{{ isReminders }}" hint-placeholder-val="{{ false }}">
-          <div style="padding: 20px 24px 24px">
-            <div style="font-size: 24px; font-weight: 600; letter-spacing: -0.015em; color: var(--ink)">التذكيرات</div>
-            <div style="font-size: 13px; color: var(--ink-3); margin-top: 6px">أضف موعد أو تذكير لنفسك</div>
-          </div>
+          <sc-if value="{{ showRemTitle }}" hint-placeholder-val="{{ true }}">
+            <div style="padding: 20px 24px 24px">
+              <div style="font-size: 24px; font-weight: 600; letter-spacing: -0.015em; color: var(--ink)">{{ remScreenTitle }}</div>
+              <div style="font-size: 13px; color: var(--ink-3); margin-top: 6px">{{ remScreenSub }}</div>
+            </div>
+          </sc-if>
           <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 24px 12px">
             <div style="font-size: 15px; font-weight: 600; color: var(--ink)">{{ monthLabel }}</div>
             <div style="display: flex; align-items: center; gap: 8px">
@@ -1705,7 +1707,7 @@ const TITLES = {
   leaves: "الاجازات", permits: "الأذونات", advances: "السلف", overtime: "الساعات الاضافية",
   requestDetail: "تفاصيل الطلب", requestForm: "طلب جديد",
   salaries: "الرواتب", salaryDetail: "قسيمة الراتب", log: "سجل الحركات",
-  reminders: "التذكيرات",
+  reminders: "التذكيرات", events: "الأحداث",
   announcements: "الاعلانات", announcementDetail: "تفاصيل الاعلان",
   notifications: "الاشعارات", suggestion: "اقتراح أو شكوى", adminNotes: "ملاحظات الادارة",
   profile: "الملف الشخصي", more: "المزيد", settings: "الاعدادات", pages: "الصفحات",
@@ -1727,7 +1729,7 @@ const EMPLOYEES = [
 const INDEX_GROUPS = [
   ["أساسي", [["home", "الرئيسية"], ["attend", "الحضور"], ["camIn", "الكاميرا"], ["log", "سجل الحضور"]]],
   ["الطلبات", [["leaves", "الاجازات"], ["permits", "الأذونات"], ["advances", "السلف"], ["overtime", "الساعات الاضافية"], ["requestDetail", "تفاصيل الطلب"], ["requestForm", "طلب جديد"]]],
-  ["الرواتب والأحداث", [["salaries", "الرواتب"], ["salaryDetail", "قسيمة الراتب"], ["reminders", "التذكيرات"], ["announcements", "الاعلانات"], ["announcementDetail", "تفاصيل الاعلان"]]],
+  ["الرواتب والأحداث", [["salaries", "الرواتب"], ["salaryDetail", "قسيمة الراتب"], ["reminders", "التذكيرات"], ["events", "الأحداث"], ["announcements", "الاعلانات"], ["announcementDetail", "تفاصيل الاعلان"]]],
   ["الحساب", [["more", "المزيد"], ["profile", "الملف الشخصي"], ["settings", "الاعدادات"], ["pages", "الصفحات"], ["terms", "الشروط والأحكام"], ["notifications", "الاشعارات"], ["suggestion", "اقتراح أو شكوى"], ["adminNotes", "ملاحظات الادارة"], ["employees", "الموظفين"], ["employeeDetail", "تفاصيل الموظف"]]],
   ["الدخول", [["splash", "سبلاش"], ["login", "تسجيل الدخول"], ["forgot", "نسيت كلمة المرور"], ["otp", "رمز التحقق"], ["reset", "كلمة مرور جديدة"]]],
 ];
@@ -1879,7 +1881,7 @@ class Component extends DCLogic {
 
   tab(tb, s) {
     const active = tb.key === s || (tb.key === "attend" && s.indexOf("cam") === 0)
-      || (tb.key === "reminders" && s === "reminderForm")
+      || (tb.key === "reminders" && (s === "reminderForm" || s === "events"))
       || (tb.key === "more" && ["profile", "settings", "pages", "suggestion", "employees", "employeeDetail"].concat(ARTICLES).indexOf(s) > -1);
     return {
       label: tb.label, active, glyph: icon(tb.glyph, 22, active ? 1.9 : 1.6),
@@ -2202,7 +2204,10 @@ class Component extends DCLogic {
       isHome: s === "home", isAttend: s === "attend", isCam,
       isRequests, isRequestDetail: s === "requestDetail", isRequestForm: s === "requestForm",
       isSalaries: s === "salaries", isSalaryDetail: s === "salaryDetail", isLog: s === "log",
-      isReminders: s === "reminders", isReminderForm: s === "reminderForm",
+      isReminders: s === "reminders" || s === "events", isReminderForm: s === "reminderForm",
+      remScreenTitle: s === "events" ? "الأحداث" : "التذكيرات",
+      remScreenSub: s === "events" ? "مواعيد الفريق وفعاليات الشركة" : "أضف موعد أو تذكير لنفسك",
+      showRemTitle: s === "reminders",
       isAnnouncements: s === "announcements", isArticle, isNotif: s === "notifications",
       isSuggestion: s === "suggestion", isProfile: s === "profile", isMore: s === "more",
       isSettings: s === "settings", isPages: s === "pages",
@@ -2240,7 +2245,7 @@ class Component extends DCLogic {
       goNotif: () => { this.setState({ unread: false }); this.go("notifications"); },
       goProfile: () => this.go("profile"),
       goAttend: () => this.jump("attend"),
-      goReminders: () => this.jump("reminders"),
+      goReminders: () => this.go("events"),
       goAdminNotes: () => this.go("adminNotes"),
       goChangePassword: () => {
         this.setState({ pwFlow: "settings" });
@@ -2484,11 +2489,16 @@ class Component extends DCLogic {
           color: sel ? "#FFFFFF" : "var(--ink)", sub: sel ? "rgba(255,255,255,0.75)" : "var(--ink-3)",
           dot: hasEv ? (sel ? "#FFFFFF" : "var(--accent)") : "transparent" };
       }),
-      reminders: [
-        { title: "اجتماع الفريق الشهري", time: "10:00 — 11:30 ص", go: () => this.setState({ reminderSheet: "edit", reminderTitle: "اجتماع الفريق الشهري" }) },
-        { title: "تسليم تقرير الأداء", time: "02:00 م", go: () => this.setState({ reminderSheet: "edit", reminderTitle: "تسليم تقرير الأداء" }) },
-        { title: "تدريب أمن المعلومات", time: "04:00 — 05:00 م", go: () => this.setState({ reminderSheet: "edit", reminderTitle: "تدريب أمن المعلومات" }) },
-      ],
+      reminders: s === "events"
+        ? [
+            { title: "اجتماع الفريق الشهري", time: "10:00 — 11:30 ص", go: () => {} },
+            { title: "تدريب أمن المعلومات", time: "01:00 — 02:00 م", go: () => {} },
+            { title: "اجتماع الربع السنوي", time: "11:00 — 12:30 م", go: () => {} },
+          ]
+        : [
+            { title: "تسليم تقرير الأداء", time: "02:00 م", go: () => this.setState({ reminderSheet: "edit", reminderTitle: "تسليم تقرير الأداء" }) },
+            { title: "مراجعة مع المدير المباشر", time: "04:00 — 05:00 م", go: () => this.setState({ reminderSheet: "edit", reminderTitle: "مراجعة مع المدير المباشر" }) },
+          ],
       reminderTimeValue: this.state.remTime || "اختر الوقت",
       reminderTimeColor: this.state.remTime ? "var(--ink)" : "var(--ink-3)",
       reminderBeforeValue: this.state.remBefore || "التذكير قبل",
