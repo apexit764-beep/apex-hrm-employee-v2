@@ -725,7 +725,13 @@
 
             <div style="display: flex; flex-direction: column; gap: 9px">
               <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">السبب</span>
-              <div style="min-height: 96px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 15px 17px; box-sizing: border-box; font-size: 14px; line-height: 1.7; color: var(--ink-3)">اكتب سبب الطلب</div>
+              <textarea onInput="{{ setReason }}" placeholder="اكتب سبب الطلب" style="min-height: 96px; width: 100%; resize: none; border-radius: 14px; border: 1px solid {{ reasonBorder }}; background: var(--card); padding: 15px 17px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; line-height: 1.7; color: var(--ink); direction: rtl; outline: none; transition: border-color 150ms"></textarea>
+              <sc-if value="{{ reasonErr }}" hint-placeholder-val="{{ false }}">
+                <span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--bad)">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
+                  اكتب سبب الطلب قبل الإرسال
+                </span>
+              </sc-if>
             </div>
 
             <div style="display: flex; flex-direction: column; gap: 9px">
@@ -1475,9 +1481,12 @@
     <!-- ══ TOAST — Dynamic Island drop ══ -->
     <sc-if value="{{ hasToast }}" hint-placeholder-val="{{ false }}">
       <div style="position: absolute; top: 10px; right: 0; left: 0; z-index: 30; display: flex; justify-content: center; padding: 0 16px; box-sizing: border-box; pointer-events: none">
-        <div style="max-width: 100%; min-height: 38px; border-radius: 999px; background: #05070C; display: flex; align-items: center; gap: 10px; padding: 8px 16px 8px 10px; box-sizing: border-box; animation: {{ toastAnim }}; transform-origin: top center; box-shadow: 0 10px 30px -8px rgba(0,0,0,0.6)">
-          <span style="width: 24px; height: 24px; border-radius: 999px; background: {{ toastDot }}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #FFFFFF">{{ toastGlyph }}</span>
+        <div style="max-width: 100%; min-height: 38px; border-radius: 999px; background: {{ toastBg }}; display: flex; align-items: center; gap: 10px; padding: 8px 10px 8px 8px; box-sizing: border-box; animation: {{ toastAnim }}; transform-origin: top center; box-shadow: 0 10px 30px -8px rgba(0,0,0,0.6); pointer-events: auto">
+          <span style="width: 24px; height: 24px; border-radius: 999px; background: {{ toastDot }}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: {{ toastGlyphColor }}">{{ toastGlyph }}</span>
           <span style="font-size: 12.5px; font-weight: 500; line-height: 1.4; color: #FFFFFF; text-wrap: pretty">{{ toastText }}</span>
+          <button type="button" onClick="{{ dismissToast }}" aria-label="إغلاق التنبيه" style="all: unset; cursor: pointer; width: 24px; height: 24px; border-radius: 999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: rgba(255,255,255,0.75); transition: background 150ms, color 150ms" style-hover="background: rgba(255,255,255,0.16); color: #FFFFFF">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
         </div>
       </div>
     </sc-if>
@@ -1605,9 +1614,17 @@ const PAY = [
 ];
 const PAY_NET = PAY.reduce((t, r) => t + r.amount, 0);
 
+// أنواع الاجازات — مصدر واحد للشرائح والتفصيل وكارت الرصيد
+const LEAVE_KINDS = [
+  { label: "طارئة", used: 2, cap: "من 6", tok: "--bad" },
+  { label: "اعتيادية", used: 3, cap: "من 15", tok: "--warn" },
+  { label: "غير مدفوعة", used: 0, cap: "بلا حد", tok: "--ink-3" },
+  { label: "مرضية", used: 1, cap: "بلا حد", tok: "--ok" },
+];
+
 const BAL = {
   leaves: { label: "رصيد الاجازات المتبقي", value: "15", unit: "يوم", period: "2026",
-    parts: [["طارئة", "6/1", "--bad"], ["اعتيادية", "15/0", "--warn"], ["غير مدفوعة", "∞/0", "--ink-3"], ["مرضية", "∞/0", "--ok"]],
+    parts: null, // مشتقّة من LEAVE_KINDS
     types: ["الكل", "طارئة", "اعتيادية", "غير مدفوعة", "مرضية"],
     filters: ["الكل", "جديدة", "قيد المراجعة", "مقبولة", "مرفوضة"],
     f1: "فترة الاجازة", v1: "18 — 20 أبريل", f2: "اجمالي الايام", v2: "2 يوم" },
@@ -1697,6 +1714,12 @@ class Component extends DCLogic {
     if (hide !== this.state.navHidden) patch.navHidden = hide;
     if (scrolled !== this.state.scrolled) patch.scrolled = scrolled;
     if (Object.keys(patch).length) this.setState(patch);
+  };
+
+  dismissToast = () => {
+    clearTimeout(this.toastTimer); clearTimeout(this.toastCloseTimer);
+    this.setState({ toastClosing: true });
+    this.toastCloseTimer = setTimeout(() => this.setState({ toast: null, toastClosing: false }), 260);
   };
 
   toast = (text, kind) => {
@@ -1820,7 +1843,7 @@ class Component extends DCLogic {
       logout: { confirm: true, title: "هل أنت متأكد من تسجيل الخروج؟", cancel: "إلغاء", cta: "تسجيل خروج",
         bad: true, action: () => { this.jump("login"); } },
       delete: { confirm: true, title: "هل انت متأكد من انك تريد حذف حسابك؟", cancel: "إلغاء", cta: "حذف الحساب",
-        bad: true, action: () => { this.jump("login"); this.toast("تم حذف الحساب", "err"); } },
+        bad: true, action: () => { this.jump("login"); this.toast("تم حذف الحساب"); } },
       cancelReq: { confirm: true, title: "هل انت متأكد من إلغاء طلبك؟", cancel: "تراجع", cta: "إلغاء الطلب",
         bad: true, action: () => { this.openReq(kind); this.toast("تم إلغاء طلبك"); } },
       delReminder: { confirm: true, title: "هل انت متأكد من حذف التذكير؟", cancel: "إلغاء", cta: "حذف",
@@ -2000,7 +2023,7 @@ class Component extends DCLogic {
 
       showBellFloat: ["attend", "reminders", "more"].indexOf(s) > -1,
       showReminderFab: s === "reminders",
-      showReqFab, goReqForm: () => this.go("requestForm"),
+      showReqFab, goReqForm: () => { this.reasonText = ""; this.setState({ reasonErr: false }); this.go("requestForm"); },
       openReminderSheet: () => this.setState({ reminderSheet: "new" }),
       closeReminderSheet: () => this.setState({ reminderSheet: null }),
       hasReminderSheet: !!this.state.reminderSheet,
@@ -2155,16 +2178,10 @@ class Component extends DCLogic {
       donutPct: Math.round(leavePct * 100) + "%",
       donutValue: String(leaveTotal - leaveUsed), donutTotal: "من " + leaveTotal + " يوم",
       leaveTotal, hasChipRow: kind !== "leaves",
-      leaveSegments: [
-        { color: "var(--bad)", width: (2 / leaveTotal * 100).toFixed(2) + "%" },
-        { color: "var(--warn)", width: (3 / leaveTotal * 100).toFixed(2) + "%" },
-        { color: "var(--ok)", width: (1 / leaveTotal * 100).toFixed(2) + "%" },
-      ],
-      leaveBreakdown: [
-        { label: "طارئة", value: "2", hint: "من 6", color: "var(--bad)" },
-        { label: "اعتيادية", value: "3", hint: "من 15", color: "var(--warn)" },
-        { label: "مرضية", value: "1", hint: "بلا حد", color: "var(--ok)" },
-      ],
+      leaveSegments: LEAVE_KINDS.filter((k) => k.used > 0).map((k) => ({
+        color: "var(" + k.tok + ")", width: (k.used / leaveTotal * 100).toFixed(2) + "%" })),
+      leaveBreakdown: LEAVE_KINDS.map((k) => ({
+        label: k.label, value: String(k.used), hint: k.cap, color: "var(" + k.tok + ")" })),
       hasDonut: kind === "leaves", hasProgress: kind === "permits",
       hasPlainBalance: !!bal.label && kind !== "leaves" && kind !== "permits",
       progressPct: "50%", progressUsed: "1 ساعة", progressLeft: "1 ساعة",
@@ -2175,7 +2192,9 @@ class Component extends DCLogic {
       viewAllReqs: () => { this.setState({ filter: 0, typeFilter: s }); this.go("requests"); },
       hasBalance: isReqOverview && !!bal.label, balanceLabel: bal.label || "", balancePeriod: this.state.balPeriod || "سبتمبر 2026",
       balanceValue: bal.value || "", balanceUnit: bal.unit || "",
-      balanceParts: (bal.parts || []).map(([label, value, tok]) => ({ label, value, dot: "var(" + tok + ")" })),
+      balanceParts: (bal.parts || (kind === "leaves"
+        ? LEAVE_KINDS.map((k) => [k.label, k.used + " " + k.cap, k.tok])
+        : [])).map(([label, value, tok]) => ({ label, value, dot: "var(" + tok + ")" })),
       filters: (bal.filters || []).map((label, i) => ({
         label, go: () => this.setState({ filter: i }),
         bg: this.state.filter === i ? "var(--accent)" : "transparent",
@@ -2213,7 +2232,23 @@ class Component extends DCLogic {
           go: () => this.setState({ modal: F2MODAL[kind] }) },
       ],
       policyTitle: form.policy ? form.policy[0] : "", policyBody: form.policy ? form.policy[1] : "",
-      submitForm: () => { this.openReq(kind); this.toast("تم ارسال طلبك بنجاح"); },
+      reasonErr: !!this.state.reasonErr,
+      reasonBorder: this.state.reasonErr ? "var(--bad)" : "var(--line)",
+      setReason: (e) => {
+        this.reasonText = e.target.value;
+        if (this.state.reasonErr && this.reasonText.trim()) this.setState({ reasonErr: false });
+      },
+      submitForm: () => {
+        if (!(this.reasonText || "").trim()) {
+          this.setState({ reasonErr: true });
+          this.toast("اكتب سبب الطلب قبل الإرسال", "err");
+          return;
+        }
+        this.reasonText = "";
+        this.setState({ reasonErr: false });
+        this.openReq(kind);
+        this.toast("تم ارسال طلبك بنجاح");
+      },
 
       salaries: this.row([
         { month: "راتب شهر يناير", date: "28 يناير 2026", total: fmtNum(PAY_NET) + " ج.م" },
@@ -2421,7 +2456,10 @@ class Component extends DCLogic {
 
       hasToast: !!this.state.toast,
       toastText: this.state.toast ? this.state.toast.text : "",
-      toastDot: this.state.toast && this.state.toast.kind === "err" ? "#D02B2B" : accent,
+      toastBg: this.state.toast && this.state.toast.kind === "err" ? "#B3261E" : "#05070C",
+      toastGlyphColor: this.state.toast && this.state.toast.kind === "err" ? "#B3261E" : "#FFFFFF",
+      toastDot: this.state.toast && this.state.toast.kind === "err" ? "#FFFFFF" : accent,
+      dismissToast: this.dismissToast,
       toastAnim: this.state.toastClosing ? "islandCollapse 240ms cubic-bezier(0.4, 0, 1, 1) forwards" : "islandExpand 300ms cubic-bezier(0.32, 0.72, 0, 1)",
       toastGlyph: icon(this.state.toast && this.state.toast.kind === "err" ? "x" : "check", 13, 2.4),
       toastLift: this.state.navHidden ? "26px" : "108px",
