@@ -31,10 +31,10 @@
     --line-strong: #D8DCE6;
     --ink: #0F1117;
     --ink-2: #4C525F;
-    --ink-3: #8A90A0;
-    --ok: #0F9D58;
+    --ink-3: #6C717D;
+    --ok: #0C7F47;
     --ok-soft: #E8F6EE;
-    --warn: #B4690E;
+    --warn: #9F5D0C;
     --warn-soft: #FDF3E3;
     --bad: #D02B2B;
     --bad-soft: #FCEDED;
@@ -227,7 +227,7 @@
             <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
               <div style="font-size: 27px; font-weight: 600; line-height: 1.2; letter-spacing: -0.025em; color: var(--ink); text-wrap: pretty">{{ title }}</div>
               <sc-if value="{{ hasPeriodChip }}" hint-placeholder-val="{{ false }}">
-                <button type="button" onClick="{{ openMonth }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); box-sizing: border-box; flex-shrink: 0; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12.5px; font-weight: 500; color: var(--ink); white-space: nowrap; transition: border-color 150ms" style-hover="border-color: var(--accent)">
+                <button type="button" onClick="{{ openMonth }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 6px; height: 38px; padding: 0 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); box-sizing: border-box; flex-shrink: 0; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12.5px; font-weight: 500; color: var(--ink); white-space: nowrap; transition: border-color 150ms" style-hover="border-color: var(--accent)">
                   {{ periodLabel }}
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
@@ -330,7 +330,7 @@
           <div style="display: flex; align-items: center; justify-content: space-between; padding: 34px 24px 14px">
             <div style="font-size: 15px; font-weight: 600; color: var(--ink)">آخر الأحداث</div>
             <sc-if value="{{ hasEvents }}" hint-placeholder-val="{{ false }}">
-              <button type="button" onClick="{{ goReminders }}" style="all: unset; cursor: pointer; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; color: var(--accent-ink)">عرض الكل</button>
+              <button type="button" onClick="{{ goReminders }}" style="all: unset; cursor: pointer; padding: 12px 6px; margin: -12px -6px; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; color: var(--accent-ink)">عرض الكل</button>
             </sc-if>
           </div>
           <sc-if value="{{ hasEvents }}" hint-placeholder-val="{{ false }}">
@@ -361,7 +361,7 @@
                 </sc-for>
                 <div style="position: absolute; bottom: 12px; right: 0; left: 0; z-index: 2; display: flex; align-items: center; justify-content: center; gap: 6px">
                   <sc-for list="{{ bannerDots }}" as="dt" hint-placeholder-count="3">
-                    <button type="button" onClick="{{ dt.go }}" style="all: unset; cursor: pointer; width: {{ dt.w }}; height: 6px; border-radius: 999px; background: {{ dt.bg }}; box-shadow: 0 1px 3px rgba(0,0,0,0.3); transition: width 220ms, background 220ms"></button>
+                    <button type="button" onClick="{{ dt.go }}" style="all: unset; cursor: pointer; box-sizing: content-box; padding: 14px 6px; margin: -14px -6px; background-clip: content-box; width: {{ dt.w }}; height: 6px; border-radius: 999px; background: {{ dt.bg }}; box-shadow: 0 1px 3px rgba(0,0,0,0.3); transition: width 220ms, background 220ms"></button>
                   </sc-for>
                 </div>
               </div>
@@ -460,7 +460,7 @@
                 </span>
                 <span style="font-size: 11.5px; font-weight: 500; color: var(--ink)">فرع رام الله</span>
               </div>
-              <button type="button" onClick="{{ recenterMap }}" aria-label="إعادة التمركز" style="all: unset; cursor: pointer; position: absolute; bottom: 11px; left: 11px; width: 34px; height: 34px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--ink-2); transition: color 150ms" style-hover="color: var(--accent-ink)">
+              <button type="button" onClick="{{ recenterMap }}" aria-label="إعادة التمركز" style="all: unset; cursor: pointer; position: absolute; bottom: 11px; left: 11px; width: 40px; height: 40px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--ink-2); transition: color 150ms" style-hover="color: var(--accent-ink)">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>
               </button>
             </div>
@@ -543,7 +543,7 @@
             <div style="margin: 0 24px 18px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 18px; box-sizing: border-box">
               <div style="display: flex; align-items: center; justify-content: space-between">
                 <span style="font-size: 13px; color: var(--ink-3)">{{ balanceLabel }}</span>
-                <button type="button" onClick="{{ openMonth }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 7px; height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12px; color: var(--ink-2); white-space: nowrap; flex-shrink: 0; transition: border-color 150ms" style-hover="border-color: var(--accent)">
+                <button type="button" onClick="{{ openMonth }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 7px; height: 38px; padding: 0 13px; border-radius: 999px; border: 1px solid var(--line); box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12px; color: var(--ink-2); white-space: nowrap; flex-shrink: 0; transition: border-color 150ms" style-hover="border-color: var(--accent)">
                   {{ balancePeriod }}
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
@@ -613,7 +613,7 @@
           <sc-if value="{{ isReqOverview }}" hint-placeholder-val="{{ false }}">
             <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 24px 12px">
               <span style="font-size: 16px; font-weight: 600; color: var(--ink)">آخر الطلبات</span>
-              <button type="button" onClick="{{ viewAllReqs }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 5px; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 500; color: var(--accent-ink); transition: opacity 150ms" style-hover="opacity: 0.75">
+              <button type="button" onClick="{{ viewAllReqs }}" style="all: unset; cursor: pointer; padding: 12px 6px; margin: -12px -6px; display: flex; align-items: center; gap: 5px; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 500; color: var(--accent-ink); transition: opacity 150ms" style-hover="opacity: 0.75">
                 عرض الكل
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
               </button>
@@ -905,7 +905,7 @@
                 <div style="display: flex; align-items: center; gap: 10px; padding: 13px 0; border-top: 1px solid var(--line)">
                   <span style="font-size: 13px; color: var(--ink-2)">{{ p.label }}</span>
                   <sc-if value="{{ p.hasNote }}" hint-placeholder-val="{{ true }}">
-                    <button type="button" onClick="{{ p.openNote }}" aria-label="تفاصيل البند" style="all: unset; cursor: pointer; display: flex; align-items: center; color: var(--ink-3); transition: color 150ms" style-hover="color: var(--accent-ink)">
+                    <button type="button" onClick="{{ p.openNote }}" aria-label="تفاصيل البند" style="all: unset; cursor: pointer; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin: -14px -14px -14px -8px; color: var(--ink-3); transition: color 150ms" style-hover="color: var(--accent-ink)">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                     </button>
                   </sc-if>
@@ -1032,10 +1032,10 @@
           <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 24px 12px">
             <div style="font-size: 15px; font-weight: 600; color: var(--ink)">{{ monthLabel }}</div>
             <div style="display: flex; align-items: center; gap: 8px">
-              <button type="button" onClick="{{ prevMonth }}" style="all: unset; cursor: pointer; width: 32px; height: 32px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2); transition: border-color 150ms, color 150ms" style-hover="border-color: var(--accent); color: var(--accent-ink)">
+              <button type="button" onClick="{{ prevMonth }}" style="all: unset; cursor: pointer; padding: 6px; margin: -6px; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2); transition: border-color 150ms, color 150ms" style-hover="border-color: var(--accent); color: var(--accent-ink)">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </button>
-              <button type="button" onClick="{{ nextMonth }}" style="all: unset; cursor: pointer; width: 32px; height: 32px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2); transition: border-color 150ms, color 150ms" style-hover="border-color: var(--accent); color: var(--accent-ink)">
+              <button type="button" onClick="{{ nextMonth }}" style="all: unset; cursor: pointer; padding: 6px; margin: -6px; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2); transition: border-color 150ms, color 150ms" style-hover="border-color: var(--accent); color: var(--accent-ink)">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
               </button>
             </div>
@@ -1143,15 +1143,15 @@
               <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">التفاصيل</span>
               <div style="min-height: 130px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 15px 17px; box-sizing: border-box; font-size: 14px; line-height: 1.7; color: var(--ink-3)">اكتب تفاصيل {{ suggestType }}</div>
             </div>
-            <div style="display: flex; align-items: center; gap: 12px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 15px 17px; box-sizing: border-box">
+            <button type="button" onClick="{{ toggleAnon }}" style="all: unset; cursor: pointer; width: 100%; box-sizing: border-box; text-align: right; font-family: 'IBM Plex Sans Arabic', sans-serif; display: flex; align-items: center; gap: 12px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 15px 17px; box-sizing: border-box">
               <span style="flex: 1; display: flex; flex-direction: column; gap: 3px">
                 <span style="font-size: 14px; font-weight: 500; color: var(--ink)">إرسال بشكل مجهول</span>
-                <span style="font-size: 12px; color: var(--ink-3)">ما بيظهر اسمك للإدارة</span>
+                <span style="font-size: 12px; color: var(--ink-3)">لن يظهر اسمك للإدارة</span>
               </span>
-              <button type="button" onClick="{{ toggleAnon }}" style="all: unset; cursor: pointer; width: 52px; height: 30px; border-radius: 999px; background: {{ anonBg }}; position: relative; flex-shrink: 0; transition: background 150ms">
+              <span style="width: 52px; height: 30px; flex-shrink: 0; border-radius: 999px; background: {{ anonBg }}; position: relative; flex-shrink: 0; transition: background 150ms">
                 <span style="position: absolute; top: 3px; right: {{ anonPos }}; width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF; transition: right 150ms"></span>
-              </button>
-            </div>
+              </span>
+            </button>
             <button type="button" onClick="{{ submitSuggestion }}" style="all: unset; cursor: pointer; height: 56px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 15px; font-weight: 600; color: var(--on-accent); transition: opacity 150ms" style-hover="opacity: 0.9">إرسال</button>
           </div>
         </sc-if>
@@ -1162,7 +1162,7 @@
             <img src="assets/avatar.png" alt="" style="width: 72px; height: 72px; border-radius: 999px; object-fit: cover; display: block; border: 1px solid var(--line)" />
             <div style="flex: 1; display: flex; flex-direction: column; gap: 7px">
               <div style="font-size: 19px; font-weight: 600; letter-spacing: -0.015em; color: var(--ink)">محمد أحمد</div>
-              <div style="font-size: 13px; color: var(--ink-3)">Open Cart Develper</div>
+              <div style="font-size: 13px; color: var(--ink-3)">OpenCart Developer</div>
               <div style="display: flex; align-items: center; gap: 7px; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--ok-soft); align-self: flex-start">
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--ok)"></span>
                 <span style="font-size: 11px; font-weight: 600; color: var(--ok)">Full Time</span>
@@ -1190,7 +1190,7 @@
             <img src="assets/avatar.png" alt="" style="width: 56px; height: 56px; border-radius: 999px; object-fit: cover; display: block; border: 1px solid var(--line)" />
             <span style="flex: 1; display: flex; flex-direction: column; gap: 5px; text-align: right">
               <span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink)">محمد أحمد</span>
-              <span style="font-size: 13px; color: var(--ink-3)">Open Cart Develper</span>
+              <span style="font-size: 13px; color: var(--ink-3)">OpenCart Developer</span>
             </span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
           </button>
@@ -1224,16 +1224,16 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </button>
             <sc-for list="{{ settingSwitches }}" as="sw" hint-placeholder-count="3">
-              <div style="display: flex; align-items: center; gap: 14px; min-height: 66px; padding: 13px 18px; box-sizing: border-box; border-top: 1px solid var(--line)">
+              <button type="button" onClick="{{ sw.go }}" style="all: unset; cursor: pointer; width: 100%; text-align: right; font-family: 'IBM Plex Sans Arabic', sans-serif; display: flex; align-items: center; gap: 14px; min-height: 66px; padding: 13px 18px; box-sizing: border-box; border-top: 1px solid var(--line)">
                 <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink)">{{ sw.glyph }}</span>
                 <span style="flex: 1; display: flex; flex-direction: column; gap: 3px">
                   <span style="font-size: 14px; font-weight: 500; color: var(--ink)">{{ sw.label }}</span>
                   <span style="font-size: 12px; color: var(--ink-3)">{{ sw.hint }}</span>
                 </span>
-                <button type="button" onClick="{{ sw.go }}" style="all: unset; cursor: pointer; width: 52px; height: 30px; border-radius: 999px; background: {{ sw.trackBg }}; position: relative; flex-shrink: 0; transition: background 150ms">
+                <span style="width: 52px; height: 30px; flex-shrink: 0; border-radius: 999px; background: {{ sw.trackBg }}; position: relative; flex-shrink: 0; transition: background 150ms">
                   <span style="position: absolute; top: 3px; right: {{ sw.knobPos }}; width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF; transition: right 150ms"></span>
-                </button>
-              </div>
+                </span>
+              </button>
             </sc-for>
           </div>
           <div style="margin: 14px 24px 0; border-radius: 14px; border: 1px solid var(--line); background: var(--card); overflow: hidden">
@@ -1331,7 +1331,7 @@
               </div>
               <div style="display: flex; align-items: center; justify-content: center; gap: 7px; font-size: 13px; color: var(--ink-3)">
                 <sc-if value="{{ canResend }}" hint-placeholder-val="{{ false }}">
-                  <button type="button" onClick="{{ resendOtp }}" style="all: unset; cursor: pointer; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 600; color: var(--accent-ink); border-bottom: 1px solid currentColor; transition: opacity 150ms" style-hover="opacity: 0.75">إعادة إرسال الرمز</button>
+                  <button type="button" onClick="{{ resendOtp }}" style="all: unset; cursor: pointer; padding: 12px 6px; margin: -12px -6px; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 600; color: var(--accent-ink); border-bottom: 1px solid currentColor; transition: opacity 150ms" style-hover="opacity: 0.75">إعادة إرسال الرمز</button>
                 </sc-if>
                 <sc-if value="{{ resendWaiting }}" hint-placeholder-val="{{ true }}">
                   <span>إعادة إرسال الرمز</span>
@@ -1341,7 +1341,7 @@
             </sc-if>
 
             <sc-if value="{{ isLogin }}" hint-placeholder-val="{{ false }}">
-              <button type="button" onClick="{{ goForgot }}" style="all: unset; cursor: pointer; align-self: flex-start; margin-top: -4px; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 500; color: var(--accent-ink)">نسيت كلمة المرور؟</button>
+              <button type="button" onClick="{{ goForgot }}" style="all: unset; cursor: pointer; align-self: flex-start; padding: 12px 6px; margin: -16px -6px -12px; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 500; color: var(--accent-ink)">نسيت كلمة المرور؟</button>
             </sc-if>
 
             <button type="button" onClick="{{ authSubmit }}" style="all: unset; cursor: pointer; height: 56px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 6px; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 15px; font-weight: 600; color: var(--on-accent); transition: opacity 150ms" style-hover="opacity: 0.9">
@@ -1580,11 +1580,11 @@
           <sc-if value="{{ modalIsMonth }}" hint-placeholder-val="{{ false }}">
             <div style="margin-top: 18px">
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px">
-                <button type="button" onClick="{{ monthYearNext }}" style="all: unset; cursor: pointer; width: 36px; height: 36px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2); transition: border-color 150ms" style-hover="border-color: var(--accent)">
+                <button type="button" onClick="{{ monthYearNext }}" style="all: unset; cursor: pointer; margin: -4px; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2); transition: border-color 150ms" style-hover="border-color: var(--accent)">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                 </button>
                 <span style="font-size: 16px; font-weight: 600; color: var(--ink); unicode-bidi: plaintext">{{ monthYear }}</span>
-                <button type="button" onClick="{{ monthYearPrev }}" style="all: unset; cursor: pointer; width: 36px; height: 36px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2); transition: border-color 150ms" style-hover="border-color: var(--accent)">
+                <button type="button" onClick="{{ monthYearPrev }}" style="all: unset; cursor: pointer; margin: -4px; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2); transition: border-color 150ms" style-hover="border-color: var(--accent)">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
                 </button>
               </div>
@@ -1632,10 +1632,10 @@
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px">
                 <div style="font-size: 15px; font-weight: 600; color: var(--ink)">يناير 2026</div>
                 <div style="display: flex; align-items: center; gap: 8px">
-                  <button type="button" onClick="{{ noop }}" style="all: unset; cursor: pointer; width: 36px; height: 36px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2)">
+                  <button type="button" onClick="{{ noop }}" style="all: unset; cursor: pointer; margin: -4px; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2)">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                   </button>
-                  <button type="button" onClick="{{ noop }}" style="all: unset; cursor: pointer; width: 36px; height: 36px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2)">
+                  <button type="button" onClick="{{ noop }}" style="all: unset; cursor: pointer; margin: -4px; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2)">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
                   </button>
                 </div>
@@ -2659,7 +2659,7 @@ class Component extends DCLogic {
         { label: "الفرع", value: "رام الله", g: "pin" },
         { label: "الرقم الوظيفي", value: "A234567", g: "badge" },
         { label: "القسم", value: "البرمجة", g: "dept" },
-        { label: "المسمى", value: "Open Cart Develper", g: "brief" },
+        { label: "المسمى", value: "OpenCart Developer", g: "brief" },
         { label: "الانضمام", value: "12-3-2025", g: "cal" },
         { label: "نظام التعاقد", value: "دوام كامل", g: "doc" },
         { label: "الراتب", value: "4,500 ₪", g: "money" },
