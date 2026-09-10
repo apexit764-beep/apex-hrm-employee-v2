@@ -132,7 +132,7 @@
       <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B7080; font-weight: 500">المظهر</div>
       <div style="display: flex; padding: 3px; border-radius: 999px; border: 1px solid #24272F; background: #14161C">
         <sc-for list="{{ themes }}" as="th" hint-placeholder-count="2">
-          <button type="button" onClick="{{ th.go }}" style="all: unset; cursor: pointer; flex: 1; height: 34px; border-radius: 999px; display: flex; align-items: center; justify-content: center; gap: 7px; background: {{ th.bg }}; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12px; font-weight: {{ th.weight }}; color: {{ th.color }}; transition: background 150ms, color 150ms">
+          <button type="button" onClick="{{ th.go }}" style="all: unset; cursor: pointer; flex: 1; height: 34px; border-radius: 999px; display: flex; align-items: center; justify-content: center; gap: 7px; background: {{ th.bg }}; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: {{ th.weight }}; color: {{ th.color }}; transition: background 150ms, color 150ms">
             {{ th.glyph }}
             {{ th.label }}
           </button>
@@ -181,7 +181,7 @@
           <img src="assets/logo-apexhr-white.svg" alt="APEXHR" style="width: 186px; display: block; animation: logoIn 620ms cubic-bezier(0.22, 1, 0.36, 1) both" />
           <div style="display: flex; align-items: center; gap: 12px; animation: logoIn 620ms cubic-bezier(0.22, 1, 0.36, 1) 160ms both">
             <span style="width: 26px; height: 1px; background: rgba(255,255,255,0.35)"></span>
-            <span style="font-size: 12.5px; font-weight: 500; letter-spacing: 0.02em; color: rgba(255,255,255,0.82); white-space: nowrap">إدارة الموظفين والحضور</span>
+            <span style="font-size: 13px; font-weight: 500; letter-spacing: 0.02em; color: rgba(255,255,255,0.82); white-space: nowrap">إدارة الموظفين والحضور</span>
             <span style="width: 26px; height: 1px; background: rgba(255,255,255,0.35)"></span>
           </div>
         </div>
@@ -192,7 +192,7 @@
             <span style="width: 6px; height: 6px; border-radius: 999px; background: rgba(255,255,255,0.9); animation: splashDot 1s ease-in-out 0.16s infinite"></span>
             <span style="width: 6px; height: 6px; border-radius: 999px; background: rgba(255,255,255,0.9); animation: splashDot 1s ease-in-out 0.32s infinite"></span>
           </div>
-          <div style="font-size: 10.5px; letter-spacing: 0.1em; color: rgba(255,255,255,0.55)">مدعوم من Apex IT Solutions</div>
+          <div style="font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.55)">مدعوم من Apex IT Solutions</div>
         </div>
       </div>
 
@@ -204,9 +204,9 @@
         <div dir="ltr" style="display: flex; align-items: center; gap: 6px">
           <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="7.5" width="3" height="4.5" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
           <svg width="16" height="12" viewBox="0 0 17 13" fill="currentColor"><path d="M8.5 12.4 5.1 8.7a4.9 4.9 0 0 1 6.8 0zM2.6 6.1 1 4.4a11 11 0 0 1 15 0l-1.6 1.7a8.7 8.7 0 0 0-11.8 0z"/></svg>
-          <span style="width: 24px; height: 12px; border-radius: 4px; border: 1.2px solid currentColor; padding: 2px; box-sizing: border-box; display: block"><span style="display: block; width: 100%; height: 100%; border-radius: 1.5px; background: currentColor"></span></span>
+          <span style="width: 24px; height: 12px; border-radius: 4px; border: 1.2px solid currentColor; padding: 2px; box-sizing: border-box; display: block"><span style="display: block; width: 100%; height: 100%; border-radius: 2px; background: currentColor"></span></span>
         </div>
-        <div style="font-size: 16px; font-weight: 600; letter-spacing: -0.01em">9:41</div>
+        <div style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">9:41</div>
       </div>
     </sc-if>
 
@@ -225,9 +225,9 @@
               </div>
             </sc-if>
             <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-              <div style="font-size: 27px; font-weight: 600; line-height: 1.2; letter-spacing: -0.025em; color: var(--ink); text-wrap: pretty">{{ title }}</div>
+              <div style="font-size: 28px; font-weight: 600; line-height: 1.2; letter-spacing: -0.025em; color: var(--ink); text-wrap: pretty">{{ title }}</div>
               <sc-if value="{{ hasPeriodChip }}" hint-placeholder-val="{{ false }}">
-                <button type="button" onClick="{{ openMonth }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 6px; height: 38px; padding: 0 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); box-sizing: border-box; flex-shrink: 0; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12.5px; font-weight: 500; color: var(--ink); white-space: nowrap; transition: border-color 150ms" style-hover="border-color: var(--accent)">
+                <button type="button" onClick="{{ openMonth }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 6px; height: 38px; padding: 0 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); box-sizing: border-box; flex-shrink: 0; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 500; color: var(--ink); white-space: nowrap; transition: border-color 150ms" style-hover="border-color: var(--accent)">
                   {{ periodLabel }}
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
@@ -253,7 +253,7 @@
           <div style="padding: 16px 24px 0; display: flex; align-items: center; gap: 12px">
             <button type="button" onClick="{{ goProfile }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 12px; flex: 1"><img src="assets/avatar.png" alt="" style="width: 48px; height: 48px; border-radius: 999px; object-fit: cover; display: block; border: 1px solid var(--line)" />
               <span style="display: flex; flex-direction: column; gap: 3px; text-align: right">
-                <span style="font-size: 12px; color: var(--ink-3)">صباح الخير 👋</span>
+                <span style="font-size: 13px; color: var(--ink-3)">صباح الخير 👋</span>
                 <span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink)">محمد أحمد</span>
               </span>
             </button>
@@ -270,7 +270,7 @@
             <div style="position: absolute; bottom: -80px; right: -60px; width: 210px; height: 210px; border-radius: 999px; background: rgba(255,255,255,0.07); pointer-events: none"></div>
             <div style="position: relative; display: flex; align-items: flex-start; justify-content: space-between; gap: 14px">
               <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0; flex-shrink: 0">
-                <div style="font-size: 12px; color: rgba(255,255,255,0.72); white-space: nowrap">{{ dateLabel }}</div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.72); white-space: nowrap">{{ dateLabel }}</div>
                 <div style="font-size: 32px; font-weight: 600; line-height: 1; letter-spacing: -0.03em; unicode-bidi: plaintext; white-space: nowrap">{{ nowTime }}</div>
               </div>
               <button type="button" onClick="{{ goPunch }}" style="all: unset; cursor: pointer; align-self: flex-start; min-width: 0; height: 40px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; gap: 7px; padding: 0 16px; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 600; color: var(--accent); white-space: nowrap; flex-shrink: 0; transition: opacity 150ms" style-hover="opacity: 0.9">
@@ -296,9 +296,9 @@
           <div style="height: 20px"></div>
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0 24px">
             <sc-for list="{{ quickTiles }}" as="q" hint-placeholder-count="9">
-              <button type="button" onClick="{{ q.go }}" style="all: unset; cursor: pointer; position: relative; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 18px 10px 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--card); box-sizing: border-box; text-align: center; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms, background 150ms" style-hover="border-color: {{ q.tint }}; background: {{ q.tintBg }}">
+              <button type="button" onClick="{{ q.go }}" style="all: unset; cursor: pointer; position: relative; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 18px 10px 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); box-sizing: border-box; text-align: center; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms, background 150ms" style-hover="border-color: {{ q.tint }}; background: {{ q.tintBg }}">
                 <span style="width: 48px; height: 48px; border-radius: 999px; background: {{ q.tintBg }}; display: flex; align-items: center; justify-content: center; color: {{ q.tint }}">{{ q.glyph }}</span>
-                <span style="font-size: 12.5px; font-weight: 600; line-height: 1.3; color: var(--ink); white-space: nowrap">{{ q.label }}</span>
+                <span style="font-size: 13px; font-weight: 600; line-height: 1.3; color: var(--ink); white-space: nowrap">{{ q.label }}</span>
                 <sc-if value="{{ q.badge }}" hint-placeholder-val="{{ false }}">
                   <span style="position: absolute; top: 10px; left: 10px; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #FFFFFF; box-sizing: border-box">{{ q.badge }}</span>
                 </sc-if>
@@ -315,12 +315,12 @@
                 <div style="display: flex; align-items: center; gap: 13px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 13px 15px; box-sizing: border-box">
                   <span style="width: 42px; height: 42px; border-radius: 999px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: var(--accent-ink); flex-shrink: 0">{{ bd.initials }}</span>
                   <span style="flex: 1; display: flex; flex-direction: column; gap: 3px; text-align: right; min-width: 0">
-                    <span style="font-size: 14px; font-weight: 600; color: var(--ink)">{{ bd.name }}</span>
-                    <span style="font-size: 11.5px; color: var(--ink-3); unicode-bidi: plaintext">{{ bd.date }}</span>
+                    <span style="font-size: 15px; font-weight: 600; color: var(--ink)">{{ bd.name }}</span>
+                    <span style="font-size: 11px; color: var(--ink-3); unicode-bidi: plaintext">{{ bd.date }}</span>
                   </span>
                   <span style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px; flex-shrink: 0">
                     <span style="font-size: 11px; font-weight: 600; color: {{ bd.whenColor }}; background: {{ bd.whenBg }}; border-radius: 999px; padding: 3px 9px">{{ bd.when }}</span>
-                    <span style="font-size: 11.5px; color: var(--ink-3); unicode-bidi: plaintext">{{ bd.age }}</span>
+                    <span style="font-size: 11px; color: var(--ink-3); unicode-bidi: plaintext">{{ bd.age }}</span>
                   </span>
                 </div>
               </sc-for>
@@ -338,12 +338,12 @@
               <sc-for list="{{ events }}" as="ev" hint-placeholder-count="2">
                 <div style="display: flex; align-items: stretch; gap: 14px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 17px 18px; box-sizing: border-box">
                   <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 46px; border-radius: 8px; background: var(--accent-soft); padding: 8px 0">
-                    <span style="font-size: 18px; font-weight: 600; line-height: 1.1; color: var(--accent-ink)">{{ ev.day }}</span>
+                    <span style="font-size: 20px; font-weight: 600; line-height: 1.1; color: var(--accent-ink)">{{ ev.day }}</span>
                     <span style="font-size: 11px; color: var(--accent-ink)">{{ ev.month }}</span>
                   </div>
                   <div style="flex: 1; display: flex; flex-direction: column; gap: 6px; justify-content: center">
-                    <div style="font-size: 14px; font-weight: 600; color: var(--ink)">{{ ev.title }}</div>
-                    <div style="font-size: 12px; color: var(--ink-3); unicode-bidi: plaintext">{{ ev.time }}</div>
+                    <div style="font-size: 15px; font-weight: 600; color: var(--ink)">{{ ev.title }}</div>
+                    <div style="font-size: 13px; color: var(--ink-3); unicode-bidi: plaintext">{{ ev.time }}</div>
                   </div>
                 </div>
               </sc-for>
@@ -352,7 +352,7 @@
 
           <sc-if value="{{ hasBanners }}" hint-placeholder-val="{{ true }}">
             <div style="padding: 30px 24px 0">
-              <div style="position: relative; border-radius: 18px; overflow: hidden; background: var(--accent-soft); aspect-ratio: 328 / 150">
+              <div style="position: relative; border-radius: 20px; overflow: hidden; background: var(--accent-soft); aspect-ratio: 328 / 150">
                 <sc-for list="{{ banners }}" as="b" hint-placeholder-count="3">
                   <div style="position: absolute; inset: 0; opacity: {{ b.opacity }}; transition: opacity 350ms ease; pointer-events: {{ b.events }}">
                     <image-slot id="{{ b.slotId }}" style="width: 100%; height: 100%" placeholder="بانر إعلاني"></image-slot>
@@ -374,7 +374,7 @@
               <button type="button" onClick="{{ an.go }}" style="all: unset; cursor: pointer; display: block; text-align: right; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 19px 20px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
                 <span style="display: flex; align-items: center; gap: 9px">
                   <span style="height: 22px; padding: 0 9px; border-radius: 999px; background: var(--accent-soft); display: flex; align-items: center; font-size: 11px; font-weight: 600; color: var(--accent-ink)">{{ an.tag }}</span>
-                  <span style="font-size: 12px; color: var(--ink-3)">{{ an.date }}</span>
+                  <span style="font-size: 13px; color: var(--ink-3)">{{ an.date }}</span>
                 </span>
                 <span style="display: block; font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--ink); margin-top: 11px">{{ an.title }}</span>
                 <span style="display: block; font-size: 13px; line-height: 1.85; color: var(--ink-2); margin-top: 7px; text-wrap: pretty">{{ an.body }}</span>
@@ -390,18 +390,18 @@
             <div style="font-size: 13px; color: var(--ink-3); margin-top: 6px">الأحد 18 يناير 2026</div>
           </div>
 
-          <div style="position: relative; margin: 0 24px; border-radius: 24px; overflow: hidden; background: linear-gradient(160deg, var(--accent) 0%, var(--accent-press) 100%); padding: 20px 22px 22px; box-sizing: border-box; color: #FFFFFF">
+          <div style="position: relative; margin: 0 24px; border-radius: 20px; overflow: hidden; background: linear-gradient(160deg, var(--accent) 0%, var(--accent-press) 100%); padding: 20px 22px 22px; box-sizing: border-box; color: #FFFFFF">
             <div style="position: absolute; top: -80px; left: -60px; width: 240px; height: 240px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.12); pointer-events: none"></div>
             <div style="position: absolute; bottom: -90px; right: -50px; width: 220px; height: 220px; border-radius: 999px; background: rgba(255,255,255,0.06); pointer-events: none"></div>
 
             <div style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 10px">
               <div style="display: flex; align-items: center; gap: 7px; height: 30px; padding: 0 12px; border-radius: 999px; background: rgba(255,255,255,0.16)">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                <span style="font-size: 12px; font-weight: 500; color: #FFFFFF">رام الله، فلسطين</span>
+                <span style="font-size: 13px; font-weight: 500; color: #FFFFFF">رام الله، فلسطين</span>
               </div>
               <div style="display: flex; align-items: center; gap: 7px; height: 30px; padding: 0 12px; border-radius: 999px; background: rgba(255,255,255,0.16)">
                 <span style="width: 7px; height: 7px; border-radius: 50%; background: #FFFFFF"></span>
-                <span style="font-size: 12px; font-weight: 500; color: #FFFFFF">{{ statusText }}</span>
+                <span style="font-size: 13px; font-weight: 500; color: #FFFFFF">{{ statusText }}</span>
               </div>
             </div>
 
@@ -413,12 +413,12 @@
                 </span>
               </button>
               <div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
-                <div style="font-size: 48px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; unicode-bidi: plaintext; white-space: nowrap">{{ nowTime }}</div>
+                <div style="font-size: 44px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; unicode-bidi: plaintext; white-space: nowrap">{{ nowTime }}</div>
                 <div style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.82)">{{ bigPunchLabel }}</div>
               </div>
             </div>
 
-            <div style="position: relative; display: flex; align-items: stretch; border-radius: 16px; background: rgba(255,255,255,0.12); padding: 14px 0">
+            <div style="position: relative; display: flex; align-items: stretch; border-radius: 14px; background: rgba(255,255,255,0.12); padding: 14px 0">
               <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px">
                 <span style="font-size: 11px; color: rgba(255,255,255,0.72)">الحضور</span>
                 <span style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em; unicode-bidi: plaintext">{{ inTime }}</span>
@@ -438,7 +438,7 @@
             <span style="flex: 1; font-size: 13px; color: var(--ink-2)">أنت داخل نطاق الفرع المسموح للتسجيل</span>
           </div>
 
-          <div style="margin: 12px 24px 0; border-radius: 16px; border: 1px solid var(--line); background: var(--card); overflow: hidden">
+          <div style="margin: 12px 24px 0; border-radius: 14px; border: 1px solid var(--line); background: var(--card); overflow: hidden">
             <div style="position: relative; height: 168px; background: var(--map-ground)">
               <svg viewBox="0 0 328 168" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-label="موقع تسجيل الحضور">
                 <rect x="0" y="0" width="328" height="168" fill="var(--map-ground)"/>
@@ -458,7 +458,7 @@
                 <span style="color: var(--accent-ink); display: flex">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/></svg>
                 </span>
-                <span style="font-size: 11.5px; font-weight: 500; color: var(--ink)">فرع رام الله</span>
+                <span style="font-size: 11px; font-weight: 500; color: var(--ink)">فرع رام الله</span>
               </div>
               <button type="button" onClick="{{ recenterMap }}" aria-label="إعادة التمركز" style="all: unset; cursor: pointer; position: absolute; bottom: 11px; left: 11px; width: 40px; height: 40px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--ink-2); transition: color 150ms" style-hover="color: var(--accent-ink)">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>
@@ -467,7 +467,7 @@
             <div style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-top: 1px solid var(--line)">
               <span style="flex: 1; display: flex; flex-direction: column; gap: 3px; text-align: right">
                 <span style="font-size: 13px; font-weight: 500; color: var(--ink)">رام الله، فلسطين</span>
-                <span style="font-size: 11.5px; color: var(--ink-3); unicode-bidi: plaintext">دقة الموقع ±12 م</span>
+                <span style="font-size: 11px; color: var(--ink-3); unicode-bidi: plaintext">دقة الموقع ±12 م</span>
               </span>
               <span style="font-size: 11px; font-weight: 600; color: var(--ok); background: var(--ok-soft); border-radius: 999px; padding: 4px 10px; flex-shrink: 0">داخل النطاق</span>
             </div>
@@ -478,9 +478,9 @@
             <div style="display: flex; align-items: baseline; gap: 16px">
               <div style="display: flex; align-items: baseline; gap: 5px">
                 <span style="font-size: 28px; font-weight: 600; line-height: 1; letter-spacing: -0.03em; color: var(--ink); unicode-bidi: plaintext">{{ weeklyTotal }}</span>
-                <span style="font-size: 12px; color: var(--ink-3)">ساعة</span>
+                <span style="font-size: 13px; color: var(--ink-3)">ساعة</span>
               </div>
-              <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-3)">
+              <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-3)">
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent)"></span>
                 معدل {{ weeklyAvg }} ساعة / يوم
               </div>
@@ -491,8 +491,8 @@
                   <div style="flex: 1; width: 100%; display: flex; align-items: flex-end">
                     <div style="width: 100%; height: {{ wh.height }}; border-radius: 8px 8px 4px 4px; background: {{ wh.bg }}; transition: height 220ms cubic-bezier(0.32, 0.72, 0, 1)"></div>
                   </div>
-                  <span style="font-size: 10px; font-weight: 500; color: {{ wh.label }}; unicode-bidi: plaintext">{{ wh.value }}</span>
-                  <span style="font-size: 10px; color: var(--ink-3); white-space: nowrap">{{ wh.day }}</span>
+                  <span style="font-size: 11px; font-weight: 500; color: {{ wh.label }}; unicode-bidi: plaintext">{{ wh.value }}</span>
+                  <span style="font-size: 11px; color: var(--ink-3); white-space: nowrap">{{ wh.day }}</span>
                 </div>
               </sc-for>
             </div>
@@ -511,11 +511,11 @@
                   <div style="flex: 1; display: flex; align-items: center; gap: 18px">
                     <div style="display: flex; flex-direction: column; gap: 3px">
                       <span style="font-size: 11px; color: var(--ink-3)">حضور</span>
-                      <span style="font-size: 14px; font-weight: 500; color: var(--ink); unicode-bidi: plaintext">{{ h.in }}</span>
+                      <span style="font-size: 15px; font-weight: 500; color: var(--ink); unicode-bidi: plaintext">{{ h.in }}</span>
                     </div>
                     <div style="display: flex; flex-direction: column; gap: 3px">
                       <span style="font-size: 11px; color: var(--ink-3)">انصراف</span>
-                      <span style="font-size: 14px; font-weight: 500; color: {{ h.outColor }}; unicode-bidi: plaintext">{{ h.out }}</span>
+                      <span style="font-size: 15px; font-weight: 500; color: {{ h.outColor }}; unicode-bidi: plaintext">{{ h.out }}</span>
                     </div>
                   </div>
                   <span style="height: 24px; padding: 0 10px; border-radius: 999px; background: {{ h.tagBg }}; display: flex; align-items: center; font-size: 11px; font-weight: 600; color: {{ h.tagColor }}; white-space: nowrap">{{ h.tag }}</span>
@@ -535,7 +535,7 @@
             </div>
             <div style="display: flex; gap: 8px; margin: 0 0 16px; padding: 0 24px; overflow-x: auto; scrollbar-width: none">
               <sc-for list="{{ subTypeChips }}" as="sf" hint-placeholder-count="5">
-                <button type="button" onClick="{{ sf.go }}" style="all: unset; cursor: pointer; flex-shrink: 0; height: 34px; padding: 0 15px; border-radius: 999px; background: {{ sf.bg }}; border: 1px solid {{ sf.border }}; display: flex; align-items: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12.5px; font-weight: {{ sf.weight }}; color: {{ sf.color }}; white-space: nowrap; transition: background 150ms, border-color 150ms, color 150ms">{{ sf.label }}</button>
+                <button type="button" onClick="{{ sf.go }}" style="all: unset; cursor: pointer; flex-shrink: 0; height: 34px; padding: 0 15px; border-radius: 999px; background: {{ sf.bg }}; border: 1px solid {{ sf.border }}; display: flex; align-items: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: {{ sf.weight }}; color: {{ sf.color }}; white-space: nowrap; transition: background 150ms, border-color 150ms, color 150ms">{{ sf.label }}</button>
               </sc-for>
             </div>
           </sc-if>
@@ -543,7 +543,7 @@
             <div style="margin: 0 24px 18px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 18px; box-sizing: border-box">
               <div style="display: flex; align-items: center; justify-content: space-between">
                 <span style="font-size: 13px; color: var(--ink-3)">{{ balanceLabel }}</span>
-                <button type="button" onClick="{{ openMonth }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 7px; height: 38px; padding: 0 13px; border-radius: 999px; border: 1px solid var(--line); box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12px; color: var(--ink-2); white-space: nowrap; flex-shrink: 0; transition: border-color 150ms" style-hover="border-color: var(--accent)">
+                <button type="button" onClick="{{ openMonth }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 7px; height: 38px; padding: 0 13px; border-radius: 999px; border: 1px solid var(--line); box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; color: var(--ink-2); white-space: nowrap; flex-shrink: 0; transition: border-color 150ms" style-hover="border-color: var(--accent)">
                   {{ balancePeriod }}
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
@@ -552,8 +552,8 @@
                 <div style="margin-top: 6px">
                   <div style="display: flex; align-items: baseline; gap: 6px">
                     <span style="font-size: 44px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; color: var(--ink); unicode-bidi: plaintext">{{ donutValue }}</span>
-                    <span style="font-size: 14px; color: var(--ink-3); unicode-bidi: plaintext">/ {{ leaveTotal }} يوم</span>
-                    <span style="margin-inline-start: auto; height: 26px; padding: 0 11px; border-radius: 999px; background: var(--ok-soft); display: flex; align-items: center; font-size: 12px; font-weight: 600; color: var(--ok)">متبقي {{ donutPct }}</span>
+                    <span style="font-size: 15px; color: var(--ink-3); unicode-bidi: plaintext">/ {{ leaveTotal }} يوم</span>
+                    <span style="margin-inline-start: auto; height: 26px; padding: 0 11px; border-radius: 999px; background: var(--ok-soft); display: flex; align-items: center; font-size: 13px; font-weight: 600; color: var(--ok)">متبقي {{ donutPct }}</span>
                   </div>
                   <div style="display: flex; height: 10px; border-radius: 999px; overflow: hidden; margin-top: 18px; background: var(--accent-soft)">
                     <sc-for list="{{ leaveSegments }}" as="sg" hint-placeholder-count="3">
@@ -576,13 +576,13 @@
               <sc-if value="{{ hasProgress }}" hint-placeholder-val="{{ false }}">
                 <div style="margin-top: 16px">
                   <div style="display: flex; align-items: baseline; gap: 6px">
-                    <span style="font-size: 34px; font-weight: 600; line-height: 1; letter-spacing: -0.03em; color: var(--ink); unicode-bidi: plaintext">{{ balanceValue }}</span>
+                    <span style="font-size: 32px; font-weight: 600; line-height: 1; letter-spacing: -0.03em; color: var(--ink); unicode-bidi: plaintext">{{ balanceValue }}</span>
                     <span style="font-size: 13px; color: var(--ink-3)">{{ balanceUnit }}</span>
                   </div>
                   <div style="height: 10px; border-radius: 999px; background: var(--line); overflow: hidden; margin-top: 16px">
                     <div style="height: 100%; width: {{ progressPct }}; border-radius: 999px; background: var(--accent); transition: width 220ms cubic-bezier(0.32, 0.72, 0, 1)"></div>
                   </div>
-                  <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px; font-size: 12px; color: var(--ink-3)">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px; font-size: 13px; color: var(--ink-3)">
                     <span>مستخدم {{ progressUsed }}</span>
                     <span>متبقي {{ progressLeft }}</span>
                   </div>
@@ -591,7 +591,7 @@
 
               <sc-if value="{{ hasPlainBalance }}" hint-placeholder-val="{{ false }}">
                 <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 14px">
-                  <span style="font-size: 40px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; color: var(--ink); unicode-bidi: plaintext">{{ balanceValue }}</span>
+                  <span style="font-size: 44px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; color: var(--ink); unicode-bidi: plaintext">{{ balanceValue }}</span>
                   <span style="font-size: 13px; color: var(--ink-3)">{{ balanceUnit }}</span>
                 </div>
               </sc-if>
@@ -601,8 +601,8 @@
                   <sc-for list="{{ balanceParts }}" as="bp" hint-placeholder-count="4">
                     <div style="display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line)">
                       <span style="width: 7px; height: 7px; border-radius: 50%; background: {{ bp.dot }}"></span>
-                      <span style="font-size: 12px; color: var(--ink-2)">{{ bp.label }}</span>
-                      <span style="font-size: 12px; font-weight: 600; color: var(--ink); unicode-bidi: plaintext">{{ bp.value }}</span>
+                      <span style="font-size: 13px; color: var(--ink-2)">{{ bp.label }}</span>
+                      <span style="font-size: 13px; font-weight: 600; color: var(--ink); unicode-bidi: plaintext">{{ bp.value }}</span>
                     </div>
                   </sc-for>
                 </div>
@@ -612,7 +612,7 @@
 
           <sc-if value="{{ isReqOverview }}" hint-placeholder-val="{{ false }}">
             <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 24px 12px">
-              <span style="font-size: 16px; font-weight: 600; color: var(--ink)">آخر الطلبات</span>
+              <span style="font-size: 17px; font-weight: 600; color: var(--ink)">آخر الطلبات</span>
               <button type="button" onClick="{{ viewAllReqs }}" style="all: unset; cursor: pointer; padding: 12px 6px; margin: -12px -6px; display: flex; align-items: center; gap: 5px; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 500; color: var(--accent-ink); transition: opacity 150ms" style-hover="opacity: 0.75">
                 عرض الكل
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
@@ -621,14 +621,14 @@
           </sc-if>
           <sc-if value="{{ noFilterResults }}" hint-placeholder-val="{{ false }}">
             <div style="margin: 0 24px; padding: 34px 20px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); display: flex; flex-direction: column; align-items: center; gap: 9px; text-align: center">
-              <span style="font-size: 14px; font-weight: 600; color: var(--ink)">لا يوجد طلبات بهذه الفلترة</span>
-              <button type="button" onClick="{{ clearFilters }}" style="all: unset; cursor: pointer; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 12.5px; font-weight: 600; color: var(--accent-ink); transition: opacity 150ms" style-hover="opacity: 0.75">مسح الفلترة</button>
+              <span style="font-size: 15px; font-weight: 600; color: var(--ink)">لا يوجد طلبات بهذه الفلترة</span>
+              <button type="button" onClick="{{ clearFilters }}" style="all: unset; cursor: pointer; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 13px; font-weight: 600; color: var(--accent-ink); transition: opacity 150ms" style-hover="opacity: 0.75">مسح الفلترة</button>
             </div>
           </sc-if>
           <sc-if value="{{ hasRequests }}" hint-placeholder-val="{{ true }}">
             <div style="margin: 0 24px; display: flex; flex-direction: column; gap: 12px">
               <sc-for list="{{ requests }}" as="rq" hint-placeholder-count="4">
-                <button type="button" onClick="{{ rq.go }}" style="all: unset; cursor: pointer; display: block; text-align: right; border-radius: 16px; border: 1px solid var(--line); background: var(--card); padding: 16px 18px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
+                <button type="button" onClick="{{ rq.go }}" style="all: unset; cursor: pointer; display: block; text-align: right; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 16px 18px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
                   <span style="display: flex; align-items: center; gap: 14px">
                     <span style="width: 46px; height: 46px; border-radius: 14px; background: {{ rq.iconBg }}; display: flex; align-items: center; justify-content: center; color: {{ rq.iconColor }}; flex-shrink: 0">{{ rq.icon }}</span>
                     <span style="flex: 1; display: flex; flex-direction: column; gap: 5px; min-width: 0">
@@ -636,7 +636,7 @@
                         <span style="font-size: 15px; font-weight: 600; color: var(--ink)">{{ rq.kind }}</span>
                         <span style="height: 22px; padding: 0 9px; border-radius: 999px; background: {{ rq.tagBg }}; display: flex; align-items: center; font-size: 11px; font-weight: 600; color: {{ rq.tagColor }}; white-space: nowrap">{{ rq.status }}</span>
                       </span>
-                      <span style="font-size: 12px; color: var(--ink-3); unicode-bidi: plaintext">{{ rq.ref }} · {{ rq.date }}</span>
+                      <span style="font-size: 13px; color: var(--ink-3); unicode-bidi: plaintext">{{ rq.ref }} · {{ rq.date }}</span>
                     </span>
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
                   </span>
@@ -661,15 +661,15 @@
         <sc-if value="{{ isRequestDetail }}" hint-placeholder-val="{{ false }}">
           <div style="margin: 0 24px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 24px 22px; box-sizing: border-box">
             <div style="display: flex; align-items: center; justify-content: space-between">
-              <span style="height: 26px; padding: 0 11px; border-radius: 999px; background: {{ detailTagBg }}; display: flex; align-items: center; font-size: 12px; font-weight: 600; color: {{ detailTagColor }}">{{ detailStatus }}</span>
-              <span style="font-size: 12px; color: var(--ink-3); unicode-bidi: plaintext">{{ detailRef }}</span>
+              <span style="height: 26px; padding: 0 11px; border-radius: 999px; background: {{ detailTagBg }}; display: flex; align-items: center; font-size: 13px; font-weight: 600; color: {{ detailTagColor }}">{{ detailStatus }}</span>
+              <span style="font-size: 13px; color: var(--ink-3); unicode-bidi: plaintext">{{ detailRef }}</span>
             </div>
-            <div style="font-size: 19px; font-weight: 600; color: var(--ink); margin-top: 16px">{{ detailTitle }}</div>
+            <div style="font-size: 20px; font-weight: 600; color: var(--ink); margin-top: 16px">{{ detailTitle }}</div>
             <div style="display: flex; flex-direction: column; gap: 0; margin-top: 6px">
               <sc-for list="{{ detailRows }}" as="r" hint-placeholder-count="5">
                 <div style="display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--line)">
                   <span style="font-size: 13px; color: var(--ink-3); min-width: 116px; flex-shrink: 0">{{ r.label }}</span>
-                  <span style="flex: 1; font-size: 14px; font-weight: 500; color: var(--ink); unicode-bidi: plaintext; text-wrap: pretty">{{ r.value }}</span>
+                  <span style="flex: 1; font-size: 15px; font-weight: 500; color: var(--ink); unicode-bidi: plaintext; text-wrap: pretty">{{ r.value }}</span>
                 </div>
               </sc-for>
             </div>
@@ -681,7 +681,7 @@
                 <span style="color: var(--bad); display: flex">
                   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
                 </span>
-                <span style="font-size: 14px; font-weight: 600; color: var(--bad)">سبب الرفض</span>
+                <span style="font-size: 15px; font-weight: 600; color: var(--bad)">سبب الرفض</span>
               </div>
               <div style="font-size: 13px; line-height: 1.8; color: var(--ink); margin-top: 10px; text-wrap: pretty">{{ rejectReason }}</div>
             </div>
@@ -692,27 +692,27 @@
               <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent-ink); flex-shrink: 0">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
               </span>
-              <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: var(--ink)">السبب</span>
+              <span style="flex: 1; text-align: right; font-size: 15px; font-weight: 500; color: var(--ink)">السبب</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </button>
             <button type="button" onClick="{{ goAdminNotes }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 13px 18px; box-sizing: border-box; transition: background 150ms" style-hover="background: var(--accent-soft)">
               <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink)">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h12"/></svg>
               </span>
-              <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: var(--ink)">ملاحظات الإدارة</span>
+              <span style="flex: 1; text-align: right; font-size: 15px; font-weight: 500; color: var(--ink)">ملاحظات الإدارة</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </button>
             <button type="button" onClick="{{ openAttachment }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 13px 18px; box-sizing: border-box; border-top: 1px solid var(--line); transition: background 150ms" style-hover="background: var(--accent-soft)">
               <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink)">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13.234 20.252 21 12.3"/><path d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486"/></svg>
               </span>
-              <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: var(--ink)">المرفقات</span>
-              <span style="font-size: 12px; color: var(--ink-3)">ملف واحد</span>
+              <span style="flex: 1; text-align: right; font-size: 15px; font-weight: 500; color: var(--ink)">المرفقات</span>
+              <span style="font-size: 13px; color: var(--ink-3)">ملف واحد</span>
             </button>
           </div>
 
           <div style="margin: 12px 24px 0; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 24px 22px; box-sizing: border-box">
-            <div style="font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 18px">مراحل الطلب</div>
+            <div style="font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 18px">مراحل الطلب</div>
             <sc-for list="{{ timeline }}" as="tl" hint-placeholder-count="4">
               <div style="display: flex; gap: 14px">
                 <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0">
@@ -725,8 +725,8 @@
                   </sc-if>
                 </div>
                 <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; padding-bottom: {{ tl.pad }}">
-                  <span style="font-size: 14px; font-weight: {{ tl.labelWeight }}; color: {{ tl.labelColor }}">{{ tl.label }}</span>
-                  <span style="font-size: 12px; color: var(--ink-3); unicode-bidi: plaintext">{{ tl.date }}</span>
+                  <span style="font-size: 15px; font-weight: {{ tl.labelWeight }}; color: {{ tl.labelColor }}">{{ tl.label }}</span>
+                  <span style="font-size: 13px; color: var(--ink-3); unicode-bidi: plaintext">{{ tl.date }}</span>
                 </div>
               </div>
             </sc-for>
@@ -749,7 +749,7 @@
             <span style="color: var(--ink-3); display: flex; flex-shrink: 0">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
             </span>
-            <input type="text" onInput="{{ setEmpQuery }}" placeholder="ابحث بالاسم أو المسمى" style="flex: 1; min-width: 0; border: 0; background: transparent; outline: none; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; color: var(--ink); direction: rtl" />
+            <input type="text" onInput="{{ setEmpQuery }}" placeholder="ابحث بالاسم أو المسمى" style="flex: 1; min-width: 0; border: 0; background: transparent; outline: none; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 15px; color: var(--ink); direction: rtl" />
             <sc-if value="{{ hasEmpQuery }}" hint-placeholder-val="{{ false }}">
               <button type="button" onClick="{{ clearEmpQuery }}" aria-label="مسح البحث" style="all: unset; cursor: pointer; display: flex; color: var(--ink-3); flex-shrink: 0; transition: color 150ms" style-hover="color: var(--ink)">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
@@ -758,17 +758,17 @@
           </div>
           <sc-if value="{{ noEmpResults }}" hint-placeholder-val="{{ false }}">
             <div style="margin: 0 24px; padding: 34px 20px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); display: flex; flex-direction: column; align-items: center; gap: 7px; text-align: center">
-              <span style="font-size: 14px; font-weight: 600; color: var(--ink)">لا يوجد موظف بهذا الاسم</span>
-              <span style="font-size: 12.5px; color: var(--ink-3)">جرّب اسم أو مسمى وظيفي مختلف</span>
+              <span style="font-size: 15px; font-weight: 600; color: var(--ink)">لا يوجد موظف بهذا الاسم</span>
+              <span style="font-size: 13px; color: var(--ink-3)">جرّب اسم أو مسمى وظيفي مختلف</span>
             </div>
           </sc-if>
           <div style="margin: 0 24px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); overflow: hidden">
             <sc-for list="{{ employees }}" as="em" hint-placeholder-count="6">
               <button type="button" onClick="{{ em.go }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 72px; padding: 13px 18px; box-sizing: border-box; border-top: {{ em.borderTop }}; transition: background 150ms" style-hover="background: var(--accent-soft)">
-                <span style="width: 46px; height: 46px; border-radius: 999px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; color: var(--accent-ink); flex-shrink: 0">{{ em.initials }}</span>
+                <span style="width: 46px; height: 46px; border-radius: 999px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; color: var(--accent-ink); flex-shrink: 0">{{ em.initials }}</span>
                 <span style="flex: 1; display: flex; flex-direction: column; gap: 4px; text-align: right; min-width: 0">
                   <span style="font-size: 15px; font-weight: 600; color: var(--ink)">{{ em.name }}</span>
-                  <span style="font-size: 12px; color: var(--ink-3)">{{ em.role }} · {{ em.dept }}</span>
+                  <span style="font-size: 13px; color: var(--ink-3)">{{ em.role }} · {{ em.dept }}</span>
                 </span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
               </button>
@@ -783,11 +783,11 @@
             <span style="font-size: 20px; font-weight: 600; color: var(--ink); margin-top: 14px">{{ empName }}</span>
             <span style="font-size: 13px; color: var(--ink-3); margin-top: 5px">{{ empRole }} · {{ empDept }}</span>
             <div style="display: flex; gap: 10px; margin-top: 20px; width: 100%">
-              <button type="button" onClick="{{ callEmp }}" style="all: unset; cursor: pointer; flex: 1; height: 46px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 500; color: #FFFFFF; transition: opacity 150ms" style-hover="opacity: 0.9">
+              <button type="button" onClick="{{ callEmp }}" style="all: unset; cursor: pointer; flex: 1; height: 46px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 15px; font-weight: 500; color: #FFFFFF; transition: opacity 150ms" style-hover="opacity: 0.9">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
                 اتصال
               </button>
-              <button type="button" onClick="{{ mailEmp }}" style="all: unset; cursor: pointer; flex: 1; height: 46px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); display: flex; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink); transition: border-color 150ms" style-hover="border-color: var(--accent)">
+              <button type="button" onClick="{{ mailEmp }}" style="all: unset; cursor: pointer; flex: 1; height: 46px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); display: flex; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 15px; font-weight: 500; color: var(--ink); transition: border-color 150ms" style-hover="border-color: var(--accent)">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></svg>
                 بريد
               </button>
@@ -798,8 +798,8 @@
               <div style="display: flex; align-items: center; gap: 14px; min-height: 60px; padding: 12px 18px; box-sizing: border-box; border-top: {{ er.borderTop }}">
                 <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink)">{{ er.glyph }}</span>
                 <span style="flex: 1; display: flex; flex-direction: column; gap: 3px; text-align: right">
-                  <span style="font-size: 12px; color: var(--ink-3)">{{ er.label }}</span>
-                  <span style="font-size: 14px; font-weight: 500; color: var(--ink); unicode-bidi: plaintext">{{ er.value }}</span>
+                  <span style="font-size: 13px; color: var(--ink-3)">{{ er.label }}</span>
+                  <span style="font-size: 15px; font-weight: 500; color: var(--ink); unicode-bidi: plaintext">{{ er.value }}</span>
                 </span>
               </div>
             </sc-for>
@@ -814,11 +814,11 @@
                 <div style="display: flex; align-items: center; justify-content: space-between">
                   <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">{{ fd.label }}</span>
                   <sc-if value="{{ fd.hint }}" hint-placeholder-val="{{ false }}">
-                    <span style="font-size: 12px; color: var(--accent-ink)">{{ fd.hint }}</span>
+                    <span style="font-size: 13px; color: var(--accent-ink)">{{ fd.hint }}</span>
                   </sc-if>
                 </div>
                 <button type="button" onClick="{{ fd.go }}" style="all: unset; cursor: pointer; height: 54px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 17px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
-                  <span style="font-size: 14px; color: {{ fd.color }}; unicode-bidi: plaintext">{{ fd.value }}</span>
+                  <span style="font-size: 15px; color: {{ fd.color }}; unicode-bidi: plaintext">{{ fd.value }}</span>
                   <span style="color: var(--ink-3); display: flex">{{ fd.glyph }}</span>
                 </button>
               </div>
@@ -826,9 +826,9 @@
 
             <div style="display: flex; flex-direction: column; gap: 9px">
               <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">السبب</span>
-              <textarea onInput="{{ setReason }}" placeholder="اكتب سبب الطلب" style="min-height: 96px; width: 100%; resize: none; border-radius: 14px; border: 1px solid {{ reasonBorder }}; background: var(--card); padding: 15px 17px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; line-height: 1.7; color: var(--ink); direction: rtl; outline: none; transition: border-color 150ms"></textarea>
+              <textarea onInput="{{ setReason }}" placeholder="اكتب سبب الطلب" style="min-height: 96px; width: 100%; resize: none; border-radius: 14px; border: 1px solid {{ reasonBorder }}; background: var(--card); padding: 15px 17px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 15px; line-height: 1.7; color: var(--ink); direction: rtl; outline: none; transition: border-color 150ms"></textarea>
               <sc-if value="{{ reasonErr }}" hint-placeholder-val="{{ false }}">
-                <span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--bad)">
+                <span style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--bad)">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
                   اكتب سبب الطلب قبل الإرسال
                 </span>
@@ -838,12 +838,12 @@
             <div style="display: flex; flex-direction: column; gap: 9px">
               <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">المرفقات</span>
               <button type="button" onClick="{{ openAttachment }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 13px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 14px 16px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: background 150ms, border-color 150ms" style-hover="background: var(--accent-soft); border-color: var(--accent)">
-                <span style="width: 42px; height: 42px; border-radius: 12px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent-ink); flex-shrink: 0">
+                <span style="width: 42px; height: 42px; border-radius: 14px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent-ink); flex-shrink: 0">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13.234 20.252 21 12.3"/><path d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486"/></svg>
                 </span>
                 <span style="flex: 1; display: flex; flex-direction: column; gap: 3px; text-align: right">
-                  <span style="font-size: 14px; font-weight: 500; color: var(--ink)">إضافة مرفق</span>
-                  <span style="font-size: 12px; color: var(--ink-3)">صورة أو PDF · حتى 5 ميجا</span>
+                  <span style="font-size: 15px; font-weight: 500; color: var(--ink)">إضافة مرفق</span>
+                  <span style="font-size: 13px; color: var(--ink-3)">صورة أو PDF · حتى 5 ميجا</span>
                 </span>
                 <span style="width: 34px; height: 34px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; justify-content: center; color: #FFFFFF; flex-shrink: 0">
                   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
@@ -856,7 +856,7 @@
                 <span style="color: var(--warn); display: flex">
                   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                 </span>
-                <span style="font-size: 14px; font-weight: 600; color: var(--ink)">{{ policyTitle }}</span>
+                <span style="font-size: 15px; font-weight: 600; color: var(--ink)">{{ policyTitle }}</span>
               </div>
               <div style="font-size: 13px; line-height: 1.85; color: var(--ink-2); margin-top: 10px; text-wrap: pretty">{{ policyBody }}</div>
             </div>
@@ -868,22 +868,22 @@
         <!-- ── SALARIES ── -->
         <sc-if value="{{ isSalaries }}" hint-placeholder-val="{{ false }}">
           <div style="margin: 0 24px 18px; border-radius: 14px; background: var(--accent); padding: 20px; box-sizing: border-box">
-            <div style="font-size: 12px; color: rgba(255,255,255,0.72)">صافي راتب يناير 2026</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.72)">صافي راتب يناير 2026</div>
             <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 12px">
-              <span style="font-size: 40px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; color: var(--on-accent); unicode-bidi: plaintext">{{ netPay }}</span>
-              <span style="font-size: 14px; color: rgba(255,255,255,0.8)">₪</span>
+              <span style="font-size: 44px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; color: var(--on-accent); unicode-bidi: plaintext">{{ netPay }}</span>
+              <span style="font-size: 15px; color: rgba(255,255,255,0.8)">₪</span>
             </div>
             <div style="display: flex; align-items: center; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.22)">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <span style="font-size: 12px; color: rgba(255,255,255,0.8)">تم التحويل 28 يناير 2026</span>
+              <span style="font-size: 13px; color: rgba(255,255,255,0.8)">تم التحويل 28 يناير 2026</span>
             </div>
           </div>
           <div style="margin: 0 24px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); overflow: hidden">
             <sc-for list="{{ salaries }}" as="sl" hint-placeholder-count="6">
               <button type="button" onClick="{{ sl.go }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 70px; padding: 14px 18px; box-sizing: border-box; border-top: {{ sl.divider }}; transition: background 150ms" style-hover="background: var(--accent-soft)">
                 <span style="flex: 1; display: flex; flex-direction: column; gap: 5px; text-align: right">
-                  <span style="font-size: 14px; font-weight: 500; color: var(--ink)">{{ sl.month }}</span>
-                  <span style="font-size: 12px; color: var(--ink-3)">{{ sl.date }}</span>
+                  <span style="font-size: 15px; font-weight: 500; color: var(--ink)">{{ sl.month }}</span>
+                  <span style="font-size: 13px; color: var(--ink-3)">{{ sl.date }}</span>
                 </span>
                 <span style="font-size: 15px; font-weight: 600; color: var(--ink); unicode-bidi: plaintext; white-space: nowrap">{{ sl.total }}</span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
@@ -897,8 +897,8 @@
           <div style="margin: 0 24px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 24px 22px; box-sizing: border-box">
             <div style="font-size: 13px; color: var(--ink-3)">صافي الراتب</div>
             <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 12px">
-              <span style="font-size: 40px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; color: var(--ink); unicode-bidi: plaintext">{{ netPay }}</span>
-              <span style="font-size: 14px; color: var(--ink-3)">₪</span>
+              <span style="font-size: 44px; font-weight: 600; line-height: 1; letter-spacing: -0.035em; color: var(--ink); unicode-bidi: plaintext">{{ netPay }}</span>
+              <span style="font-size: 15px; color: var(--ink-3)">₪</span>
             </div>
             <div style="margin-top: 20px">
               <sc-for list="{{ payslip }}" as="p" hint-placeholder-count="6">
@@ -910,7 +910,7 @@
                     </button>
                   </sc-if>
                   <span style="flex: 1"></span>
-                  <span style="font-size: 14px; font-weight: 500; color: {{ p.color }}; unicode-bidi: plaintext">{{ p.value }}</span>
+                  <span style="font-size: 15px; font-weight: 500; color: {{ p.color }}; unicode-bidi: plaintext">{{ p.value }}</span>
                 </div>
               </sc-for>
             </div>
@@ -920,12 +920,12 @@
             <div style="border-radius: 14px; border: 1px solid var(--line); background: var(--card); overflow: hidden">
               <sc-for list="{{ receipts }}" as="rc" hint-placeholder-count="2">
                 <button type="button" onClick="{{ rc.open }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 13px; width: 100%; min-height: 62px; padding: 12px 16px; box-sizing: border-box; border-top: {{ rc.divider }}; transition: background 150ms" style-hover="background: var(--accent-soft)">
-                  <span style="width: 38px; height: 38px; border-radius: 10px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent-ink); flex-shrink: 0">
+                  <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent-ink); flex-shrink: 0">
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
                   </span>
                   <span style="flex: 1; display: flex; flex-direction: column; gap: 3px; text-align: right; min-width: 0">
-                    <span style="font-size: 13.5px; font-weight: 500; color: var(--ink)">{{ rc.name }}</span>
-                    <span style="font-size: 11.5px; color: var(--ink-3); unicode-bidi: plaintext">{{ rc.meta }}</span>
+                    <span style="font-size: 13px; font-weight: 500; color: var(--ink)">{{ rc.name }}</span>
+                    <span style="font-size: 11px; color: var(--ink-3); unicode-bidi: plaintext">{{ rc.meta }}</span>
                   </span>
                   <span style="color: var(--ink-3); display: flex; flex-shrink: 0">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
@@ -946,12 +946,12 @@
         <sc-if value="{{ isLog }}" hint-placeholder-val="{{ false }}">
           <div style="padding: 0 24px 16px">
             <button type="button" onClick="{{ openRange }}" style="all: unset; cursor: pointer; width: 100%; height: 56px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); display: flex; align-items: center; gap: 12px; padding: 0 16px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
-              <span style="width: 38px; height: 38px; border-radius: 10px; background: var(--bg); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--ink-3); flex-shrink: 0">
+              <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--bg); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--ink-3); flex-shrink: 0">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><path d="M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M3 10h18"/></svg>
               </span>
               <span style="flex: 1; display: flex; flex-direction: column; gap: 2px; align-items: flex-start">
                 <span style="font-size: 11px; color: var(--ink-3)">الفترة</span>
-                <span style="font-size: 14px; font-weight: 500; color: var(--ink); unicode-bidi: plaintext">{{ logRangeLabel }}</span>
+                <span style="font-size: 15px; font-weight: 500; color: var(--ink); unicode-bidi: plaintext">{{ logRangeLabel }}</span>
               </span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
             </button>
@@ -959,14 +959,14 @@
           <div style="display: flex; gap: 10px; padding: 0 24px 18px">
             <sc-for list="{{ logSummary }}" as="ls" hint-placeholder-count="3">
               <div style="flex: 1; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 14px 15px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px">
-                <span style="font-size: 12px; color: var(--ink-3)">{{ ls.label }}</span>
+                <span style="font-size: 13px; color: var(--ink-3)">{{ ls.label }}</span>
                 <span style="font-size: 24px; font-weight: 600; line-height: 1; letter-spacing: -0.025em; color: {{ ls.color }}">{{ ls.value }}</span>
               </div>
             </sc-for>
           </div>
           <div style="margin: 0 24px 18px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 20px; box-sizing: border-box">
             <div style="display: flex; align-items: baseline; justify-content: space-between">
-              <div style="font-size: 14px; font-weight: 600; color: var(--ink)">ساعات الدوام</div>
+              <div style="font-size: 15px; font-weight: 600; color: var(--ink)">ساعات الدوام</div>
               <div style="display: flex; align-items: baseline; gap: 5px">
                 <span style="font-size: 20px; font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: var(--ink); unicode-bidi: plaintext">{{ weeklyTotal }}</span>
                 <span style="font-size: 11px; color: var(--ink-3)">ساعة</span>
@@ -978,37 +978,37 @@
                   <div style="flex: 1; width: 100%; display: flex; align-items: flex-end">
                     <div style="width: 100%; height: {{ wh.height }}; border-radius: 8px 8px 4px 4px; background: {{ wh.bg }}; transition: height 220ms cubic-bezier(0.32, 0.72, 0, 1)"></div>
                   </div>
-                  <span style="font-size: 10px; color: var(--ink-3); white-space: nowrap">{{ wh.day }}</span>
+                  <span style="font-size: 11px; color: var(--ink-3); white-space: nowrap">{{ wh.day }}</span>
                 </div>
               </sc-for>
             </div>
           </div>
           <div style="display: flex; align-items: baseline; justify-content: space-between; padding: 4px 24px 12px">
             <div style="font-size: 15px; font-weight: 600; color: var(--ink)">الحركات</div>
-            <div style="font-size: 12px; color: var(--ink-3)">{{ logCount }} خلال الفترة</div>
+            <div style="font-size: 13px; color: var(--ink-3)">{{ logCount }} خلال الفترة</div>
           </div>
           <sc-if value="{{ hasHistory }}" hint-placeholder-val="{{ true }}">
             <div style="margin: 0 24px; display: flex; flex-direction: column; gap: 10px">
               <sc-for list="{{ logRows }}" as="h" hint-placeholder-count="8">
                 <div style="display: flex; align-items: center; gap: 13px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 13px 14px; box-sizing: border-box">
-                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 48px; height: 52px; border-radius: 12px; background: {{ h.dateBg }}; flex-shrink: 0">
-                    <span style="font-size: 18px; font-weight: 700; line-height: 1; color: {{ h.dateColor }}">{{ h.day }}</span>
-                    <span style="font-size: 10px; color: {{ h.dateSub }}; margin-top: 3px">{{ h.weekday }}</span>
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 48px; height: 52px; border-radius: 14px; background: {{ h.dateBg }}; flex-shrink: 0">
+                    <span style="font-size: 20px; font-weight: 700; line-height: 1; color: {{ h.dateColor }}">{{ h.day }}</span>
+                    <span style="font-size: 11px; color: {{ h.dateSub }}; margin-top: 3px">{{ h.weekday }}</span>
                   </div>
                   <div style="flex: 1; display: flex; flex-direction: column; gap: 7px">
                     <div style="display: flex; align-items: center; gap: 8px">
-                      <span style="width: 22px; height: 22px; border-radius: 7px; background: var(--ok-soft); display: flex; align-items: center; justify-content: center; color: var(--ok); flex-shrink: 0">
+                      <span style="width: 22px; height: 22px; border-radius: 8px; background: var(--ok-soft); display: flex; align-items: center; justify-content: center; color: var(--ok); flex-shrink: 0">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
                       </span>
-                      <span style="font-size: 12px; color: var(--ink-3)">حضور</span>
-                      <span style="font-size: 13.5px; font-weight: 600; color: var(--ink); unicode-bidi: plaintext">{{ h.in }}</span>
+                      <span style="font-size: 13px; color: var(--ink-3)">حضور</span>
+                      <span style="font-size: 13px; font-weight: 600; color: var(--ink); unicode-bidi: plaintext">{{ h.in }}</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px">
-                      <span style="width: 22px; height: 22px; border-radius: 7px; background: {{ h.outIconBg }}; display: flex; align-items: center; justify-content: center; color: {{ h.outIconColor }}; flex-shrink: 0">
+                      <span style="width: 22px; height: 22px; border-radius: 8px; background: {{ h.outIconBg }}; display: flex; align-items: center; justify-content: center; color: {{ h.outIconColor }}; flex-shrink: 0">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
                       </span>
-                      <span style="font-size: 12px; color: var(--ink-3)">انصراف</span>
-                      <span style="font-size: 13.5px; font-weight: 600; color: {{ h.outColor }}; unicode-bidi: plaintext">{{ h.out }}</span>
+                      <span style="font-size: 13px; color: var(--ink-3)">انصراف</span>
+                      <span style="font-size: 13px; font-weight: 600; color: {{ h.outColor }}; unicode-bidi: plaintext">{{ h.out }}</span>
                     </div>
                   </div>
                   <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px; align-self: stretch">
@@ -1042,8 +1042,8 @@
           </div>
           <div style="display: flex; gap: 7px; padding: 0 24px 18px; overflow-x: auto; scrollbar-width: none">
             <sc-for list="{{ weekStrip }}" as="d" hint-placeholder-count="7">
-              <button type="button" onClick="{{ d.go }}" style="all: unset; cursor: pointer; flex: 1 0 auto; min-width: 60px; padding: 16px 8px 16px; border-radius: 16px; background: {{ d.bg }}; border: 1px solid {{ d.border }}; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 9px; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: background 150ms, border-color 150ms">
-                <span style="font-size: 12px; color: {{ d.sub }}">{{ d.weekday }}</span>
+              <button type="button" onClick="{{ d.go }}" style="all: unset; cursor: pointer; flex: 1 0 auto; min-width: 60px; padding: 16px 8px 16px; border-radius: 14px; background: {{ d.bg }}; border: 1px solid {{ d.border }}; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 9px; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: background 150ms, border-color 150ms">
+                <span style="font-size: 13px; color: {{ d.sub }}">{{ d.weekday }}</span>
                 <span style="font-size: 20px; font-weight: 700; line-height: 1; color: {{ d.color }}">{{ d.day }}</span>
               </button>
             </sc-for>
@@ -1054,8 +1054,8 @@
                 <button type="button" onClick="{{ rm.go }}" style="all: unset; cursor: pointer; display: flex; align-items: stretch; gap: 14px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 17px 18px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
                   <span style="width: 3px; border-radius: 999px; background: var(--accent); flex-shrink: 0"></span>
                   <span style="flex: 1; display: flex; flex-direction: column; gap: 7px; text-align: right">
-                    <span style="font-size: 14px; font-weight: 600; color: var(--ink)">{{ rm.title }}</span>
-                    <span style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-3)">
+                    <span style="font-size: 15px; font-weight: 600; color: var(--ink)">{{ rm.title }}</span>
+                    <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-3)">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20"/><path d="M12 6v6l4 2"/></svg>
                       <span style="unicode-bidi: plaintext">{{ rm.time }}</span>
                     </span>
@@ -1079,7 +1079,7 @@
               <button type="button" onClick="{{ an.go }}" style="all: unset; cursor: pointer; display: block; text-align: right; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 19px 20px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
                 <span style="display: flex; align-items: center; gap: 9px">
                   <span style="height: 22px; padding: 0 9px; border-radius: 999px; background: var(--accent-soft); display: flex; align-items: center; font-size: 11px; font-weight: 600; color: var(--accent-ink)">{{ an.tag }}</span>
-                  <span style="font-size: 12px; color: var(--ink-3)">{{ an.date }}</span>
+                  <span style="font-size: 13px; color: var(--ink-3)">{{ an.date }}</span>
                 </span>
                 <span style="display: block; font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--ink); margin-top: 11px">{{ an.title }}</span>
                 <span style="display: block; font-size: 13px; line-height: 1.85; color: var(--ink-2); margin-top: 7px; text-wrap: pretty">{{ an.body }}</span>
@@ -1094,12 +1094,12 @@
             <sc-if value="{{ hasArticleMeta }}" hint-placeholder-val="{{ false }}">
               <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px">
                 <span style="height: 22px; padding: 0 9px; border-radius: 999px; background: var(--accent-soft); display: flex; align-items: center; font-size: 11px; font-weight: 600; color: var(--accent-ink)">{{ articleTag }}</span>
-                <span style="font-size: 12px; color: var(--ink-3)">{{ articleDate }}</span>
+                <span style="font-size: 13px; color: var(--ink-3)">{{ articleDate }}</span>
               </div>
             </sc-if>
             <div style="font-size: 20px; font-weight: 600; line-height: 1.4; letter-spacing: -0.015em; color: var(--ink)">{{ articleTitle }}</div>
             <sc-for list="{{ articleBody }}" as="p" hint-placeholder-count="3">
-              <p style="font-size: 14px; line-height: 1.95; color: var(--ink-2); margin: 16px 0 0; text-wrap: pretty">{{ p }}</p>
+              <p style="font-size: 15px; line-height: 1.95; color: var(--ink-2); margin: 16px 0 0; text-wrap: pretty">{{ p }}</p>
             </sc-for>
           </div>
         </sc-if>
@@ -1112,8 +1112,8 @@
                 <div style="display: flex; align-items: flex-start; gap: 13px; padding: 18px; box-sizing: border-box; border-top: {{ n.divider }}; background: {{ n.bg }}">
                   <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink); margin-top: 1px">{{ n.glyph }}</span>
                   <span style="flex: 1; display: flex; flex-direction: column; gap: 6px">
-                    <span style="font-size: 14px; font-weight: 500; line-height: 1.55; color: var(--ink); text-wrap: pretty">{{ n.text }}</span>
-                    <span style="font-size: 12px; color: var(--ink-3)">{{ n.time }}</span>
+                    <span style="font-size: 15px; font-weight: 500; line-height: 1.55; color: var(--ink); text-wrap: pretty">{{ n.text }}</span>
+                    <span style="font-size: 13px; color: var(--ink-3)">{{ n.time }}</span>
                   </span>
                   <sc-if value="{{ n.fresh }}" hint-placeholder-val="{{ false }}">
                     <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px"></span>
@@ -1131,22 +1131,22 @@
               <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">النوع</span>
               <div style="display: flex; gap: 8px">
                 <sc-for list="{{ suggestTypes }}" as="sg" hint-placeholder-count="2">
-                  <button type="button" onClick="{{ sg.go }}" style="all: unset; cursor: pointer; flex: 1; height: 48px; border-radius: 14px; background: {{ sg.bg }}; border: 1px solid {{ sg.border }}; display: flex; align-items: center; justify-content: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: {{ sg.weight }}; color: {{ sg.color }}; transition: background 150ms, color 150ms, border-color 150ms">{{ sg.label }}</button>
+                  <button type="button" onClick="{{ sg.go }}" style="all: unset; cursor: pointer; flex: 1; height: 48px; border-radius: 14px; background: {{ sg.bg }}; border: 1px solid {{ sg.border }}; display: flex; align-items: center; justify-content: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 15px; font-weight: {{ sg.weight }}; color: {{ sg.color }}; transition: background 150ms, color 150ms, border-color 150ms">{{ sg.label }}</button>
                 </sc-for>
               </div>
             </div>
             <div style="display: flex; flex-direction: column; gap: 9px">
               <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">العنوان</span>
-              <div style="height: 54px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); display: flex; align-items: center; padding: 0 17px; box-sizing: border-box; font-size: 14px; color: var(--ink-3)">عنوان مختصر</div>
+              <div style="height: 54px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); display: flex; align-items: center; padding: 0 17px; box-sizing: border-box; font-size: 15px; color: var(--ink-3)">عنوان مختصر</div>
             </div>
             <div style="display: flex; flex-direction: column; gap: 9px">
               <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">التفاصيل</span>
-              <div style="min-height: 130px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 15px 17px; box-sizing: border-box; font-size: 14px; line-height: 1.7; color: var(--ink-3)">اكتب تفاصيل {{ suggestType }}</div>
+              <div style="min-height: 130px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 15px 17px; box-sizing: border-box; font-size: 15px; line-height: 1.7; color: var(--ink-3)">اكتب تفاصيل {{ suggestType }}</div>
             </div>
             <button type="button" onClick="{{ toggleAnon }}" style="all: unset; cursor: pointer; width: 100%; box-sizing: border-box; text-align: right; font-family: 'IBM Plex Sans Arabic', sans-serif; display: flex; align-items: center; gap: 12px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 15px 17px; box-sizing: border-box">
               <span style="flex: 1; display: flex; flex-direction: column; gap: 3px">
-                <span style="font-size: 14px; font-weight: 500; color: var(--ink)">إرسال بشكل مجهول</span>
-                <span style="font-size: 12px; color: var(--ink-3)">لن يظهر اسمك للإدارة</span>
+                <span style="font-size: 15px; font-weight: 500; color: var(--ink)">إرسال بشكل مجهول</span>
+                <span style="font-size: 13px; color: var(--ink-3)">لن يظهر اسمك للإدارة</span>
               </span>
               <span style="width: 52px; height: 30px; flex-shrink: 0; border-radius: 999px; background: {{ anonBg }}; position: relative; flex-shrink: 0; transition: background 150ms">
                 <span style="position: absolute; top: 3px; right: {{ anonPos }}; width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF; transition: right 150ms"></span>
@@ -1161,7 +1161,7 @@
           <div style="margin: 0 24px 14px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); padding: 26px 22px; box-sizing: border-box; display: flex; align-items: center; gap: 16px">
             <img src="assets/avatar.png" alt="" style="width: 72px; height: 72px; border-radius: 999px; object-fit: cover; display: block; border: 1px solid var(--line)" />
             <div style="flex: 1; display: flex; flex-direction: column; gap: 7px">
-              <div style="font-size: 19px; font-weight: 600; letter-spacing: -0.015em; color: var(--ink)">محمد أحمد</div>
+              <div style="font-size: 20px; font-weight: 600; letter-spacing: -0.015em; color: var(--ink)">محمد أحمد</div>
               <div style="font-size: 13px; color: var(--ink-3)">OpenCart Developer</div>
               <div style="display: flex; align-items: center; gap: 7px; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--ok-soft); align-self: flex-start">
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--ok)"></span>
@@ -1174,7 +1174,7 @@
               <div style="display: flex; align-items: center; gap: 13px; min-height: 62px; padding: 13px 18px; box-sizing: border-box; border-top: {{ r.divider }}">
                 <span style="width: 34px; height: 34px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink)">{{ r.glyph }}</span>
                 <span style="font-size: 13px; color: var(--ink-3); flex-shrink: 0">{{ r.label }}</span>
-                <span style="flex: 1; text-align: left; font-size: 14px; font-weight: 500; color: var(--ink); unicode-bidi: plaintext">{{ r.value }}</span>
+                <span style="flex: 1; text-align: left; font-size: 15px; font-weight: 500; color: var(--ink); unicode-bidi: plaintext">{{ r.value }}</span>
               </div>
             </sc-for>
           </div>
@@ -1194,11 +1194,29 @@
             </span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
           </button>
-          <div style="margin: 0 24px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); overflow: hidden">
-            <sc-for list="{{ moreRows }}" as="m" hint-placeholder-count="6">
+          <div style="margin: 0 24px 10px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); overflow: hidden">
+            <sc-for list="{{ workRows }}" as="m" hint-placeholder-count="3">
               <button type="button" onClick="{{ m.go }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 13px 18px; box-sizing: border-box; border-top: {{ m.divider }}; transition: background 150ms" style-hover="background: var(--accent-soft)">
                 <span style="width: 38px; height: 38px; border-radius: 8px; background: {{ m.bg }}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: {{ m.fg }}">{{ m.glyph }}</span>
-                <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: {{ m.text }}">{{ m.label }}</span>
+                <span style="flex: 1; text-align: right; font-size: 15px; font-weight: 500; color: {{ m.text }}">{{ m.label }}</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+            </sc-for>
+          </div>
+          <div style="margin: 0 24px 10px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); overflow: hidden">
+            <sc-for list="{{ accountRows }}" as="m" hint-placeholder-count="3">
+              <button type="button" onClick="{{ m.go }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 13px 18px; box-sizing: border-box; border-top: {{ m.divider }}; transition: background 150ms" style-hover="background: var(--accent-soft)">
+                <span style="width: 38px; height: 38px; border-radius: 8px; background: {{ m.bg }}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: {{ m.fg }}">{{ m.glyph }}</span>
+                <span style="flex: 1; text-align: right; font-size: 15px; font-weight: 500; color: {{ m.text }}">{{ m.label }}</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+            </sc-for>
+          </div>
+          <div style="margin: 14px 24px 0; border-radius: 14px; border: 1px solid var(--line); background: var(--card); overflow: hidden">
+            <sc-for list="{{ logoutRow }}" as="m" hint-placeholder-count="1">
+              <button type="button" onClick="{{ m.go }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 13px 18px; box-sizing: border-box; border-top: {{ m.divider }}; transition: background 150ms" style-hover="background: var(--accent-soft)">
+                <span style="width: 38px; height: 38px; border-radius: 8px; background: {{ m.bg }}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: {{ m.fg }}">{{ m.glyph }}</span>
+                <span style="flex: 1; text-align: right; font-size: 15px; font-weight: 500; color: {{ m.text }}">{{ m.label }}</span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
               </button>
             </sc-for>
@@ -1212,14 +1230,14 @@
               <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink)">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2z"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </span>
-              <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: var(--ink)">تغيير كلمة المرور</span>
+              <span style="flex: 1; text-align: right; font-size: 15px; font-weight: 500; color: var(--ink)">تغيير كلمة المرور</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </button>
             <button type="button" onClick="{{ openLang }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 66px; padding: 13px 18px; box-sizing: border-box; border-top: 1px solid var(--line); transition: background 150ms" style-hover="background: var(--accent-soft)">
               <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink)">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
               </span>
-              <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: var(--ink)">اللغة</span>
+              <span style="flex: 1; text-align: right; font-size: 15px; font-weight: 500; color: var(--ink)">اللغة</span>
               <span style="font-size: 13px; color: var(--ink-3)">{{ lang }}</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </button>
@@ -1227,8 +1245,8 @@
               <button type="button" onClick="{{ sw.go }}" style="all: unset; cursor: pointer; width: 100%; text-align: right; font-family: 'IBM Plex Sans Arabic', sans-serif; display: flex; align-items: center; gap: 14px; min-height: 66px; padding: 13px 18px; box-sizing: border-box; border-top: 1px solid var(--line)">
                 <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink)">{{ sw.glyph }}</span>
                 <span style="flex: 1; display: flex; flex-direction: column; gap: 3px">
-                  <span style="font-size: 14px; font-weight: 500; color: var(--ink)">{{ sw.label }}</span>
-                  <span style="font-size: 12px; color: var(--ink-3)">{{ sw.hint }}</span>
+                  <span style="font-size: 15px; font-weight: 500; color: var(--ink)">{{ sw.label }}</span>
+                  <span style="font-size: 13px; color: var(--ink-3)">{{ sw.hint }}</span>
                 </span>
                 <span style="width: 52px; height: 30px; flex-shrink: 0; border-radius: 999px; background: {{ sw.trackBg }}; position: relative; flex-shrink: 0; transition: background 150ms">
                   <span style="position: absolute; top: 3px; right: {{ sw.knobPos }}; width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF; transition: right 150ms"></span>
@@ -1241,13 +1259,13 @@
               <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--bad-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--bad)">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
               </span>
-              <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: var(--bad)">تسجيل الخروج</span>
+              <span style="flex: 1; text-align: right; font-size: 15px; font-weight: 500; color: var(--bad)">تسجيل الخروج</span>
             </button>
             <button type="button" onClick="{{ openDelete }}" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 13px 18px; box-sizing: border-box; border-top: 1px solid var(--line); transition: background 150ms" style-hover="background: var(--bad-soft)">
               <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--bad-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--bad)">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
               </span>
-              <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: var(--bad)">حذف الحساب</span>
+              <span style="flex: 1; text-align: right; font-size: 15px; font-weight: 500; color: var(--bad)">حذف الحساب</span>
             </button>
           </div>
         </sc-if>
@@ -1260,7 +1278,7 @@
                 <span style="width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-ink)">
                   <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
                 </span>
-                <span style="flex: 1; text-align: right; font-size: 14px; font-weight: 500; color: var(--ink)">{{ p.label }}</span>
+                <span style="flex: 1; text-align: right; font-size: 15px; font-weight: 500; color: var(--ink)">{{ p.label }}</span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
               </button>
             </sc-for>
@@ -1302,20 +1320,20 @@
               <img src="assets/logo-apexhr-white.svg" alt="APEXHR" style="width: 112px; display: block; align-self: flex-start; opacity: 0.95" />
             <div style="display: flex; flex-direction: column; gap: 11px">
               <div style="font-size: 28px; font-weight: 700; line-height: 1.25; letter-spacing: -0.025em; color: #FFFFFF; text-wrap: balance">{{ authTitle }}</div>
-              <div style="font-size: 13.5px; line-height: 1.75; color: rgba(255,255,255,0.78); max-width: 32ch; text-wrap: pretty">{{ authSub }}</div>
+              <div style="font-size: 13px; line-height: 1.75; color: rgba(255,255,255,0.78); max-width: 32ch; text-wrap: pretty">{{ authSub }}</div>
             </div>
             </div>
           </div>
         </div>
 
-        <div class="scr" style="flex: 1; overflow-y: auto; scrollbar-width: none; margin-top: -24px; border-radius: 24px 24px 0 0; background: var(--bg); position: relative; z-index: 1; padding: 28px 26px 34px; box-sizing: border-box">
+        <div class="scr" style="flex: 1; overflow-y: auto; scrollbar-width: none; margin-top: -24px; border-radius: 20px 24px 0 0; background: var(--bg); position: relative; z-index: 1; padding: 28px 26px 34px; box-sizing: border-box">
           <div style="display: flex; flex-direction: column; gap: 18px">
             <sc-for list="{{ authFields }}" as="f" hint-placeholder-count="2">
               <div style="display: flex; flex-direction: column; gap: 9px">
                 <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">{{ f.label }}</span>
                 <div style="height: 56px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); display: flex; align-items: center; gap: 12px; padding: 0 16px; box-sizing: border-box; transition: border-color 150ms" style-hover="border-color: var(--line-strong)">
                   <span style="width: 24px; display: flex; align-items: center; justify-content: center; color: var(--ink-3); flex-shrink: 0">{{ f.glyph }}</span>
-                  <span style="flex: 1; font-size: 14px; color: var(--ink); unicode-bidi: plaintext; text-align: right">{{ f.value }}</span>
+                  <span style="flex: 1; font-size: 15px; color: var(--ink); unicode-bidi: plaintext; text-align: right">{{ f.value }}</span>
                   <sc-if value="{{ f.isPassword }}" hint-placeholder-val="{{ false }}">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
                   </sc-if>
@@ -1394,7 +1412,7 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
           </button>
         </sc-if>
-        <div style="flex: 1; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); opacity: {{ appBarTitleOpacity }}; transform: translateY({{ appBarTitleShift }}); transition: opacity 150ms, transform 150ms">{{ title }}</div>
+        <div style="flex: 1; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); opacity: {{ appBarTitleOpacity }}; transform: translateY({{ appBarTitleShift }}); transition: opacity 150ms, transform 150ms">{{ title }}</div>
       </div>
     </sc-if>
 
@@ -1417,7 +1435,7 @@
 
     <!-- ══ REQUEST FAB (docked in the leaves / permits / advances / overtime screens) ══ -->
     <sc-if value="{{ showReqFab }}" hint-placeholder-val="{{ false }}">
-      <button type="button" onClick="{{ goReqForm }}" style="all: unset; cursor: pointer; position: absolute; bottom: 30px; left: 24px; z-index: 8; height: 52px; padding: 0 20px 0 22px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; gap: 8px; box-sizing: border-box; color: #FFFFFF; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 600; box-shadow: 0 8px 20px -8px rgba(79,70,229,0.5); transition: opacity 150ms" style-hover="opacity: 0.9">
+      <button type="button" onClick="{{ goReqForm }}" style="all: unset; cursor: pointer; position: absolute; bottom: 30px; left: 24px; z-index: 8; height: 52px; padding: 0 20px 0 22px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; gap: 8px; box-sizing: border-box; color: #FFFFFF; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 15px; font-weight: 600; box-shadow: 0 8px 20px -8px rgba(79,70,229,0.5); transition: opacity 150ms" style-hover="opacity: 0.9">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
         طلب جديد
       </button>
@@ -1426,14 +1444,14 @@
     <!-- ══ REMINDER BOTTOM SHEET ══ -->
     <sc-if value="{{ hasReminderSheet }}" hint-placeholder-val="{{ false }}">
       <div style="position: absolute; inset: 0; z-index: 22; background: rgba(8,9,13,0.5); animation: fadeIn 150ms ease-out" onClick="{{ closeReminderSheet }}"></div>
-      <div style="position: absolute; bottom: 16px; right: 16px; left: 16px; z-index: 23; border-radius: 24px; border: 1px solid var(--line); background: var(--card); padding: 12px 22px 24px; box-sizing: border-box; animation: sheetIn 220ms cubic-bezier(0.32, 0.72, 0, 1)">
+      <div style="position: absolute; bottom: 16px; right: 16px; left: 16px; z-index: 23; border-radius: 20px; border: 1px solid var(--line); background: var(--card); padding: 12px 22px 24px; box-sizing: border-box; animation: sheetIn 220ms cubic-bezier(0.32, 0.72, 0, 1)">
         <div style="display: flex; justify-content: center; padding-bottom: 12px">
           <span style="width: 44px; height: 4px; border-radius: 999px; background: var(--line-strong)"></span>
         </div>
         <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 6px">
           <div style="display: flex; flex-direction: column; gap: 5px">
             <div style="font-size: 20px; font-weight: 600; letter-spacing: -0.015em; color: var(--ink)">{{ reminderSheetTitle }}</div>
-            <div style="font-size: 12px; color: var(--ink-3)">{{ reminderSheetSub }}</div>
+            <div style="font-size: 13px; color: var(--ink-3)">{{ reminderSheetSub }}</div>
           </div>
           <button type="button" onClick="{{ closeReminderSheet }}" style="all: unset; cursor: pointer; width: 34px; height: 34px; border-radius: 999px; background: var(--bg); display: flex; align-items: center; justify-content: center; color: var(--ink-3); flex-shrink: 0; transition: color 150ms" style-hover="color: var(--ink)">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
@@ -1444,9 +1462,9 @@
             <sc-for list="{{ reminderInfo }}" as="ri" hint-placeholder-count="4">
               <div style="display: flex; align-items: center; gap: 12px; border-radius: 14px; background: var(--bg); padding: 14px 16px; box-sizing: border-box">
                 <span style="color: var(--ink-3); display: flex; flex-shrink: 0">{{ ri.glyph }}</span>
-                <span style="font-size: 12.5px; color: var(--ink-3); flex-shrink: 0">{{ ri.label }}</span>
+                <span style="font-size: 13px; color: var(--ink-3); flex-shrink: 0">{{ ri.label }}</span>
                 <span style="flex: 1"></span>
-                <span style="font-size: 14px; font-weight: 500; color: var(--ink); unicode-bidi: plaintext; text-align: left">{{ ri.value }}</span>
+                <span style="font-size: 15px; font-weight: 500; color: var(--ink); unicode-bidi: plaintext; text-align: left">{{ ri.value }}</span>
               </div>
             </sc-for>
           </div>
@@ -1464,12 +1482,12 @@
         <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px; animation: swapIn 260ms cubic-bezier(0.32, 0.72, 0, 1)">
           <div style="display: flex; flex-direction: column; gap: 9px">
             <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">الحدث</span>
-            <div style="height: 54px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); display: flex; align-items: center; padding: 0 17px; box-sizing: border-box; font-size: 14px; color: {{ reminderEventColor }}">{{ reminderEventValue }}</div>
+            <div style="height: 54px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); display: flex; align-items: center; padding: 0 17px; box-sizing: border-box; font-size: 15px; color: {{ reminderEventColor }}">{{ reminderEventValue }}</div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 9px">
             <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">التاريخ</span>
             <button type="button" onClick="{{ openDate }}" style="all: unset; cursor: pointer; height: 54px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); display: flex; align-items: center; justify-content: space-between; padding: 0 17px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
-              <span style="font-size: 14px; color: var(--ink); unicode-bidi: plaintext">{{ reminderDateValue }}</span>
+              <span style="font-size: 15px; color: var(--ink); unicode-bidi: plaintext">{{ reminderDateValue }}</span>
               <span style="color: var(--ink-3); display: flex">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><path d="M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M3 10h18"/></svg>
               </span>
@@ -1478,7 +1496,7 @@
           <div style="display: flex; flex-direction: column; gap: 9px">
             <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">الوقت</span>
             <button type="button" onClick="{{ openTime }}" style="all: unset; cursor: pointer; height: 54px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); display: flex; align-items: center; justify-content: space-between; padding: 0 17px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
-              <span style="font-size: 14px; color: {{ reminderTimeColor }}; unicode-bidi: plaintext">{{ reminderTimeValue }}</span>
+              <span style="font-size: 15px; color: {{ reminderTimeColor }}; unicode-bidi: plaintext">{{ reminderTimeValue }}</span>
               <span style="color: var(--ink-3); display: flex">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20"/><path d="M12 6v6l4 2"/></svg>
               </span>
@@ -1487,7 +1505,7 @@
           <div style="display: flex; flex-direction: column; gap: 9px">
             <span style="font-size: 13px; font-weight: 500; color: var(--ink-2)">التذكير قبل</span>
             <button type="button" onClick="{{ openRemindBefore }}" style="all: unset; cursor: pointer; height: 54px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); display: flex; align-items: center; justify-content: space-between; padding: 0 17px; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; transition: border-color 150ms" style-hover="border-color: var(--accent)">
-              <span style="font-size: 14px; color: {{ reminderBeforeColor }}">{{ reminderBeforeValue }}</span>
+              <span style="font-size: 15px; color: {{ reminderBeforeColor }}">{{ reminderBeforeValue }}</span>
               <span style="color: var(--ink-3); display: flex">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
               </span>
@@ -1512,7 +1530,7 @@
           <button type="button" onClick="{{ t.go }}" style="all: unset; cursor: pointer; flex: {{ t.grow }}; height: 52px; border-radius: 999px; background: {{ t.pill }}; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'IBM Plex Sans Arabic', sans-serif; color: {{ t.color }}; transition: flex 220ms cubic-bezier(0.32, 0.72, 0, 1), background 150ms, color 150ms">
             {{ t.glyph }}
             <sc-if value="{{ t.active }}" hint-placeholder-val="{{ false }}">
-              <span style="font-size: 12px; font-weight: 600; line-height: 1; white-space: nowrap">{{ t.label }}</span>
+              <span style="font-size: 13px; font-weight: 600; line-height: 1; white-space: nowrap">{{ t.label }}</span>
             </sc-if>
           </button>
         </sc-for>
@@ -1537,7 +1555,7 @@
           <sc-for list="{{ sideTabs }}" as="t" hint-placeholder-count="3">
             <button type="button" onClick="{{ t.go }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; font-family: 'IBM Plex Sans Arabic', sans-serif; color: {{ t.color }}; transition: color 150ms">
               {{ t.glyph }}
-              <span style="font-size: 10px; font-weight: {{ t.weight }}; line-height: 1; white-space: nowrap">{{ t.label }}</span>
+              <span style="font-size: 11px; font-weight: {{ t.weight }}; line-height: 1; white-space: nowrap">{{ t.label }}</span>
             </button>
           </sc-for>
         </div>
@@ -1548,7 +1566,7 @@
     <!-- ══ MODALS ══ -->
     <sc-if value="{{ hasModal }}" hint-placeholder-val="{{ false }}">
       <div style="position: absolute; inset: 0; z-index: 26; background: rgba(8,9,13,0.5); display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box; animation: fadeIn 150ms ease-out">
-        <div style="width: 100%; border-radius: 22px; border: 1px solid var(--line); background: var(--card); padding: 24px 22px; box-sizing: border-box; animation: sheetIn 200ms cubic-bezier(0.32, 0.72, 0, 1)">
+        <div style="width: 100%; border-radius: 20px; border: 1px solid var(--line); background: var(--card); padding: 24px 22px; box-sizing: border-box; animation: sheetIn 200ms cubic-bezier(0.32, 0.72, 0, 1)">
 
           <sc-if value="{{ modalIsConfirm }}" hint-placeholder-val="{{ false }}">
             <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
@@ -1572,8 +1590,8 @@
 
           <sc-if value="{{ modalIsConfirm }}" hint-placeholder-val="{{ false }}">
             <div style="display: flex; gap: 10px; margin-top: 22px">
-              <button type="button" onClick="{{ modalAction }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; background: {{ modalCtaBg }}; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; transition: opacity 150ms" style-hover="opacity: 0.9">{{ modalCta }}</button>
-              <button type="button" onClick="{{ closeModal }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink); transition: background 150ms" style-hover="background: var(--bg)">{{ modalCancel }}</button>
+              <button type="button" onClick="{{ modalAction }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; background: {{ modalCtaBg }}; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 15px; font-weight: 600; color: #FFFFFF; transition: opacity 150ms" style-hover="opacity: 0.9">{{ modalCta }}</button>
+              <button type="button" onClick="{{ closeModal }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 15px; font-weight: 500; color: var(--ink); transition: background 150ms" style-hover="background: var(--bg)">{{ modalCancel }}</button>
             </div>
           </sc-if>
 
@@ -1583,7 +1601,7 @@
                 <button type="button" onClick="{{ monthYearNext }}" style="all: unset; cursor: pointer; margin: -4px; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2); transition: border-color 150ms" style-hover="border-color: var(--accent)">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                 </button>
-                <span style="font-size: 16px; font-weight: 600; color: var(--ink); unicode-bidi: plaintext">{{ monthYear }}</span>
+                <span style="font-size: 17px; font-weight: 600; color: var(--ink); unicode-bidi: plaintext">{{ monthYear }}</span>
                 <button type="button" onClick="{{ monthYearPrev }}" style="all: unset; cursor: pointer; margin: -4px; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; box-sizing: border-box; color: var(--ink-2); transition: border-color 150ms" style-hover="border-color: var(--accent)">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
                 </button>
@@ -1594,18 +1612,18 @@
                 </sc-for>
               </div>
               <div style="display: flex; gap: 10px; margin-top: 22px">
-                <button type="button" onClick="{{ applyMonth }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; transition: opacity 150ms" style-hover="opacity: 0.9">تطبيق</button>
-                <button type="button" onClick="{{ closeModal }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink); transition: background 150ms" style-hover="background: var(--bg)">إلغاء</button>
+                <button type="button" onClick="{{ applyMonth }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 15px; font-weight: 600; color: #FFFFFF; transition: opacity 150ms" style-hover="opacity: 0.9">تطبيق</button>
+                <button type="button" onClick="{{ closeModal }}" style="all: unset; cursor: pointer; flex: 1; height: 52px; border-radius: 999px; border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: center; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 15px; font-weight: 500; color: var(--ink); transition: background 150ms" style-hover="background: var(--bg)">إلغاء</button>
               </div>
             </div>
           </sc-if>
 
           <sc-if value="{{ modalIsNote }}" hint-placeholder-val="{{ false }}">
             <div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 8px 4px 6px">
-              <span style="width: 58px; height: 58px; border-radius: 16px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent-ink)">
+              <span style="width: 58px; height: 58px; border-radius: 14px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent-ink)">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H9a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1"/><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><path d="M8 12h8"/><path d="M8 16h5"/></svg>
               </span>
-              <div style="font-size: 14px; line-height: 2; color: var(--ink-2); margin-top: 16px; text-wrap: pretty">{{ modalNoteText }}</div>
+              <div style="font-size: 15px; line-height: 2; color: var(--ink-2); margin-top: 16px; text-wrap: pretty">{{ modalNoteText }}</div>
             </div>
           </sc-if>
 
@@ -1616,7 +1634,7 @@
                   <sc-if value="{{ o.flag }}" hint-placeholder-val="{{ false }}">
                     <span style="font-size: 20px; line-height: 1; flex-shrink: 0">{{ o.flag }}</span>
                   </sc-if>
-                  <span style="flex: 1; text-align: right; font-size: 14px; font-weight: {{ o.weight }}; color: {{ o.color }}">{{ o.label }}</span>
+                  <span style="flex: 1; text-align: right; font-size: 15px; font-weight: {{ o.weight }}; color: {{ o.color }}">{{ o.label }}</span>
                   <span style="width: 20px; height: 20px; border-radius: 999px; border: 1.5px solid {{ o.ring }}; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
                     <sc-if value="{{ o.selected }}" hint-placeholder-val="{{ false }}">
                       <span style="width: 10px; height: 10px; border-radius: 999px; background: var(--accent)"></span>
@@ -1649,20 +1667,20 @@
                 </sc-for>
               </div>
               <sc-if value="{{ modalIsRange }}" hint-placeholder-val="{{ false }}">
-                <div style="display: flex; align-items: center; gap: 12px; margin-top: 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); padding: 11px 14px; box-sizing: border-box">
+                <div style="display: flex; align-items: center; gap: 12px; margin-top: 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); padding: 11px 14px; box-sizing: border-box">
                   <div style="flex: 1; display: flex; flex-direction: column; gap: 3px; text-align: right">
-                    <span style="font-size: 10px; color: var(--ink-3)">{{ rangeStartCap }}</span>
+                    <span style="font-size: 11px; color: var(--ink-3)">{{ rangeStartCap }}</span>
                     <span style="font-size: 13px; font-weight: 600; color: var(--ink); unicode-bidi: plaintext">{{ rangeStartLabel }}</span>
                   </div>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><path d="m15 18-6-6 6-6"/></svg>
                   <div style="flex: 1; display: flex; flex-direction: column; gap: 3px; text-align: right">
-                    <span style="font-size: 10px; color: var(--ink-3)">{{ rangeEndCap }}</span>
+                    <span style="font-size: 11px; color: var(--ink-3)">{{ rangeEndCap }}</span>
                     <span style="font-size: 13px; font-weight: 600; color: var(--ink); unicode-bidi: plaintext">{{ rangeEndLabel }}</span>
                   </div>
-                  <span style="height: 32px; padding: 0 13px; border-radius: 999px; background: var(--accent-soft); display: flex; align-items: center; font-size: 12px; font-weight: 600; color: var(--accent-ink); white-space: nowrap; flex-shrink: 0">{{ rangeDaysLabel }}</span>
+                  <span style="height: 32px; padding: 0 13px; border-radius: 999px; background: var(--accent-soft); display: flex; align-items: center; font-size: 13px; font-weight: 600; color: var(--accent-ink); white-space: nowrap; flex-shrink: 0">{{ rangeDaysLabel }}</span>
                 </div>
               </sc-if>
-              <button type="button" onClick="{{ confirmDate }}" style="all: unset; cursor: pointer; width: 100%; height: 52px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; justify-content: center; margin-top: 14px; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; font-weight: 600; color: var(--on-accent); transition: opacity 150ms" style-hover="opacity: 0.9">تأكيد</button>
+              <button type="button" onClick="{{ confirmDate }}" style="all: unset; cursor: pointer; width: 100%; height: 52px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; justify-content: center; margin-top: 14px; font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 15px; font-weight: 600; color: var(--on-accent); transition: opacity 150ms" style-hover="opacity: 0.9">تأكيد</button>
             </div>
           </sc-if>
         </div>
@@ -1674,7 +1692,7 @@
       <div style="position: absolute; top: 10px; right: 0; left: 0; z-index: 30; display: flex; justify-content: center; padding: 0 16px; box-sizing: border-box; pointer-events: none">
         <div style="max-width: 100%; min-height: 38px; border-radius: 999px; background: {{ toastBg }}; display: flex; align-items: center; gap: 10px; padding: 8px 10px 8px 8px; box-sizing: border-box; animation: {{ toastAnim }}; transform-origin: top center; box-shadow: 0 10px 30px -8px rgba(0,0,0,0.6); pointer-events: auto">
           <span style="width: 24px; height: 24px; border-radius: 999px; background: {{ toastDot }}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: {{ toastGlyphColor }}">{{ toastGlyph }}</span>
-          <span style="font-size: 12.5px; font-weight: 500; line-height: 1.4; color: #FFFFFF; text-wrap: pretty">{{ toastText }}</span>
+          <span style="font-size: 13px; font-weight: 500; line-height: 1.4; color: #FFFFFF; text-wrap: pretty">{{ toastText }}</span>
           <button type="button" onClick="{{ dismissToast }}" aria-label="إغلاق التنبيه" style="all: unset; cursor: pointer; width: 24px; height: 24px; border-radius: 999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: rgba(255,255,255,0.75); transition: background 150ms, color 150ms" style-hover="background: rgba(255,255,255,0.16); color: #FFFFFF">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
           </button>
@@ -2665,13 +2683,17 @@ class Component extends DCLogic {
         { label: "الراتب", value: "4,500 ₪", g: "money" },
       ]).map((r) => Object.assign({}, r, { glyph: icon(r.g, 17) })),
 
-      moreRows: this.row([
+      workRows: this.row([
         { label: "الطلبات", glyph: icon("clipboard", 19), bg: "var(--accent-soft)", fg: "var(--accent-ink)", text: "var(--ink)", go: () => { this.setState({ filter: 0, typeFilter: null }); this.go("requests"); } },
         { label: "الموظفين", glyph: icon("user", 19), bg: "var(--accent-soft)", fg: "var(--accent-ink)", text: "var(--ink)", go: () => this.go("employees") },
         { label: "الرواتب", glyph: icon("money", 19), bg: "var(--accent-soft)", fg: "var(--accent-ink)", text: "var(--ink)", go: () => this.jump("salaries") },
+      ]),
+      accountRows: this.row([
         { label: "اقتراح أو شكوى", glyph: icon("mail", 19), bg: "var(--accent-soft)", fg: "var(--accent-ink)", text: "var(--ink)", go: () => this.go("suggestion") },
         { label: "الإعدادات", glyph: icon("gear", 19), bg: "var(--accent-soft)", fg: "var(--accent-ink)", text: "var(--ink)", go: () => this.go("settings") },
         { label: "الصفحات", glyph: icon("doc", 19), bg: "var(--accent-soft)", fg: "var(--accent-ink)", text: "var(--ink)", go: () => this.go("pages") },
+      ]),
+      logoutRow: this.row([
         { label: "تسجيل الخروج", glyph: icon("logout", 19), bg: "var(--bad-soft)", fg: "var(--bad)", text: "var(--bad)", go: () => this.setState({ modal: "logout" }) },
       ]),
       pageRows: this.row([
